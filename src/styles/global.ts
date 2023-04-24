@@ -10,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
         font-weight: 400;
         line-height: 1.8;
         color: #333;
-        background: #fff;
+        background: #0A1C38;
         scroll-behavior: smooth;
     }
 
@@ -28,5 +28,15 @@ export const GlobalStyles = createGlobalStyle`
     h1, h2, h3, h4, h5, span, p {
         margin: 0;
         padding: 0;
+    }
+
+    p {
+        font-family: 'Barlow';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.3px;
+        color: #FFFFFF;
     }
 `;

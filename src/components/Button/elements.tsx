@@ -13,9 +13,7 @@ const buttonStyles: Record<
   primary: css`
     color: ${({ theme }) => theme.colors.white};
     background-color: ${({ theme }) => theme.colors.primary};
-    padding: 1.1em 2.5em;
     border: none;
-    text-transform: uppercase;
     transition: opacity 300ms ease;
 
     &:hover {
@@ -37,14 +35,15 @@ const buttonStyles: Record<
 };
 
 export const Button = styled("button")<ButtonProps>`
-  font-family: "Playfair Display";
-  font-weight: 700;
-  font-size: 0.8em;
-  line-height: 1;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
   cursor: pointer;
-  outline: none;
-  border-radius: 50px;
-  white-space: nowrap;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   ${({ variant }) => buttonStyles[variant!]}
 `;

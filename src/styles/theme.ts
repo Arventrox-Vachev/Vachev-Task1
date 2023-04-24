@@ -4,8 +4,8 @@ import { typography } from "./commonStyles";
 
 export const theme: DefaultTheme = {
   colors: {
-    primary: "#24CAE2",
-    secondary: "#1692A4",
+    primary: "#173158",
+    secondary: "#081831",
     black: "#000000",
     white: "#ffffff",
     vividRed: "#cf2e2e"
