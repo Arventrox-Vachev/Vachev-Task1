@@ -7,7 +7,15 @@ import {
 } from "styles";
 
 declare module "styled-components" {
-  type Colors = "primary" | "secondary" | "black" | "white" | "vividRed";
+  type Colors =
+    | "primary"
+    | "secondary"
+    | "black"
+    | "white"
+    | "vividRed"
+    | "yellow"
+    | "grey"
+    | "link";
 
   type Gradients = "blueToPurple";
 

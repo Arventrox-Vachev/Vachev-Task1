@@ -3,10 +3,11 @@ import { Paragraph as _LogoText, Image as _Image, Button as _Button } from "comp
 import { LogoContainerProps, LogoTextProps } from "./Logo";
 
 export const LogoContainer = styled(props => <div {...props} />)<LogoContainerProps>`
+  height: fit-content;
+
   display: flex;
-  flex-direction: row;
   align-items: center;
-  margin: 34px 0 34px 40px;
+  justify-content: center;
 `;
 
 export const Image = styled(_Image)``;

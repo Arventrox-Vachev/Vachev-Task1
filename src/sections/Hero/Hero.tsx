@@ -1,33 +1,31 @@
 import * as S from "./elements";
+import { JoinWaitingListForm } from "collections";
 import { heroSectionContent } from "data";
 
 export const Hero = () => {
   return (
     <S.SectionContainer>
-      <div>
-        <h1>{heroSectionContent.title}</h1>
-        <p>{heroSectionContent.subtitle}</p>
-        <div>
-          <h3>{heroSectionContent.formText.title}</h3>
-          <div>
-            <input placeholder={heroSectionContent.formText.emailHolder}></input>
-            <button>{heroSectionContent.formText.buttonText}</button>
-          </div>
+      <S.TextContainer>
+        <S.H1>
+          <S.HighlightedTextContainer>
+            {heroSectionContent.title.firstPart}
+          </S.HighlightedTextContainer>
 
-          {heroSectionContent.formText.policiesText.map((policy, index) => (
-            <div key={index}>
-              <input type='checkbox'></input>
-              <p>{policy}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-      <S.Image
+          {heroSectionContent.title.secondPart}
+        </S.H1>
+        {heroSectionContent.subtitle.map((subTitle, index) => (
+          <S.H3 key={index}>{subTitle}</S.H3>
+        ))}
+
+        <JoinWaitingListForm />
+      </S.TextContainer>
+
+      {/* <S.Image
         src={heroSectionContent.heroImage}
         alt={heroSectionContent.heroImage.alt}
         width={heroSectionContent.heroImage.width}
         height={heroSectionContent.heroImage.height}
-      ></S.Image>
+      ></S.Image> */}
     </S.SectionContainer>
   );
 };

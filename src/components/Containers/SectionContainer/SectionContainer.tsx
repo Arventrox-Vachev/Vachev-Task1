@@ -1,5 +1,3 @@
-import { SectionContainer as _SectionContainer } from "./elements";
+import * as S from "./elements";
 
-export const SectionContainer = ({ ...props }) => {
-  return <_SectionContainer {...props} />;
-};
+export const SectionContainer = ({ ...props }) => <S.SectionContainer {...props} />;

@@ -20,11 +20,12 @@ const buttonStyles: Record<
       opacity: 0.8;
     }
   `,
+
   secondary: css`
-    color: ${({ theme }) => theme.colors.white};
-    background-color: transparent;
+    color: ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.yellow};
     padding: 0.9em 2em;
-    border: 1px solid ${({ theme }) => theme.colors.white};
+    border: none;
     transition: color 500ms ease, background-color 500ms ease;
 
     &:hover {
@@ -40,6 +41,7 @@ export const Button = styled("button")<ButtonProps>`
   font-size: 16px;
   line-height: 19px;
   cursor: pointer;
+  border-radius: 4px;
 
   display: flex;
   align-items: center;

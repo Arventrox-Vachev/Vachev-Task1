@@ -8,7 +8,10 @@ export const theme: DefaultTheme = {
     secondary: "#081831",
     black: "#000000",
     white: "#ffffff",
-    vividRed: "#cf2e2e"
+    vividRed: "#cf2e2e",
+    yellow: "#fcd130",
+    grey: "#FFFFFF",
+    link: "#7184ab"
   },
   typography,
   gradients: {

@@ -9,7 +9,7 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 18px;
         font-weight: 400;
         line-height: 1.8;
-        color: #333;
+        color: #ffffff;
         background: #0A1C38;
         scroll-behavior: smooth;
     }
@@ -37,6 +37,5 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 18px;
         line-height: 22px;
         letter-spacing: 0.3px;
-        color: #FFFFFF;
     }
 `;

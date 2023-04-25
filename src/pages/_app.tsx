@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps: { ...pageProps } }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <Head>
-        <title>app title goes here</title>
+        <title>CampaignMeister</title>
         <meta name='description' content='app description goes here' />
 
         <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no' />
