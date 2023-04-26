@@ -14,10 +14,12 @@ const buttonStyles: Record<
     color: ${({ theme }) => theme.colors.white};
     background-color: ${({ theme }) => theme.colors.primary};
     border: none;
-    transition: opacity 300ms ease;
+    transition: color 500ms ease, background-color 500ms ease;
 
     &:hover {
-      opacity: 0.8;
+      background-color: transparent;
+      border: 2px solid ${({ theme }) => theme.colors.primary};
+      color: ${({ theme }) => theme.colors.yellow};
     }
   `,
 
@@ -27,10 +29,12 @@ const buttonStyles: Record<
     padding: 0.9em 2em;
     border: none;
     transition: color 500ms ease, background-color 500ms ease;
+    border: 2px solid transparent;
 
     &:hover {
-      color: ${({ theme }) => theme.colors.black};
-      background-color: ${({ theme }) => theme.colors.white};
+      background-color: transparent;
+      border-color: ${({ theme }) => theme.colors.yellow};
+      color: ${({ theme }) => theme.colors.yellow};
     }
   `
 };

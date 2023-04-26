@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { TextContainerProps } from "./TextContainer";
 
-export const TextContainer = styled(({ ...props }) => <div {...props} />)`
+export const TextContainer = styled("div")`
   display: flex;
   align-items: flex-start;
 `;

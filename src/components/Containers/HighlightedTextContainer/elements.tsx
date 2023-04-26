@@ -1,5 +1,5 @@
 import styled from "styled-components";
 
-export const HighlightedTextContainer = styled(({ ...props }) => <span {...props} />)`
+export const HighlightedTextContainer = styled("span")`
   color: ${({ theme }) => theme.colors.yellow};
 `;

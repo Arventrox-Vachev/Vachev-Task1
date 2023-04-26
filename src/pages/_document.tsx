@@ -36,9 +36,10 @@ export default class MyDocument extends Document {
           <link rel='preconnect' href='https://fonts.googleapis.com' />
           <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='anonymous' />
           <link
-            href='https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Crimson+Text&family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap'
+            href='https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap'
             rel='stylesheet'
-          />
+          ></link>
+
           <meta name='description' content='app description goes here'></meta>
           <meta name='title' content='app title goes here' />
         </Head>

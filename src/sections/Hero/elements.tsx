@@ -11,7 +11,6 @@ import {
 export const SectionContainer = styled(_SectionContainer)`
   padding-top: 30px;
   padding-bottom: 80px;
-  margin-right: 0;
 
   background-image: url(./imgs/HERO.png);
   background-repeat: no-repeat;

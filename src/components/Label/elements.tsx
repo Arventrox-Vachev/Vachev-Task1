@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Label = styled(({ ...props }) => <label {...props} />)`
+export const Label = styled("label")`
   font-family: "Barlow";
   font-style: normal;
   font-weight: 400;

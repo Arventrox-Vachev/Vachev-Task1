@@ -1,10 +1,14 @@
 import { NextPage } from "next";
-import { Hero } from "sections";
+import { Hero, FlyWheel, Icons, Steps, JoinMailing } from "sections";
 
 const Home: NextPage = () => {
   return (
     <main>
       <Hero />
+      <FlyWheel />
+      <Icons />
+      <Steps />
+      <JoinMailing />
     </main>
   );
 };

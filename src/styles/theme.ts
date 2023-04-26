@@ -10,7 +10,7 @@ export const theme: DefaultTheme = {
     white: "#ffffff",
     vividRed: "#cf2e2e",
     yellow: "#fcd130",
-    grey: "#FFFFFF",
+    grey: "rgba(255, 255, 255, 0.7);",
     link: "#7184ab"
   },
   typography,

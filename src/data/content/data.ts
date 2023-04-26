@@ -39,10 +39,11 @@ export const joinWaitingListFormContent = {
 };
 
 export const flywheelContent = {
-  title: "How to boost your performance with flawless data",
+  title: "How to <span> boost your performance </span> with flawless data",
+
   description: [
-    "Optimizing campaigns is hard, especially across all your channels, brands and agencies. Campaign-Meister ensures you and your team  have all the insights to boost your campaign performance.",
-    "Optimizing campaigns is hard, especially across all your channels, brands and agencies. Campaign-Meister ensures you and your team  have all the insights to boost your campaign performance."
+    "Optimizing campaigns is hard, especially across all your channels, brands and agencies. Campaign-Meister ensures you and your team  have all the insights to boost your campaign performance. ",
+    "Optimizing campaigns is hard, especially across all your channels, brands and agencies. Campaign-Meister ensures you and your team  have all the insights to boost your campaign performance. Optimizing campaigns is hard, especially across all your channels, brands and agencies. "
   ],
   cards: [
     {
@@ -60,85 +61,143 @@ export const flywheelContent = {
       description:
         "Compare campaign tactics across all channels in real-time and proceed  with your winning tactics."
     }
-  ]
+  ],
+  flywheelImg: {
+    src: "/imgs/ASSET_diagram.png",
+    alt: "Flywheel",
+    width: 551,
+    height: 551
+  }
 };
 
 export const iconsContent = {
-  title: "The Building Blocks  of CampaignMeister",
+  title: { firstPart: "The ", highlighted: "Building Blocks ", lastPart: "of CampaignMeister" },
   cards: [
     {
       title: "Smart Campaigns",
       description:
-        "Easily set up structured campaigns with clear goals and objectives. Ensure flawless measurement of all campaign tactics using our automated UTM tags."
-    },
-    {
-      title: "Smart Insights",
-      description:
-        "We create smart insights by combining campaign attribution, marketing mix modeling and validated experiments to improve your campaign optimization with over 25%."
-    },
-    {
-      title: "Smart Data",
-      description:
-        "We monitor all data sources on matters such as data freshness and schema changes. Our anomaly detection algorithms will warn you ahead of any unexpected trend change."
+        "Easily set up structured campaigns with clear goals and objectives. Ensure flawless measurement of all campaign tactics using our automated UTM tags.",
+      icon: {
+        src: "/imgs/campaign-icon.png",
+        alt: "Smart Campaigns",
+        width: 80,
+        height: 80
+      }
     },
     {
       title: "Full Funnel",
       description:
-        "Manage all your campaigns across all channels, brands and countries while spanning the full customer journey."
+        "Manage all your campaigns across all channels, brands and countries while spanning the full customer journey.",
+      icon: {
+        src: "/imgs/funnel-icon.png",
+        alt: "Full Funnel",
+        width: 80,
+        height: 80
+      }
+    },
+    {
+      title: "Smart Insights",
+      description:
+        "We create smart insights by combining campaign attribution, marketing mix modeling and validated experiments to improve your campaign optimization with over 25%.",
+      icon: {
+        src: "/imgs/insights-icon.png",
+        alt: "Smart Insights",
+        width: 80,
+        height: 80
+      }
     },
     {
       title: "Campaign Governance",
       description:
-        "Ensure proper naming conventions across all campaigns, maintain clear definitions of dimensions and metrics and keep track of all changes: what, when and by whom."
+        "Ensure proper naming conventions across all campaigns, maintain clear definitions of dimensions and metrics and keep track of all changes: what, when and by whom.",
+      icon: {
+        src: "/imgs/governance-icon.png",
+        alt: "Campaign Governance",
+        width: 80,
+        height: 80
+      }
     },
+    {
+      title: "Smart Data",
+      description:
+        "We monitor all data sources on matters such as data freshness and schema changes. Our anomaly detection algorithms will warn you ahead of any unexpected trend change.",
+      icon: {
+        src: "/imgs/data-icon.png",
+        alt: "Smart Data",
+        width: 80,
+        height: 80
+      }
+    },
+
     {
       title: "Work Together",
       description:
-        "Collaborate with all your agencies across all campaigns, brands and countries. Create campaigns together, share files, chat in real time replacing hundreds Excel sheets."
+        "Collaborate with all your agencies across all campaigns, brands and countries. Create campaigns together, share files, chat in real time replacing hundreds Excel sheets.",
+      icon: {
+        src: "/imgs/together-icon.png",
+        alt: "Work Together",
+        width: 80,
+        height: 80
+      }
     }
   ]
 };
 
 export const stepsContent = {
-  title: "You can achieve this in just three easy steps",
+  title: { firstPart: "You can achieve this in just ", highlighted: "three easy steps" },
   cards: [
     {
       number: 1,
-      title: "Organise",
-      description: [
-        "Set up all your campaigns in one tool replacing hundreds of Excel Sheets",
-        "Create Smart Campaigns with clear goals, objectives and tactics across all brands, channels and agencies. Import all historic campaigns and learn about your performance drivers immediately."
-      ]
+      title: "Organize",
+      description: {
+        highlighted: "Set up all your campaigns in one tool replacing hundreds of Excel Sheets",
+        text: "Create Smart Campaigns with clear goals, objectives and tactics across all brands, channels and agencies. Import all historic campaigns and learn about your performance drivers immediately."
+      },
+      icon: {
+        src: "/imgs/icon-step1.png",
+        alt: "Organize",
+        width: 193,
+        height: 197
+      }
     },
     {
       number: 2,
       title: "Analyze",
-      description: [
-        "Use validated data to see performance in customizable dashboards",
-        "We combine all relevant data sources and ensure data quality through automated tests. Be informed upfront to any trend change through our automated anomaly detection."
-      ]
+      description: {
+        highlighted: "Use validated data to see performance in customizable dashboards",
+        text: "We combine all relevant data sources and ensure data quality through automated tests. Be informed upfront to any trend change through our automated anomaly detection."
+      },
+      icon: {
+        src: "/imgs/icon-step2.png",
+        alt: "Analyze",
+        width: 193,
+        height: 197
+      }
     },
     {
       number: 3,
       title: "Optimize",
-      description: [
-        "Improve your campaign performance with 25% through Smart Insights",
-        "Our Smart Insights Engine will combine historic campaign performance, marketing mix modeling and validated learnings to give you a clear holistic understanding in marketing performance and incrementality."
-      ]
+      description: {
+        highlighted: "Improve your campaign performance with 25% through Smart Insights",
+        text: "Our Smart Insights Engine will combine historic campaign performance, marketing mix modeling and validated learnings to give you a clear holistic understanding in marketing performance and incrementality."
+      },
+      icon: {
+        src: "/imgs/icon-step3.png",
+        alt: "Optimize",
+        width: 193,
+        height: 197
+      }
     }
   ]
 };
 
 export const mailingListContent = {
-  title: "Start optimizing now",
-  form: {
-    title: "Join waiting list for access",
-    emailHolder: "Enter email",
-    buttonText: "Join",
-    policiesText: [
-      "I agree to the Terms & Conditions and the Privacy Policy",
-      "I want to subscribe to the newsletter "
-    ]
+  title: { firstHighlighted: "Start ", text: "optimizing ", secondHighlighted: "now" },
+  image: {
+    src: "/imgs/Data.png",
+    alt: "background",
+    width: 193,
+    height: 197
   }
 };
 

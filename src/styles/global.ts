@@ -5,7 +5,7 @@ export const GlobalStyles = createGlobalStyle`
     body {
         padding: 0;
         margin: 0;
-        font-family: 'Crimson Text', serif;
+        font-family: "Barlow" ,sans-serif;
         font-size: 18px;
         font-weight: 400;
         line-height: 1.8;
@@ -37,5 +37,11 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 18px;
         line-height: 22px;
         letter-spacing: 0.3px;
+    }
+    
+    main{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
     }
 `;
