@@ -13,13 +13,6 @@ export const Hero = () => {
 
         <JoinWaitingListForm />
       </S.TextContainer>
-
-      {/* <S.Image
-        src={heroSectionContent.heroImage}
-        alt={heroSectionContent.heroImage.alt}
-        width={heroSectionContent.heroImage.width}
-        height={heroSectionContent.heroImage.height}
-      ></S.Image> */}
     </S.SectionContainer>
   );
 };
