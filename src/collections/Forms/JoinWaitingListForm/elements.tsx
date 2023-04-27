@@ -37,6 +37,10 @@ export const H2 = styled(({ ...props }) => <_H2 {...props} />)`
   font-weight: 500;
   font-size: 24px;
   line-height: 140%;
+
+  > span {
+    color: ${({ theme }) => theme.colors.yellow};
+  }
 `;
 
 export const Checkbox = styled(({ ...props }) => <input {...props} />)`

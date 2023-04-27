@@ -6,12 +6,7 @@ export interface JoinWaitingListFormProps {}
 export const JoinWaitingListForm = ({ ...props }: JoinWaitingListFormProps) => {
   return (
     <S.FormContainer {...props}>
-      <S.H2>
-        <S.HighlightedTextContainer>
-          {joinWaitingListFormContent.title.highlighted}
-        </S.HighlightedTextContainer>
-        {joinWaitingListFormContent.title.text}
-      </S.H2>
+      <S.H2 dangerouslySetInnerHTML={{ __html: joinWaitingListFormContent.title }} />
 
       <S.InputWrapper>
         <S.InputField
@@ -23,16 +18,7 @@ export const JoinWaitingListForm = ({ ...props }: JoinWaitingListFormProps) => {
 
       <S.InputWrapper>
         <S.Checkbox type='checkbox'></S.Checkbox>
-        <S.Label>
-          I agree to the{" "}
-          <S.HighlightedTextContainer className='underlined'>
-            Terms & Conditions{" "}
-          </S.HighlightedTextContainer>
-          and the{" "}
-          <S.HighlightedTextContainer className='underlined'>
-            Privacy Policy
-          </S.HighlightedTextContainer>
-        </S.Label>
+        <S.Label>I agree to the Terms & Conditions and the Privacy Policy</S.Label>
       </S.InputWrapper>
 
       <S.InputWrapper>

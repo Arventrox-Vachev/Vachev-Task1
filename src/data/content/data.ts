@@ -27,7 +27,7 @@ export const heroSectionContent = {
 };
 
 export const joinWaitingListFormContent = {
-  title: "Join waiting list for access",
+  title: "<span>Join</span> waiting list for access",
   emailHolder: "Enter email",
   buttonText: "Join",
   policiesText: [
