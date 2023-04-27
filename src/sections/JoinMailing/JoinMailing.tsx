@@ -4,7 +4,6 @@ import { mailingListContent } from "data";
 export const JoinMailing = () => {
   return (
     <S.SectionContainer>
-      <S.Image />
       <S.H1>
         <S.HighlightedTextContainer>
           {mailingListContent.title.firstHighlighted}
