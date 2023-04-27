@@ -1,11 +1,7 @@
 import styled from "styled-components";
-import {
-  SectionContainer as _SectionContainer,
-  H1 as _H1,
-  HighlightedTextContainer as _HighlightedTextContainer
-} from "components";
+import { SectionContainer as _SectionContainer, H1 as _H1 } from "components";
 
-export const SectionContainer = styled(({ ...props }) => <_SectionContainer {...props} />)`
+export const SectionContainer = styled(_SectionContainer)`
   flex-direction: column;
   align-items: center;
 
@@ -13,7 +9,7 @@ export const SectionContainer = styled(({ ...props }) => <_SectionContainer {...
   border-radius: 16px;
 `;
 
-export const H1 = styled(({ ...props }) => <_H1 {...props} />)`
+export const H1 = styled(_H1)`
   width: 100%;
   padding: 80px 0;
   border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
@@ -26,10 +22,6 @@ export const H1 = styled(({ ...props }) => <_H1 {...props} />)`
   text-align: center;
 `;
 
-export const StepsCardsWrapper = styled(({ ...props }) => <div {...props} />)`
+export const StepsCardsWrapper = styled("div")`
   display: flex;
 `;
-
-export const HighlightedTextContainer = styled(({ ...props }) => (
-  <_HighlightedTextContainer {...props} />
-))``;

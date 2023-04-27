@@ -12,4 +12,4 @@ export const H2 = styled(_H2)`
   color: ${({ theme }) => theme.colors.yellow};
 `;
 
-export const Paragraph = styled(({ ...props }) => <_Paragraph variant='xs' {...props} />)``;
+export const Paragraph = styled(({ ...props }) => <_Paragraph variant='sm' {...props} />)``;

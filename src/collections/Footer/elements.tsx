@@ -4,23 +4,25 @@ import {
   TextContainer as _TextContainer,
   Paragraph as _Paragraph,
   Link as _Link,
-  HighlightedTextContainer as _HighlightedTextContainer,
   H3 as _H3
 } from "components";
 import { Logo as _Logo } from "collections";
 
-export const Footer = styled(({ ...props }: FooterProps) => <footer {...props} />)`
+export const Footer = styled("footer")`
   min-height: 322px;
-  padding: 40px 0 30px 40px;
+  padding: 40px 0 28px 40px;
 
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.secondary};
 `;
 
-export const HolderContainer = styled(({ ...props }) => <div {...props} />)`
+export const HolderContainer = styled("div")`
   display: flex;
-  gap: 81px;
+  gap: 143px;
+  padding-right: 137px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const TextContainer = styled(props => <_TextContainer {...props} />)`
@@ -33,40 +35,48 @@ export const TextContainer = styled(props => <_TextContainer {...props} />)`
   }
 `;
 
-export const Logo = styled(props => <_Logo {...props} />)``;
+export const Logo = styled(props => <_Logo variant='sm' {...props} />)`
+  padding-right: 6px;
 
-export const Paragraph = styled(props => <_Paragraph {...props} />)`
+  > div {
+    padding: 0;
+  }
+
+  > p {
+    padding-top: 4px;
+    padding-left: 6px;
+  }
+`;
+
+export const Paragraph = styled(props => <_Paragraph variant='xs' {...props} />)`
   padding: 8px 40px;
   padding-right: 0;
   border-left: 2px solid #173158;
-
-  font-family: "Barlow";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
 `;
 
-export const NavContainer = styled(({ ...props }) => <div {...props} />)`
+export const NavContainer = styled("div")`
   display: flex;
-  gap: 40px;
+  gap: 62px;
 `;
 
-export const NavSubContainer = styled(({ ...props }) => <div {...props} />)`
+export const NavSubContainer = styled("div")`
   display: flex;
   flex-direction: column;
 `;
 
-export const Link = styled(({ ...props }) => <_Link {...props} />)``;
+export const Link = styled(({ ...props }) => <_Link {...props} />)`
+  margin-bottom: 15px;
+`;
 
 export const H3 = styled(({ ...props }) => <_H3 {...props} />)`
   margin-bottom: 30px;
 `;
 
-export const Copyright = styled(props => <_Paragraph {...props} />)`
+export const Copyright = styled(props => <_Paragraph variant='xs' {...props} />)`
   margin-top: auto;
-`;
 
-export const HighlightedTextContainer = styled(props => <_HighlightedTextContainer {...props} />)`
-  text-decoration: underline;
+  > span {
+    color: ${({ theme }) => theme.colors.yellow};
+    text-decoration: underline;
+  }
 `;

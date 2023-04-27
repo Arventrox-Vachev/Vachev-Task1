@@ -1,19 +1,16 @@
 import * as S from "./elements";
 import { iconsContent } from "data";
-import { IconCard } from "collections";
 
-export const Icons = () => {
+export interface IconsProps {}
+
+export const Icons = ({ ...props }: IconsProps) => {
   return (
     <S.SectionContainer>
-      <S.H1>
-        {iconsContent.title.firstPart}
-        <S.HighlightedTextContainer>{iconsContent.title.highlighted}</S.HighlightedTextContainer>
-        {iconsContent.title.lastPart}
-      </S.H1>
+      <S.H1 dangerouslySetInnerHTML={{ __html: iconsContent.title }} />
 
       <S.IconsWrapper>
         {iconsContent.cards.map((card, index) => (
-          <IconCard key={index} card={card} />
+          <S.IconCard key={index} card={card} />
         ))}
       </S.IconsWrapper>
     </S.SectionContainer>

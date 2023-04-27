@@ -1,8 +1,9 @@
 import * as S from "./elements";
-import { JoinWaitingListForm } from "collections";
 import { heroSectionContent } from "data";
 
-export const Hero = () => {
+export interface HeroProps {}
+
+export const Hero = ({ ...props }: HeroProps) => {
   return (
     <S.SectionContainer>
       <S.TextContainer>
@@ -11,7 +12,7 @@ export const Hero = () => {
           <S.H3 key={index}>{subTitle}</S.H3>
         ))}
 
-        <JoinWaitingListForm />
+        <S.JoinWaitingListForm />
       </S.TextContainer>
     </S.SectionContainer>
   );

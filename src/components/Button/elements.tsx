@@ -11,10 +11,13 @@ const buttonStyles: Record<
   FlattenInterpolation<ThemedStyledProps<ButtonProps, DefaultTheme>>
 > = {
   primary: css`
+    width: 119px;
+
     color: ${({ theme }) => theme.colors.white};
     background-color: ${({ theme }) => theme.colors.primary};
     border: none;
     transition: color 500ms ease, background-color 500ms ease;
+    font-weight: 500;
 
     &:hover {
       background-color: transparent;
@@ -24,6 +27,8 @@ const buttonStyles: Record<
   `,
 
   secondary: css`
+    width: 125px;
+
     color: ${({ theme }) => theme.colors.primary};
     background-color: ${({ theme }) => theme.colors.yellow};
     padding: 14px 37px;
@@ -40,10 +45,14 @@ const buttonStyles: Record<
 };
 
 export const Button = styled("button")<ButtonProps>`
+  height: 51px;
+
+  font-family: "Barlow", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 19px;
+
   cursor: pointer;
   border-radius: 4px;
 

@@ -23,10 +23,10 @@ export const TextContainer = styled(_TextContainer)`
   width: 100%;
 `;
 
-export const IconTitle = styled(({ ...props }) => <_Paragraph variant='xs' {...props} />)`
+export const IconTitle = styled(({ ...props }) => <_Paragraph variant='sm' {...props} />)`
   margin-bottom: 20px;
   font-weight: 500;
   color: ${({ theme }) => theme.colors.yellow};
 `;
 
-export const IconParagraph = styled(({ ...props }) => <_Paragraph variant='xs' {...props} />)``;
+export const IconParagraph = styled(({ ...props }) => <_Paragraph variant='sm' {...props} />)``;

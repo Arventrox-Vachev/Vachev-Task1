@@ -7,10 +7,7 @@ export interface StepsProps {}
 export const Steps = () => {
   return (
     <S.SectionContainer>
-      <S.H1>
-        {stepsContent.title.firstPart}
-        <S.HighlightedTextContainer>{stepsContent.title.highlighted}</S.HighlightedTextContainer>
-      </S.H1>
+      <S.H1 dangerouslySetInnerHTML={{ __html: stepsContent.title }} />
 
       <S.StepsCardsWrapper>
         {stepsContent.cards.map((card, index) => (

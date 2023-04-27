@@ -9,22 +9,16 @@ export const JoinWaitingListForm = ({ ...props }: JoinWaitingListFormProps) => {
       <S.H2 dangerouslySetInnerHTML={{ __html: joinWaitingListFormContent.title }} />
 
       <S.InputWrapper>
-        <S.InputField
-          type='text'
-          placeholder={joinWaitingListFormContent.emailHolder}
-        ></S.InputField>
+        <S.InputField type='text' placeholder={joinWaitingListFormContent.emailHolder} />
         <S.Button>{joinWaitingListFormContent.buttonText}</S.Button>
       </S.InputWrapper>
 
-      <S.InputWrapper>
-        <S.Checkbox type='checkbox'></S.Checkbox>
-        <S.Label>I agree to the Terms & Conditions and the Privacy Policy</S.Label>
-      </S.InputWrapper>
-
-      <S.InputWrapper>
-        <S.Checkbox type='checkbox'></S.Checkbox>
-        <S.Label>I want to subscribe to the newsletter</S.Label>
-      </S.InputWrapper>
+      {joinWaitingListFormContent.policiesText.map((policy, index) => (
+        <S.InputWrapper key={index}>
+          <S.Checkbox type='checkbox'></S.Checkbox>
+          <S.Label dangerouslySetInnerHTML={{ __html: policy }} />
+        </S.InputWrapper>
+      ))}
     </S.FormContainer>
   );
 };

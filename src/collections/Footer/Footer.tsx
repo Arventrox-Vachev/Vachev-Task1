@@ -2,9 +2,9 @@ import * as S from "./elements";
 import type { HTMLFooterProps } from "types";
 import { footerContent } from "data";
 
-export interface FooterProps extends HTMLFooterProps {}
+export interface FooterProps {}
 
-export const Footer = ({ ...props }: FooterProps) => {
+export const Footer = ({ ...props }: FooterProps & HTMLFooterProps) => {
   return (
     <S.Footer {...props}>
       <S.HolderContainer>
@@ -17,6 +17,7 @@ export const Footer = ({ ...props }: FooterProps) => {
           {footerContent.items.map((item, index) => (
             <S.NavSubContainer key={index}>
               <S.H3>{item.title}</S.H3>
+
               {item.links.map((link, index) => (
                 <S.Link key={index}>{link}</S.Link>
               ))}
@@ -25,12 +26,7 @@ export const Footer = ({ ...props }: FooterProps) => {
         </S.NavContainer>
       </S.HolderContainer>
 
-      <S.Copyright>
-        {footerContent.copyright.firstPart}
-        <S.HighlightedTextContainer>
-          {footerContent.copyright.secondPart}
-        </S.HighlightedTextContainer>
-      </S.Copyright>
+      <S.Copyright dangerouslySetInnerHTML={{ __html: footerContent.copyright }} />
     </S.Footer>
   );
 };

@@ -1,18 +1,12 @@
 import * as S from "./elements";
 import { mailingListContent } from "data";
 
-export const JoinMailing = () => {
+export interface JoinMailingProps {}
+
+export const JoinMailing = ({ ...props }: JoinMailingProps) => {
   return (
     <S.SectionContainer>
-      <S.H1>
-        <S.HighlightedTextContainer>
-          {mailingListContent.title.firstHighlighted}
-        </S.HighlightedTextContainer>
-        {mailingListContent.title.text}
-        <S.HighlightedTextContainer>
-          {mailingListContent.title.secondHighlighted}
-        </S.HighlightedTextContainer>
-      </S.H1>
+      <S.H1 dangerouslySetInnerHTML={{ __html: mailingListContent.title }} />
       <S.JoinWaitingListForm />
     </S.SectionContainer>
   );

@@ -9,6 +9,7 @@ export interface TypographyStylesProps {
   h6: { regular: FlattenSimpleInterpolation };
   p: {
     regular: FlattenSimpleInterpolation;
+    md: FlattenSimpleInterpolation;
     sm: FlattenSimpleInterpolation;
     xs: FlattenSimpleInterpolation;
   };
@@ -61,7 +62,7 @@ export const typography: TypographyStylesProps = {
       text-align: left;
     `,
 
-    sm: css`
+    md: css`
       font-family: "Barlow", sans-serif;
       font-style: normal;
       font-weight: 300;
@@ -70,12 +71,19 @@ export const typography: TypographyStylesProps = {
 
       letter-spacing: 0.3px;
     `,
-    xs: css`
+    sm: css`
       font-family: "Barlow", sans-serif;
       font-style: normal;
       font-weight: 300;
       font-size: 16px;
       line-height: 140%;
+    `,
+    xs: css`
+      font-family: "Barlow", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
     `
   }
 };

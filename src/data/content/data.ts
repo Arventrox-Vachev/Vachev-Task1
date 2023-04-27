@@ -17,13 +17,6 @@ export const heroSectionContent = {
     "Optimizing campaigns is hard, especially if you lack trustworthy data. Unfortunately this is the case for more than 65% of the companies.",
     "Boost your  performance by fixing your data across all channels, brands and agencies."
   ]
-
-  // heroImage: {
-  //   src: "/imgs/Hero.png",
-  //   alt: "Some text",
-  //   width: 773,
-  //   height: 605
-  // }
 };
 
 export const joinWaitingListFormContent = {
@@ -31,7 +24,7 @@ export const joinWaitingListFormContent = {
   emailHolder: "Enter email",
   buttonText: "Join",
   policiesText: [
-    "I agree to the Terms & Conditions and the Privacy Policy",
+    "I agree to the <span>Terms & Conditions</span> and the <span>Privacy Policy</span>",
     "I want to subscribe to the newsletter "
   ]
 };
@@ -69,7 +62,7 @@ export const flywheelContent = {
 };
 
 export const iconsContent = {
-  title: { firstPart: "The ", highlighted: "Building Blocks ", lastPart: "of CampaignMeister" },
+  title: "The <span>Building Blocks</span> of CampaignMeister",
   cards: [
     {
       title: "Smart Campaigns",
@@ -142,7 +135,7 @@ export const iconsContent = {
 };
 
 export const stepsContent = {
-  title: { firstPart: "You can achieve this in just ", highlighted: "three easy steps" },
+  title: "You can achieve this in just <span>three easy steps</span>",
   cards: [
     {
       number: 1,
@@ -190,7 +183,7 @@ export const stepsContent = {
 };
 
 export const mailingListContent = {
-  title: { firstHighlighted: "Start ", text: "optimizing ", secondHighlighted: "now" },
+  title: "<span>Start</span> optimizing <span>now</span>",
   image: {
     src: "/imgs/Data.png",
     alt: "background",
@@ -217,8 +210,5 @@ export const footerContent = {
     }
   ],
 
-  copyright: {
-    firstPart: "© 2022, CampaignMeister is a product of ",
-    secondPart: "Human Data Associates"
-  }
+  copyright: "© 2022, CampaignMeister is a product of <span>Human Data Associates</span>"
 };

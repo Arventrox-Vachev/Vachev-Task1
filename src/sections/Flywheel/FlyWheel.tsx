@@ -1,10 +1,12 @@
 import { flywheelContent } from "data";
 import * as S from "./elements";
 
-export const FlyWheel = () => {
+export interface FlyWheelProps {}
+
+export const FlyWheel = ({ ...props }: FlyWheelProps) => {
   return (
     <S.SectionContainer>
-      <S.H1 dangerouslySetInnerHTML={{ __html: flywheelContent.title }} />
+      <S.Title dangerouslySetInnerHTML={{ __html: flywheelContent.title }} />
 
       <S.TextContainer>
         {flywheelContent.description.map((desc, index) => (

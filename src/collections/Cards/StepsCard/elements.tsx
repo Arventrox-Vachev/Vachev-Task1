@@ -65,9 +65,9 @@ export const H2 = styled(_H2)`
 `;
 
 export const HighlightedParagraph = styled(({ ...props }) => (
-  <_Paragraph variant='xs' {...props} />
+  <_Paragraph variant='sm' {...props} />
 ))`
   font-weight: 500;
 `;
 
-export const Paragraph = styled(({ ...props }) => <_Paragraph variant='xs' {...props} />)``;
+export const Paragraph = styled(({ ...props }) => <_Paragraph variant='sm' {...props} />)``;

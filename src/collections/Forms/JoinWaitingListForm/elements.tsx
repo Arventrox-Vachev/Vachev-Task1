@@ -1,10 +1,5 @@
 import styled from "styled-components";
-import {
-  H2 as _H2,
-  HighlightedTextContainer as _HighlightedTextContainer,
-  Label as _Label,
-  Button as _Button
-} from "components";
+import { H2 as _H2, Label as _Label, Button as _Button } from "components";
 
 export const FormContainer = styled(({ maxWidth, ...props }) => <form {...props} />)`
   max-width: ${({ maxWidth }) => maxWidth || "501px"};
@@ -14,7 +9,7 @@ export const FormContainer = styled(({ maxWidth, ...props }) => <form {...props}
   background-color: ${({ theme }) => theme.colors.primary};
 `;
 
-export const InputWrapper = styled(({ ...props }) => <div {...props} />)`
+export const InputWrapper = styled("div")`
   display: flex;
 
   &:first-of-type {
@@ -108,14 +103,11 @@ export const Label = styled(({ ...props }) => <_Label {...props} />)`
   font-weight: 100;
   font-size: 12px;
   line-height: 140%;
-`;
 
-export const Button = styled(({ ...props }) => <_Button variant='secondary' {...props} />)``;
-
-export const HighlightedTextContainer = styled(({ ...props }) => (
-  <_HighlightedTextContainer {...props} />
-))`
-  &.underlined {
+  > span {
+    color: ${({ theme }) => theme.colors.yellow};
     text-decoration: underline;
   }
 `;
+
+export const Button = styled(({ ...props }) => <_Button variant='secondary' {...props} />)``;

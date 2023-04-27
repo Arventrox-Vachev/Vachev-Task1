@@ -4,9 +4,9 @@ import {
   TextContainer as _TextContainer,
   Image as _Image,
   H1 as _H1,
-  H3 as _H3,
-  HighlightedTextContainer as _HighlightedTextContainer
+  H3 as _H3
 } from "components";
+import { JoinWaitingListForm as _JoinWaitingListForm } from "collections";
 
 export const SectionContainer = styled(_SectionContainer)`
   padding-top: 30px;
@@ -19,17 +19,17 @@ export const SectionContainer = styled(_SectionContainer)`
   background-position-x: 109%;
 `;
 
-export const TextContainer = styled(({ ...props }) => <_TextContainer {...props} />)`
+export const TextContainer = styled(_TextContainer)`
   flex-direction: column;
   flex-basis: 501px;
   margin-right: auto;
 `;
 
-export const H1 = styled(({ ...props }) => <_H1 {...props} />)`
+export const H1 = styled(_H1)`
   padding-bottom: 40px;
 `;
 
-export const H3 = styled(({ ...props }) => <_H3 {...props} />)`
+export const H3 = styled(_H3)`
   padding-bottom: 28px;
 
   &:last-of-type {
@@ -37,6 +37,4 @@ export const H3 = styled(({ ...props }) => <_H3 {...props} />)`
   }
 `;
 
-export const HighlightedTextContainer = styled(({ ...props }) => (
-  <_HighlightedTextContainer {...props} />
-))``;
+export const JoinWaitingListForm = styled(_JoinWaitingListForm)``;
