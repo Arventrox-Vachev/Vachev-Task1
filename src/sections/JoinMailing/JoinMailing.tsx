@@ -1,6 +1,5 @@
 import * as S from "./elements";
 import { mailingListContent } from "data";
-import { JoinWaitingListForm } from "collections";
 
 export const JoinMailing = () => {
   return (
@@ -15,7 +14,7 @@ export const JoinMailing = () => {
           {mailingListContent.title.secondHighlighted}
         </S.HighlightedTextContainer>
       </S.H1>
-      <JoinWaitingListForm />
+      <S.JoinWaitingListForm />
     </S.SectionContainer>
   );
 };

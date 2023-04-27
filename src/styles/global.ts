@@ -30,18 +30,14 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
     }
 
-    p {
+    /* p {
         font-family: 'Barlow';
         font-style: normal;
-        font-weight: 400;
+        font-weight: 100;
         font-size: 18px;
         line-height: 22px;
         letter-spacing: 0.3px;
-    }
+    } */
     
-    main{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-    }
+ 
 `;

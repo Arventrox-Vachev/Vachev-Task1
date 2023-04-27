@@ -50,7 +50,7 @@ export const H6 = ({ variant = "regular", ...props }: H6Props) => {
 };
 
 export interface ParagraphProps extends HTMLHeadingProps {
-  variant?: "regular";
+  variant?: "regular" | "sm" | "xs";
 }
 
 export const Paragraph = ({ variant = "regular", ...props }: ParagraphProps) => {

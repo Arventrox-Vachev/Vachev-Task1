@@ -26,7 +26,7 @@ const buttonStyles: Record<
   secondary: css`
     color: ${({ theme }) => theme.colors.primary};
     background-color: ${({ theme }) => theme.colors.yellow};
-    padding: 0.9em 2em;
+    padding: 14px 37px;
     border: none;
     transition: color 500ms ease, background-color 500ms ease;
     border: 2px solid transparent;

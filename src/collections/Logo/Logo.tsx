@@ -1,11 +1,9 @@
 import * as S from "./elements";
 import { logoContent } from "data";
 
-export interface LogoContainerProps extends HTMLDivElement {}
+export interface LogoProps {}
 
-export interface LogoTextProps extends HTMLParagraphElement {}
-
-export const Logo = () => {
+export const Logo = ({ ...props }: LogoProps) => {
   return (
     <S.LogoContainer>
       <S.Image

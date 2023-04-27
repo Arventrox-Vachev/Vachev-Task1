@@ -20,7 +20,7 @@ export const Footer = styled(({ ...props }: FooterProps) => <footer {...props} /
 
 export const HolderContainer = styled(({ ...props }) => <div {...props} />)`
   display: flex;
-  gap: 141px;
+  gap: 81px;
 `;
 
 export const TextContainer = styled(props => <_TextContainer {...props} />)`

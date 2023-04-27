@@ -11,10 +11,8 @@ export const logoContent = {
 };
 
 export const heroSectionContent = {
-  title: {
-    firstPart: "The ugly truth: Your campaign data are a mess. ",
-    secondPart: "By fixing it, you can improve your campaign performance with over 25%."
-  },
+  title:
+    "<span>The ugly truth: Your campaign data are a mess.</span> By fixing it, you can improve your campaign performance with over 25%.",
   subtitle: [
     "Optimizing campaigns is hard, especially if you lack trustworthy data. Unfortunately this is the case for more than 65% of the companies.",
     "Boost your  performance by fixing your data across all channels, brands and agencies."
@@ -29,7 +27,7 @@ export const heroSectionContent = {
 };
 
 export const joinWaitingListFormContent = {
-  title: { highlighted: "Join", text: " waiting list for access" },
+  title: "Join waiting list for access",
   emailHolder: "Enter email",
   buttonText: "Join",
   policiesText: [

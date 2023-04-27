@@ -14,9 +14,9 @@ export const SectionContainer = styled(_SectionContainer)`
 
   background-image: url(./imgs/HERO.png);
   background-repeat: no-repeat;
-  background-size: 1000px;
-  background-position: right;
-  background-position-y: -20%;
+  background-size: 1052px;
+  background-position-y: -35%;
+  background-position-x: 109%;
 `;
 
 export const TextContainer = styled(({ ...props }) => <_TextContainer {...props} />)`
@@ -27,22 +27,10 @@ export const TextContainer = styled(({ ...props }) => <_TextContainer {...props}
 
 export const H1 = styled(({ ...props }) => <_H1 {...props} />)`
   padding-bottom: 40px;
-
-  font-family: "Barlow";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 38px;
 `;
 
 export const H3 = styled(({ ...props }) => <_H3 {...props} />)`
-  padding-bottom: 20px;
-
-  font-family: "Barlow";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 140%;
+  padding-bottom: 28px;
 
   &:last-of-type {
     padding-bottom: 40px;
@@ -52,8 +40,3 @@ export const H3 = styled(({ ...props }) => <_H3 {...props} />)`
 export const HighlightedTextContainer = styled(({ ...props }) => (
   <_HighlightedTextContainer {...props} />
 ))``;
-
-export const Image = styled(_Image)`
-  scale: 1.2;
-  z-index: 10;
-`;

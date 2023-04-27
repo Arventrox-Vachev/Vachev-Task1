@@ -5,6 +5,7 @@ import {
   HighlightedTextContainer as _HighlightedTextContainer,
   Image as _Image
 } from "components";
+import { Logo as _Logo, JoinWaitingListForm as _JoinWaitingListForm } from "collections";
 
 export const SectionContainer = styled(({ ...props }) => <_SectionContainer {...props} />)`
   flex-direction: column;
@@ -14,22 +15,21 @@ export const SectionContainer = styled(({ ...props }) => <_SectionContainer {...
   background-image: url(./imgs/Data.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-position-y: 0px;
+  background-size: 88px;
+  background-position-y: -38px;
 `;
 
 export const H1 = styled(({ ...props }) => <_H1 {...props} />)`
   width: 100%;
   margin-bottom: 40px;
-
-  font-family: "Barlow";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 38px;
   text-align: center;
 `;
 export const Image = styled(({ ...props }) => <_Image {...props} />)``;
 
 export const HighlightedTextContainer = styled(({ ...props }) => (
   <_HighlightedTextContainer {...props} />
+))``;
+
+export const JoinWaitingListForm = styled(props => (
+  <_JoinWaitingListForm maxWidth='520px' {...props} />
 ))``;

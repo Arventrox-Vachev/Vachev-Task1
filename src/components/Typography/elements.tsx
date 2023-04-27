@@ -4,6 +4,10 @@ import { H1Props, H2Props, H3Props, H4Props, H5Props, ParagraphProps } from ".";
 
 export const Heading1 = styled(({ variant = "regular", ...props }: H1Props) => <h1 {...props} />)`
   ${({ variant }) => variant && theme.typography.h1[variant]}
+
+  > span {
+    color: ${({ theme }) => theme.colors.yellow};
+  }
 `;
 
 export const Heading2 = styled(({ variant = "regular", ...props }: H2Props) => <h2 {...props} />)`

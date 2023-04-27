@@ -6,13 +6,7 @@ export const Hero = () => {
   return (
     <S.SectionContainer>
       <S.TextContainer>
-        <S.H1>
-          <S.HighlightedTextContainer>
-            {heroSectionContent.title.firstPart}
-          </S.HighlightedTextContainer>
-
-          {heroSectionContent.title.secondPart}
-        </S.H1>
+        <S.H1 dangerouslySetInnerHTML={{ __html: heroSectionContent.title }} />
         {heroSectionContent.subtitle.map((subTitle, index) => (
           <S.H3 key={index}>{subTitle}</S.H3>
         ))}

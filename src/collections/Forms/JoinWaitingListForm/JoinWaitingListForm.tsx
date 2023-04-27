@@ -1,9 +1,11 @@
 import * as S from "./elements";
 import { joinWaitingListFormContent } from "data";
 
-export const JoinWaitingListForm = () => {
+export interface JoinWaitingListFormProps {}
+
+export const JoinWaitingListForm = ({ ...props }: JoinWaitingListFormProps) => {
   return (
-    <S.FormContainer>
+    <S.FormContainer {...props}>
       <S.H2>
         <S.HighlightedTextContainer>
           {joinWaitingListFormContent.title.highlighted}

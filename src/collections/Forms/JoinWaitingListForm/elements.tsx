@@ -6,8 +6,8 @@ import {
   Button as _Button
 } from "components";
 
-export const FormContainer = styled(({ ...props }) => <form {...props} />)`
-  max-width: 501px;
+export const FormContainer = styled(({ maxWidth, ...props }) => <form {...props} />)`
+  max-width: ${({ maxWidth }) => maxWidth || "501px"};
   width: 100%;
   padding: 20px;
   border-radius: 16px;
@@ -18,7 +18,7 @@ export const InputWrapper = styled(({ ...props }) => <div {...props} />)`
   display: flex;
 
   &:first-of-type {
-    padding: 16px 0;
+    padding: 16px 0 13px;
     gap: 20px;
   }
 
@@ -40,6 +40,8 @@ export const H2 = styled(({ ...props }) => <_H2 {...props} />)`
 `;
 
 export const Checkbox = styled(({ ...props }) => <input {...props} />)`
+  margin: 0;
+
   appearance: none;
   -webkit-appearance: none;
   height: 20px;
@@ -61,7 +63,7 @@ export const Checkbox = styled(({ ...props }) => <input {...props} />)`
 
 export const InputField = styled(({ ...props }) => <input {...props} />)`
   width: 100%;
-  padding: 16px;
+  padding-left: 16px;
 
   border-color: transparent;
   border-radius: 4px;
@@ -96,6 +98,12 @@ export const InputField = styled(({ ...props }) => <input {...props} />)`
 
 export const Label = styled(({ ...props }) => <_Label {...props} />)`
   margin-left: 8px;
+
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 140%;
 `;
 
 export const Button = styled(({ ...props }) => <_Button variant='secondary' {...props} />)``;

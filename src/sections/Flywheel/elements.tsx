@@ -23,16 +23,7 @@ export const H1 = styled(({ ...props }) => <_H1 {...props} />)`
   padding: 80px 0;
   border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
 
-  font-family: "Barlow";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 38px;
   text-align: center;
-
-  > span {
-    color: ${({ theme }) => theme.colors.yellow};
-  }
 `;
 
 export const TextContainer = styled(({ ...props }) => <_TextContainer {...props} />)`
@@ -41,30 +32,26 @@ export const TextContainer = styled(({ ...props }) => <_TextContainer {...props}
 `;
 
 export const Paragraph = styled(({ ...props }) => <_Paragraph {...props} />)`
-  font-family: "Barlow";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 140%;
+  padding-right: 60px;
 
   &:first-child {
-    margin-bottom: 20px;
+    margin-bottom: 28px;
   }
 `;
 
 export const FlywheelWrapper = styled(({ ...props }) => <div {...props} />)`
-  padding: 40px 116px 80px 116px;
+  width: 100%;
+  padding: 14px 116px 80px 116px;
 
   display: grid;
+  row-gap: 40px;
 `;
 
 export const FlywheelCardWrapper = styled(({ ...props }) => <div {...props} />)`
   margin-top: auto;
-  margin-bottom: 20px;
 
   &:first-child {
     grid-column: 1/4;
-    padding-left: 20px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -77,7 +64,3 @@ export const ImageWrapper = styled(({ ...props }) => <div {...props} />)`
 `;
 
 export const Image = styled(({ ...props }) => <_Image {...props} />)``;
-
-// export const HighlightedTextContainer = styled(({ ...props }) => (
-//   <_HighlightedTextContainer {...props} />
-// ))``;
