@@ -26,7 +26,7 @@ export type MaxWidthBreakpointsType = {
 };
 
 export const breakpoints: BreakpointsValuesType = {
-  S: 1199,
+  S: 1100,
   // S: 599,
   M: 899,
   L: 1199,

@@ -3,7 +3,6 @@ export * from "./Typography";
 export * from "./FormInput";
 export * from "./FormTextArea";
 export * from "./FormCheckbox";
-export * from "./Image";
 export * from "./Containers";
 export * from "./Link";
 export * from "./Label";

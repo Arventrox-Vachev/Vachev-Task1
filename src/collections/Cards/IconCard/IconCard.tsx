@@ -1,4 +1,5 @@
 import * as S from "./elements";
+import Image from "next/image";
 
 export interface IconCardProps {
   card: {
@@ -16,12 +17,15 @@ export interface IconCardProps {
 export const IconCard = ({ card, ...props }: IconCardProps) => {
   return (
     <S.IconWrapper {...props}>
-      <S.Image
-        src={card.icon.src}
-        alt={card.icon.alt}
-        width={card.icon.width}
-        height={card.icon.height}
-      />
+      <S.ImageWrapper>
+        <Image
+          src={card.icon.src}
+          alt={card.icon.alt}
+          width={card.icon.width}
+          height={card.icon.height}
+        />
+      </S.ImageWrapper>
+
       <S.TextContainer>
         <S.IconTitle>{card.title}</S.IconTitle>
         <S.IconParagraph>{card.description}</S.IconParagraph>

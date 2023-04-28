@@ -1,12 +1,16 @@
 import styled from "styled-components";
 import { H2 as _H2, Label as _Label, Button as _Button } from "components";
 
-export const FormContainer = styled(({ maxWidth, ...props }) => <form {...props} />)`
+export const FormContainer = styled(({ padding, maxWidth, ...props }) => <form {...props} />)`
   max-width: ${({ maxWidth }) => maxWidth || "501px"};
   width: 100%;
   padding: 20px 22px;
   border-radius: 16px;
   background-color: ${({ theme }) => theme.colors.primary};
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    padding: ${({ padding }) => padding || "20px 22px"};
+  }
 `;
 
 export const InputWrapper = styled("div")`

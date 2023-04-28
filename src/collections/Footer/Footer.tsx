@@ -1,16 +1,20 @@
 import * as S from "./elements";
 import type { HTMLFooterProps } from "types";
 import { footerContent } from "data";
+import { useMediaQuery } from "hooks";
 
 export interface FooterProps {}
 
 export const Footer = ({ ...props }: FooterProps & HTMLFooterProps) => {
+  const [isSmallScreenDevice] = useMediaQuery({ type: "max", breakpoint: "S" });
+
   return (
     <S.Footer {...props}>
       <S.HolderContainer>
         <S.TextContainer>
           <S.Logo />
-          <S.Paragraph>{footerContent.description}</S.Paragraph>
+          {!isSmallScreenDevice && <S.Paragraph>{footerContent.description}</S.Paragraph>}
+          {isSmallScreenDevice && <S.Paragraph>{footerContent.mobileText}</S.Paragraph>}
         </S.TextContainer>
 
         <S.NavContainer>
@@ -19,7 +23,7 @@ export const Footer = ({ ...props }: FooterProps & HTMLFooterProps) => {
               <S.H3>{item.title}</S.H3>
 
               {item.links.map((link, index) => (
-                <S.Link key={index}>{link}</S.Link>
+                <S.Link key={index} dangerouslySetInnerHTML={{ __html: link }} />
               ))}
             </S.NavSubContainer>
           ))}

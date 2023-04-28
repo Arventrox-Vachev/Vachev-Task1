@@ -213,6 +213,7 @@ export const mailingListContent = {
 
 export const footerContent = {
   description: "Boost your campaign performance with over 25% by fixing your campaign data",
+  mobileText: "The art of Campaign Optimization",
   items: [
     {
       title: "Navigation",
@@ -220,7 +221,7 @@ export const footerContent = {
         "The art of optimizing",
         "Boost your campaigns",
         "Start optimizing now",
-        "CampaignMeisters building blocks"
+        "<span>CampaignMeisters building blocks</span>"
       ]
     },
     {
@@ -229,5 +230,5 @@ export const footerContent = {
     }
   ],
 
-  copyright: "© 2022, CampaignMeister is a product of <span>Human Data Associates</span>"
+  copyright: "<div>© 2022, </div>CampaignMeister is a product of <span>Human Data Associates</span>"
 };

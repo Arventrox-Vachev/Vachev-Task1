@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {
-  Image as _Image,
+  ImageWrapper as _ImageWrapperWrapper,
   TextContainer as _TextContainer,
   H2 as _H2,
   Paragraph as _Paragraph
@@ -31,15 +31,22 @@ export const CardContainer = styled("div")`
 
     & ~ & {
       padding: 24px 24px 40px 24px;
+      > div {
+        margin-bottom: 33px;
+      }
     }
 
     &:last-child {
-      padding: 24px 24px 40px 24px;
+      padding: 0px 24px 0px 24px;
+
+      > div {
+        margin-bottom: 23px;
+      }
     }
   }
 `;
 
-export const Image = styled(_Image)``;
+export const ImageWrapper = styled(_ImageWrapperWrapper)``;
 
 export const TextContainer = styled(_TextContainer)`
   display: flex;
@@ -75,18 +82,6 @@ export const NumberWrapper = styled("div")`
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
     margin-top: -7px;
-
-    /* &:only-of-type && & ~ & {
-      margin-bottom: 40px;
-    } */
-
-    /* &:not(:first-child) {
-      margin-bottom: 100px;
-    } */
-
-    /* & + & {
-      margin: 100px;
-    } */
   }
 `;
 

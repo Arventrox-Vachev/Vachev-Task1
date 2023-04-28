@@ -3,7 +3,7 @@ import {
   TextContainer as _TextContainer,
   H2 as _H2,
   Paragraph as _Paragraph,
-  Image as _Image
+  ImageWrapper as _ImageWrapper
 } from "components";
 
 export const TextContainer = styled(_TextContainer)`
@@ -23,4 +23,6 @@ export const H2 = styled(_H2)`
 
 export const Paragraph = styled(({ ...props }) => <_Paragraph variant='sm' {...props} />)``;
 
-export const Image = styled(_Image)``;
+export const ImageWrapper = styled(_ImageWrapper)`
+  min-width: 102px;
+`;

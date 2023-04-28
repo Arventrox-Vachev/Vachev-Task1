@@ -2,7 +2,6 @@ import styled from "styled-components";
 import {
   SectionContainer as _SectionContainer,
   TextContainer as _TextContainer,
-  Image as _Image,
   H1 as _H1,
   H3 as _H3
 } from "components";
@@ -34,6 +33,7 @@ export const TextContainer = styled(_TextContainer)`
 
 export const H1 = styled(_H1)`
   padding-bottom: 40px;
+  text-align: left;
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
     padding-bottom: 23px;

@@ -15,6 +15,10 @@ export const Footer = styled("footer")`
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.secondary};
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    padding-top: 84px;
+  }
 `;
 
 export const HolderContainer = styled("div")`
@@ -26,6 +30,7 @@ export const HolderContainer = styled("div")`
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
     flex-direction: column;
+    gap: 42px;
   }
 `;
 
@@ -55,12 +60,23 @@ export const Logo = styled(props => <_Logo variant='sm' {...props} />)`
     padding-top: 4px;
     padding-left: 6px;
   }
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    padding-bottom: 9px;
+  }
 `;
 
 export const Paragraph = styled(props => <_Paragraph variant='xs' {...props} />)`
   padding: 8px 40px;
   padding-right: 0;
-  border-left: 2px solid #173158;
+  border-left: 2px solid ${({ theme }) => theme.colors.primary};
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    border-top: 2px solid ${({ theme }) => theme.colors.primary};
+  }
 `;
 
 export const NavContainer = styled("div")`
@@ -69,6 +85,7 @@ export const NavContainer = styled("div")`
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
     flex-direction: column;
+    gap: 30px;
   }
 `;
 
@@ -79,6 +96,12 @@ export const NavSubContainer = styled("div")`
 
 export const Link = styled(({ ...props }) => <_Link {...props} />)`
   margin-bottom: 15px;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    > span {
+      display: none;
+    }
+  }
 `;
 
 export const H3 = styled(({ ...props }) => <_H3 {...props} />)`
@@ -87,9 +110,22 @@ export const H3 = styled(({ ...props }) => <_H3 {...props} />)`
 
 export const Copyright = styled(props => <_Paragraph variant='xs' {...props} />)`
   margin-top: auto;
+  display: flex;
 
   > span {
     color: ${({ theme }) => theme.colors.yellow};
     text-decoration: underline;
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+    margin-top: 45px;
+
+    > div {
+      order: 3;
+      margin-top: 16px;
+    }
   }
 `;

@@ -12,6 +12,11 @@ export const SectionContainer = styled(_SectionContainer)`
   background-position: center;
   background-size: 88px;
   background-position-y: -38px;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    padding: 36px 0;
+    background-position-y: -114px;
+  }
 `;
 
 export const H1 = styled(_H1)`
@@ -21,5 +26,5 @@ export const H1 = styled(_H1)`
 `;
 
 export const JoinWaitingListForm = styled(props => (
-  <_JoinWaitingListForm maxWidth='520px' {...props} />
+  <_JoinWaitingListForm padding='20px' maxWidth='520px' {...props} />
 ))``;

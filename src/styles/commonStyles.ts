@@ -23,6 +23,7 @@ export const typography: TypographyStylesProps = {
       font-weight: 500;
       font-size: 32px;
       line-height: 38px;
+      text-align: center;
     `
   },
   h2: {

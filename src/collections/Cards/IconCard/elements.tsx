@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {
   Paragraph as _Paragraph,
   TextContainer as _TextContainer,
-  Image as _Image
+  ImageWrapper as _ImageWrapper
 } from "components";
 
 export const IconWrapper = styled("div")`
@@ -20,7 +20,10 @@ export const IconWrapper = styled("div")`
   }
 `;
 
-export const Image = styled(({ ...props }) => <_Image minWidth={80} {...props} />)``;
+export const ImageWrapper = styled(_ImageWrapper)`
+  margin-bottom: auto;
+  min-width: 80px;
+`;
 
 export const TextContainer = styled(_TextContainer)`
   display: flex;

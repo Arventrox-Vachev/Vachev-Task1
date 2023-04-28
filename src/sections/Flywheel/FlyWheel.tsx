@@ -1,5 +1,6 @@
-import { flywheelContent } from "data";
 import * as S from "./elements";
+import { flywheelContent } from "data";
+import Image from "next/image";
 
 export interface FlyWheelProps {}
 
@@ -22,7 +23,7 @@ export const FlyWheel = ({ ...props }: FlyWheelProps) => {
         ))}
 
         <S.ImageWrapper>
-          <S.Image
+          <Image
             src={flywheelContent.flywheelImg.src}
             alt={flywheelContent.flywheelImg.alt}
             width={flywheelContent.flywheelImg.width}

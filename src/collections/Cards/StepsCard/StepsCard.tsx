@@ -1,4 +1,5 @@
 import * as S from "./elements";
+import Image from "next/image";
 
 interface StepsCardProps {
   card: {
@@ -20,12 +21,14 @@ interface StepsCardProps {
 export const StepsCard = ({ card }: StepsCardProps) => {
   return (
     <S.CardContainer>
-      <S.Image
-        src={card.icon.src}
-        alt={card.icon.alt}
-        width={card.icon.width}
-        height={card.icon.height}
-      />
+      <S.ImageWrapper>
+        <Image
+          src={card.icon.src}
+          alt={card.icon.alt}
+          width={card.icon.width}
+          height={card.icon.height}
+        />
+      </S.ImageWrapper>
       <S.TextContainer>
         <S.NumberWrapper>{card.number}</S.NumberWrapper>
         <S.H2>{card.title}</S.H2>

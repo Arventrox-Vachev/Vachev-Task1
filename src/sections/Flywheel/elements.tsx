@@ -4,7 +4,7 @@ import {
   H1 as _H1,
   TextContainer as _TextContainer,
   Paragraph as _Paragraph,
-  Image as _Image
+  ImageWrapper as _ImageWrapper
 } from "components";
 import { FlywheelCard as _FlywheelCard } from "collections";
 
@@ -93,13 +93,14 @@ export const FlywheelCardWrapper = styled("div")`
 `;
 export const FlywheelCard = styled(({ ...props }) => <_FlywheelCard {...props} />)``;
 
-export const ImageWrapper = styled("div")`
+export const ImageWrapper = styled(_ImageWrapper)`
   grid-column: 2 / 3;
   grid-row: 2;
+  min-width: 500px;
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
     order: 1;
+
+    min-width: auto;
   }
 `;
-
-export const Image = styled(_Image)``;

@@ -17,7 +17,6 @@ export const H1 = styled(_H1)`
   @media ${({ theme }) => theme.breakpoint.max.S} {
     padding: 39px 47px;
     text-align: center;
-    /* margin-bottom: 40px; */
   }
 `;
 

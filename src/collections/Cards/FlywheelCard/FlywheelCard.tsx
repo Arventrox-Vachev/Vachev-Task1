@@ -1,5 +1,6 @@
-import { useMediaQuery } from "hooks";
 import * as S from "./elements";
+import Image from "next/image";
+import { useMediaQuery } from "hooks";
 
 export interface FlywheelCardProps {
   key: number;
@@ -21,12 +22,14 @@ export const FlywheelCard = ({ card }: FlywheelCardProps) => {
   return (
     <S.TextContainer>
       {isSmallScreenDevice && (
-        <S.Image
-          src={card.icon.src}
-          alt={card.icon.alt}
-          width={card.icon.width}
-          height={card.icon.height}
-        />
+        <S.ImageWrapper>
+          <Image
+            src={card.icon.src}
+            alt={card.icon.alt}
+            width={card.icon.width}
+            height={card.icon.height}
+          />
+        </S.ImageWrapper>
       )}
       <S.H2>{card.title}</S.H2>
       <S.Paragraph>{card.description}</S.Paragraph>
