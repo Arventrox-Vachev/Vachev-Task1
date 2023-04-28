@@ -24,10 +24,9 @@ export const CardContainer = styled("div")`
   }
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    /* padding: 55px 25px; */
     padding: 54px 24px 40px 24px;
-    border: none;
     align-items: center;
+    border: none;
 
     & ~ & {
       padding: 24px 24px 40px 24px;
@@ -68,8 +67,8 @@ export const NumberWrapper = styled("div")`
   width: 100%;
   margin-top: 4px;
 
-  background-color: #081831;
-  color: #fcd130;
+  background-color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.yellow};
   border-radius: 50%;
 
   display: flex;

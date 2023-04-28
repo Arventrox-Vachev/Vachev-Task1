@@ -64,7 +64,6 @@ export const FlywheelWrapper = styled("div")`
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
     padding: 20px;
-    /* gap: 40px; */
     padding-top: 0;
     display: flex;
     flex-direction: column-reverse;

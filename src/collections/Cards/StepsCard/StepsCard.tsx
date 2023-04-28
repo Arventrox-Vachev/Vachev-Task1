@@ -18,9 +18,9 @@ interface StepsCardProps {
   };
 }
 
-export const StepsCard = ({ card }: StepsCardProps) => {
+export const StepsCard = ({ card, ...props }: StepsCardProps) => {
   return (
-    <S.CardContainer>
+    <S.CardContainer {...props}>
       <S.ImageWrapper>
         <Image
           src={card.icon.src}

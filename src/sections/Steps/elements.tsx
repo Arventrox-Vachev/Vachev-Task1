@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { SectionContainer as _SectionContainer, H1 as _H1 } from "components";
+import { StepsCard as _StepsCard } from "collections";
 
 export const SectionContainer = styled(({ ...props }) => (
   <_SectionContainer variant='primary' {...props} />
@@ -25,3 +26,5 @@ export const StepsCardsWrapper = styled("div")`
     flex-direction: column;
   }
 `;
+
+export const StepsCard = styled(_StepsCard)``;

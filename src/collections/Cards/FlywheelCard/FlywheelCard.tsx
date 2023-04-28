@@ -16,7 +16,7 @@ export interface FlywheelCardProps {
   };
 }
 
-export const FlywheelCard = ({ card }: FlywheelCardProps) => {
+export const FlywheelCard = ({ card, ...props }: FlywheelCardProps) => {
   const [isSmallScreenDevice] = useMediaQuery({ type: "max", breakpoint: "S" });
 
   return (

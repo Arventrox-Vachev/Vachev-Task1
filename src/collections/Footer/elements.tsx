@@ -15,6 +15,7 @@ export const Footer = styled("footer")`
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.secondary};
+  overflow-x: hidden;
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
     padding-top: 84px;
@@ -22,11 +23,12 @@ export const Footer = styled("footer")`
 `;
 
 export const HolderContainer = styled("div")`
-  display: flex;
-  gap: 10vw;
   padding-right: 137px;
   margin-left: auto;
   margin-right: auto;
+
+  display: flex;
+  gap: 10vw;
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
     flex-direction: column;
@@ -36,16 +38,15 @@ export const HolderContainer = styled("div")`
 
 export const TextContainer = styled(props => <_TextContainer {...props} />)`
   display: flex;
-  height: fit-content;
-  align-items: center;
 
   > div {
     padding-right: 40px;
   }
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    flex-direction: column;
     width: 100%;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 

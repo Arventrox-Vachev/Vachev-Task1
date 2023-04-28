@@ -1,5 +1,5 @@
-import { HTMLDivProps } from "types";
 import * as S from "./elements";
+import { HTMLDivProps } from "types";
 
 export interface NextImageProps {}
 

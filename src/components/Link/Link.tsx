@@ -1,5 +1,5 @@
-import { HTMLAnchorProps } from "types";
 import * as S from "./elements";
+import { HTMLAnchorProps } from "types";
 
 export interface LinkProps {}
 

@@ -1,6 +1,6 @@
 import * as S from "./elements";
-import { flywheelContent } from "data";
 import Image from "next/image";
+import { flywheelContent } from "data";
 
 export interface FlyWheelProps {}
 
