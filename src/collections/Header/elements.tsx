@@ -8,6 +8,10 @@ export const Header = styled("header")<HeaderProps>`
   align-items: center;
   border-bottom: 2px solid ${({ theme }) => theme.colors.primary};
   padding: 23.5px 41px;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    padding: 23.5px 20.5px;
+  }
 `;
 
 export const Logo = styled(({ ...props }) => <_Logo {...props} />)``;

@@ -10,11 +10,17 @@ export const IconWrapper = styled("div")`
   max-width: 560px;
   width: 100%;
   gap: 20px;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    margin-bottom: 79px;
+
+    &:last-child {
+      margin-bottom: 19px;
+    }
+  }
 `;
 
-export const Image = styled(_Image)`
-  margin-bottom: auto;
-`;
+export const Image = styled(({ ...props }) => <_Image minWidth={80} {...props} />)``;
 
 export const TextContainer = styled(_TextContainer)`
   display: flex;

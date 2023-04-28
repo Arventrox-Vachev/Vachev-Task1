@@ -13,9 +13,9 @@ export interface IconCardProps {
   };
 }
 
-export const IconCard = ({ card }: IconCardProps) => {
+export const IconCard = ({ card, ...props }: IconCardProps) => {
   return (
-    <S.IconWrapper>
+    <S.IconWrapper {...props}>
       <S.Image
         src={card.icon.src}
         alt={card.icon.alt}

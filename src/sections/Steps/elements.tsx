@@ -14,14 +14,17 @@ export const H1 = styled(_H1)`
   padding: 80px 0;
   border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
 
-  font-family: "Barlow";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 38px;
-  text-align: center;
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    padding: 39px 47px;
+    text-align: center;
+    /* margin-bottom: 40px; */
+  }
 `;
 
 export const StepsCardsWrapper = styled("div")`
   display: flex;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    flex-direction: column;
+  }
 `;

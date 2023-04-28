@@ -40,17 +40,35 @@ export const flywheelContent = {
     {
       title: "Smart Start",
       description:
-        "Use all your historic data to predict your Campaign Success Probability so you can optimise on it upfront."
+        "Use all your historic data to predict your Campaign Success Probability so you can optimise on it upfront.",
+      icon: {
+        src: "/imgs/Smart_Start.png",
+        alt: "Smart Start",
+        width: 102,
+        height: 102
+      }
     },
     {
       title: "Smart Learning",
       description:
-        "Gain advanced insights by combining campaign attribution, marketing mix modeling and learnings from validated experiments."
+        "Gain advanced insights by combining campaign attribution, marketing mix modeling and learnings from validated experiments.",
+      icon: {
+        src: "/imgs/Smart_Learning.png",
+        alt: "Smart Learning",
+        width: 102,
+        height: 102
+      }
     },
     {
       title: "Smart Flight",
       description:
-        "Compare campaign tactics across all channels in real-time and proceed  with your winning tactics."
+        "Compare campaign tactics across all channels in real-time and proceed  with your winning tactics.",
+      icon: {
+        src: "/imgs/Smart_Flight.png",
+        alt: "Smart Flight",
+        width: 102,
+        height: 102
+      }
     }
   ],
   flywheelImg: {
@@ -63,6 +81,7 @@ export const flywheelContent = {
 
 export const iconsContent = {
   title: "The <span>Building Blocks</span> of CampaignMeister",
+  mobileTitle: "Why <span>use</span> CampaignMeister ?",
   cards: [
     {
       title: "Smart Campaigns",

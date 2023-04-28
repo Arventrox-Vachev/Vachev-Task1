@@ -4,7 +4,7 @@ import { H2 as _H2, Label as _Label, Button as _Button } from "components";
 export const FormContainer = styled(({ maxWidth, ...props }) => <form {...props} />)`
   max-width: ${({ maxWidth }) => maxWidth || "501px"};
   width: 100%;
-  padding: 20px;
+  padding: 20px 22px;
   border-radius: 16px;
   background-color: ${({ theme }) => theme.colors.primary};
 `;
@@ -23,6 +23,12 @@ export const InputWrapper = styled("div")`
 
   &:last-child {
     margin-top: 10px;
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    &:last-child {
+      margin-top: 6px;
+    }
   }
 `;
 
@@ -57,6 +63,12 @@ export const Checkbox = styled(({ ...props }) => <input {...props} />)`
     background-image: url(./imgs/active-button.png);
     background-size: contain;
     border: none;
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    height: auto;
+    width: auto;
+    padding: 14px;
   }
 `;
 
@@ -107,6 +119,10 @@ export const Label = styled(({ ...props }) => <_Label {...props} />)`
   > span {
     color: ${({ theme }) => theme.colors.yellow};
     text-decoration: underline;
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    margin-left: 18px;
   }
 `;
 

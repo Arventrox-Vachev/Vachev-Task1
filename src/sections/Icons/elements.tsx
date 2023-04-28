@@ -9,6 +9,10 @@ export const SectionContainer = styled(_SectionContainer)`
 
   background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 16px;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    margin-bottom: 40px;
+  }
 `;
 
 export const H1 = styled(_H1)`
@@ -16,6 +20,10 @@ export const H1 = styled(_H1)`
   padding: 80px 0;
   border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
   text-align: center;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    padding: 42px 0;
+  }
 `;
 
 export const IconsWrapper = styled("div")`
@@ -24,12 +32,12 @@ export const IconsWrapper = styled("div")`
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 120px;
   row-gap: 81px;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    grid-template-columns: repeat(1, 1fr);
+    margin: 20px;
+    gap: 0;
+  }
 `;
 
-export const IconCard = styled(_IconCard)`
-  margin: 80px 60px 102px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 120px;
-  row-gap: 81px;
-`;
+export const IconCard = styled(_IconCard)``;

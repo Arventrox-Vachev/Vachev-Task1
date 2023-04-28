@@ -17,8 +17,15 @@ export const SectionContainer = styled(_SectionContainer)`
   background-size: 1052px;
   background-position-y: -35%;
   background-position-x: 109%;
-`;
 
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    max-width: 360px;
+    padding: 259px 20px 40px 20px;
+    background-size: 551px;
+    background-position-y: -26px;
+    background-position-x: -157px;
+  }
+`;
 export const TextContainer = styled(_TextContainer)`
   flex-direction: column;
   flex-basis: 501px;
@@ -27,10 +34,20 @@ export const TextContainer = styled(_TextContainer)`
 
 export const H1 = styled(_H1)`
   padding-bottom: 40px;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    padding-bottom: 23px;
+    padding-right: 53px;
+  }
 `;
 
 export const H3 = styled(_H3)`
   padding-bottom: 28px;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    padding-bottom: 0;
+    padding-right: 45px;
+  }
 
   &:last-of-type {
     padding-bottom: 40px;

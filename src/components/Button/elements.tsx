@@ -61,4 +61,8 @@ export const Button = styled("button")<ButtonProps>`
   justify-content: center;
 
   ${({ variant }) => buttonStyles[variant!]}
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    width: 79px;
+  }
 `;

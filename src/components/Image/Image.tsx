@@ -1,11 +1,13 @@
 import * as S from "./elements";
 import { ImageProps } from "next/image";
 
-export interface NextImageProps {}
+export interface NextImageProps {
+  minWidth?: number;
+}
 
-export const Image = ({ ...props }: NextImageProps & ImageProps) => {
+export const Image = ({ minWidth, ...props }: NextImageProps & ImageProps) => {
   return (
-    <S.ImageContainer {...props}>
+    <S.ImageContainer minWidth={minWidth}>
       <S.NextImage {...props} />
     </S.ImageContainer>
   );

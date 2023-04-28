@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import Image from "next/image";
 
-export const NextImage = styled(Image)`
-  width: 100%;
-  height: auto;
-`;
-
-export const ImageContainer = styled("div")`
+export const ImageContainer = styled(({ minWidth, ...props }) => <div {...props} />)`
   display: flex;
   align-items: center;
+
+  width: fit-content;
+  min-width: ${({ minWidth }) => ` ${minWidth}px` || "auto"};
+  margin-bottom: auto;
 `;
+
+export const NextImage = styled(Image)``;

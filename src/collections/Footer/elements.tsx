@@ -19,10 +19,14 @@ export const Footer = styled("footer")`
 
 export const HolderContainer = styled("div")`
   display: flex;
-  gap: 143px;
+  gap: 10vw;
   padding-right: 137px;
   margin-left: auto;
   margin-right: auto;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    flex-direction: column;
+  }
 `;
 
 export const TextContainer = styled(props => <_TextContainer {...props} />)`
@@ -30,8 +34,13 @@ export const TextContainer = styled(props => <_TextContainer {...props} />)`
   height: fit-content;
   align-items: center;
 
-  div {
+  > div {
     padding-right: 40px;
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    flex-direction: column;
+    width: 100%;
   }
 `;
 
@@ -57,6 +66,10 @@ export const Paragraph = styled(props => <_Paragraph variant='xs' {...props} />)
 export const NavContainer = styled("div")`
   display: flex;
   gap: 62px;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    flex-direction: column;
+  }
 `;
 
 export const NavSubContainer = styled("div")`

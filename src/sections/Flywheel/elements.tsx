@@ -14,6 +14,12 @@ export const SectionContainer = styled(_SectionContainer)`
   margin-bottom: 80px;
   background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 16px;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    padding: 0;
+    padding-bottom: 16px;
+    margin-bottom: 40px;
+  }
 `;
 
 export const Title = styled(_H1)`
@@ -21,18 +27,36 @@ export const Title = styled(_H1)`
   padding: 80px 0;
   border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
   text-align: center;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    padding: 42px 0;
+  }
 `;
 
 export const TextContainer = styled(_TextContainer)`
   flex-direction: column;
   padding: 40px 233px;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    padding: 37px 21px;
+  }
 `;
 
 export const Paragraph = styled(_Paragraph)`
   padding-right: 60px;
 
   &:first-child {
-    margin-bottom: 28px;
+    padding-right: 0;
+    margin-bottom: 57px;
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    &:first-child {
+      margin: 0;
+    }
+    &:last-child {
+      display: none;
+    }
   }
 `;
 
@@ -42,6 +66,14 @@ export const FlywheelWrapper = styled("div")`
 
   display: grid;
   row-gap: 40px;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    padding: 20px;
+    /* gap: 40px; */
+    padding-top: 0;
+    display: flex;
+    flex-direction: column-reverse;
+  }
 `;
 
 export const FlywheelCardWrapper = styled("div")`
@@ -52,12 +84,22 @@ export const FlywheelCardWrapper = styled("div")`
     margin-left: auto;
     margin-right: auto;
   }
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    &:first-child {
+      order: 1;
+    }
+  }
 `;
 export const FlywheelCard = styled(({ ...props }) => <_FlywheelCard {...props} />)``;
 
 export const ImageWrapper = styled("div")`
   grid-column: 2 / 3;
   grid-row: 2;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    order: 1;
+  }
 `;
 
 export const Image = styled(_Image)``;

@@ -7,4 +7,8 @@ export const SectionContainer = styled("section")`
   height: auto;
   margin-left: auto;
   margin-right: auto;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    max-width: 320px;
+  }
 `;
