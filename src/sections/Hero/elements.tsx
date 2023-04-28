@@ -7,10 +7,9 @@ import {
 } from "components";
 import { JoinWaitingListForm as _JoinWaitingListForm } from "collections";
 
-export const SectionContainer = styled(_SectionContainer)`
-  padding-top: 30px;
-  padding-bottom: 80px;
-
+export const SectionContainer = styled(({ ...props }) => (
+  <_SectionContainer variant='secondary' {...props} />
+))`
   background-image: url(./imgs/HERO.png);
   background-repeat: no-repeat;
   background-size: 1052px;
@@ -18,13 +17,12 @@ export const SectionContainer = styled(_SectionContainer)`
   background-position-x: 109%;
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    max-width: 360px;
-    padding: 259px 20px 40px 20px;
     background-size: 551px;
     background-position-y: -26px;
     background-position-x: -157px;
   }
 `;
+
 export const TextContainer = styled(_TextContainer)`
   flex-direction: column;
   flex-basis: 501px;

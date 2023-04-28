@@ -123,9 +123,8 @@ export const Copyright = styled(props => <_Paragraph variant='xs' {...props} />)
     padding-right: 10px;
     margin-top: 45px;
 
-    > div {
-      order: 3;
-      margin-top: 16px;
+    > span {
+      margin-bottom: 14px;
     }
   }
 `;

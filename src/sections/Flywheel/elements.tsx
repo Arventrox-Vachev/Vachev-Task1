@@ -8,17 +8,12 @@ import {
 } from "components";
 import { FlywheelCard as _FlywheelCard } from "collections";
 
-export const SectionContainer = styled(_SectionContainer)`
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 80px;
-  background-color: ${({ theme }) => theme.colors.primary};
-  border-radius: 16px;
-
+export const SectionContainer = styled(({ ...props }) => (
+  <_SectionContainer variant='primary' {...props} />
+))`
   @media ${({ theme }) => theme.breakpoint.max.S} {
     padding: 0;
     padding-bottom: 16px;
-    margin-bottom: 40px;
   }
 `;
 

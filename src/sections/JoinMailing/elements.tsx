@@ -22,9 +22,12 @@ export const SectionContainer = styled(_SectionContainer)`
 export const H1 = styled(_H1)`
   width: 100%;
   margin-bottom: 40px;
-  text-align: center;
 `;
 
 export const JoinWaitingListForm = styled(props => (
   <_JoinWaitingListForm padding='20px' maxWidth='520px' {...props} />
-))``;
+))`
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    max-width: 320px;
+  }
+`;

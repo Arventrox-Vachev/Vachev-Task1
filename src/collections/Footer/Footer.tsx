@@ -30,7 +30,12 @@ export const Footer = ({ ...props }: FooterProps & HTMLFooterProps) => {
         </S.NavContainer>
       </S.HolderContainer>
 
-      <S.Copyright dangerouslySetInnerHTML={{ __html: footerContent.copyright }} />
+      {!isSmallScreenDevice && (
+        <S.Copyright dangerouslySetInnerHTML={{ __html: footerContent.copyright }} />
+      )}
+      {isSmallScreenDevice && (
+        <S.Copyright dangerouslySetInnerHTML={{ __html: footerContent.mobileCopyright }} />
+      )}
     </S.Footer>
   );
 };

@@ -2,18 +2,9 @@ import styled from "styled-components";
 import { SectionContainer as _SectionContainer, H1 as _H1 } from "components";
 import { IconCard as _IconCard } from "collections";
 
-export const SectionContainer = styled(_SectionContainer)`
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 80px;
-
-  background-color: ${({ theme }) => theme.colors.primary};
-  border-radius: 16px;
-
-  @media ${({ theme }) => theme.breakpoint.max.S} {
-    margin-bottom: 40px;
-  }
-`;
+export const SectionContainer = styled(({ ...props }) => (
+  <_SectionContainer variant='primary' {...props} />
+))``;
 
 export const H1 = styled(_H1)`
   width: 100%;
