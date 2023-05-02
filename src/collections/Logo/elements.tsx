@@ -9,8 +9,8 @@ export const LogoWrapper = styled("div")`
 `;
 
 export const ImageWrapper = styled(_ImageWrapper)`
-  min-width: 60.59px;
   width: 100%;
+  min-width: 60.59px;
 `;
 
 export const LogoText = styled(Typography.Paragraph).attrs({ variant: "md" })`

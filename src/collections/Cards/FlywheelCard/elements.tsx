@@ -5,7 +5,7 @@ import {
   ImageWrapper as _ImageWrapper
 } from "components";
 
-export const CardWrapper = styled("div")`
+export const FlywheelCardContainer = styled("div")`
   max-width: 280px;
   width: 100%;
 `;

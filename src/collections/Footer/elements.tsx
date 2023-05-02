@@ -115,7 +115,6 @@ export const Copyright = styled(Typography.Paragraph).attrs({ variant: "xs" })`
   }
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    display: flex;
     flex-direction: column;
     padding-right: 10px;
     margin-top: 45px;

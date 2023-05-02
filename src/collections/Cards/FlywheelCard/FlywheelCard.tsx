@@ -19,7 +19,7 @@ export const FlywheelCard = ({ card, ...props }: FlywheelCardProps) => {
   const [isSmallScreenDevice] = useMediaQuery({ type: "max", breakpoint: "M" });
 
   return (
-    <S.CardWrapper {...props}>
+    <S.FlywheelCardContainer {...props}>
       {isSmallScreenDevice && (
         <S.ImageWrapper>
           <Image
@@ -32,6 +32,6 @@ export const FlywheelCard = ({ card, ...props }: FlywheelCardProps) => {
       )}
       <S.Title>{card.title}</S.Title>
       <S.Text>{card.description}</S.Text>
-    </S.CardWrapper>
+    </S.FlywheelCardContainer>
   );
 };
