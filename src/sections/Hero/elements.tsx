@@ -40,6 +40,7 @@ export const TextContainer = styled(_TextContainer)`
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
     flex-basis: 100%;
+    align-items: center;
   }
 `;
 
