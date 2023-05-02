@@ -2,8 +2,7 @@ import styled from "styled-components";
 import {
   ImageWrapper as _ImageWrapperWrapper,
   TextContainer as _TextContainer,
-  H2 as _H2,
-  Paragraph as _Paragraph
+  Typography
 } from "components";
 
 export const CardContainer = styled("div")`
@@ -84,14 +83,12 @@ export const NumberWrapper = styled("div")`
   }
 `;
 
-export const H2 = styled(_H2)`
+export const Title = styled(Typography.H2)`
   color: ${({ theme }) => theme.colors.yellow};
 `;
 
-export const HighlightedParagraph = styled(({ ...props }) => (
-  <_Paragraph variant='sm' {...props} />
-))`
+export const HighlightedText = styled(Typography.Paragraph).attrs({ variant: "sm" })`
   font-weight: 500;
 `;
 
-export const Paragraph = styled(({ ...props }) => <_Paragraph variant='sm' {...props} />)``;
+export const Text = styled(Typography.Paragraph).attrs({ variant: "sm" })``;

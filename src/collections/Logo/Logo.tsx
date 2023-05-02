@@ -1,6 +1,6 @@
 import * as S from "./elements";
-import { logoContent } from "data";
 import Image from "next/image";
+import { logoContent } from "data";
 
 export interface LogoProps {}
 

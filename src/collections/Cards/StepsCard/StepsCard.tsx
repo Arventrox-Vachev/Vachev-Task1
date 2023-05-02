@@ -31,9 +31,9 @@ export const StepsCard = ({ card, ...props }: StepsCardProps) => {
       </S.ImageWrapper>
       <S.TextContainer>
         <S.NumberWrapper>{card.number}</S.NumberWrapper>
-        <S.H2>{card.title}</S.H2>
-        <S.HighlightedParagraph>{card.description.highlighted}</S.HighlightedParagraph>
-        <S.Paragraph>{card.description.text}</S.Paragraph>
+        <S.Title>{card.title}</S.Title>
+        <S.HighlightedText>{card.description.highlighted}</S.HighlightedText>
+        <S.Text>{card.description.text}</S.Text>
       </S.TextContainer>
     </S.CardContainer>
   );

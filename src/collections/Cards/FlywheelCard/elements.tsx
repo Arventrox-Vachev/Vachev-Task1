@@ -1,18 +1,17 @@
 import styled from "styled-components";
 import {
   TextContainer as _TextContainer,
-  H2 as _H2,
-  Paragraph as _Paragraph,
+  Typography,
   ImageWrapper as _ImageWrapper
 } from "components";
 
-export const TextContainer = styled(_TextContainer)`
+export const CardWrapper = styled("div")`
   flex-direction: column;
   max-width: 280px;
   width: 100%;
 `;
 
-export const H2 = styled(_H2)`
+export const Title = styled(Typography.H2)`
   margin-bottom: 20px;
   color: ${({ theme }) => theme.colors.yellow};
 
@@ -21,7 +20,7 @@ export const H2 = styled(_H2)`
   }
 `;
 
-export const Paragraph = styled(({ ...props }) => <_Paragraph variant='sm' {...props} />)``;
+export const Text = styled(Typography.Paragraph).attrs({ variant: "sm" })``;
 
 export const ImageWrapper = styled(_ImageWrapper)`
   min-width: 102px;

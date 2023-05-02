@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Checkbox = styled(({ ...props }) => <input {...props} />)`
+export const Checkbox = styled("input")`
   margin: 0;
 
   appearance: none;
@@ -19,6 +19,12 @@ export const Checkbox = styled(({ ...props }) => <input {...props} />)`
     background-image: url(./imgs/active-button.png);
     background-size: contain;
     border: none;
+
+    @media ${({ theme }) => theme.breakpoint.max.S} {
+      background-image: url(./imgs/mobile-active-button.png);
+      min-width: 32px;
+      min-height: 32px;
+    }
   }
 
   @media ${({ theme }) => theme.breakpoint.max.S} {

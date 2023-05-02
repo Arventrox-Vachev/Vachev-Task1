@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {
-  Paragraph as _Paragraph,
   TextContainer as _TextContainer,
+  Typography,
   ImageWrapper as _ImageWrapper
 } from "components";
 
@@ -32,10 +32,10 @@ export const TextContainer = styled(_TextContainer)`
   width: 100%;
 `;
 
-export const IconTitle = styled(({ ...props }) => <_Paragraph variant='sm' {...props} />)`
+export const Title = styled(Typography.Paragraph).attrs({ variant: "sm" })`
   margin-bottom: 20px;
   font-weight: 500;
   color: ${({ theme }) => theme.colors.yellow};
 `;
 
-export const IconParagraph = styled(({ ...props }) => <_Paragraph variant='sm' {...props} />)``;
+export const Text = styled(Typography.Paragraph).attrs({ variant: "sm" })``;

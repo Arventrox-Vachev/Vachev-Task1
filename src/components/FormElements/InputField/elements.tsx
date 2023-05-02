@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const InputField = styled(({ ...props }) => <input {...props} />)`
+export const InputField = styled("input")`
   width: 100%;
   padding-left: 16px;
 

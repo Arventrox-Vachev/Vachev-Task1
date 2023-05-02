@@ -1,23 +1,20 @@
 import styled from "styled-components";
 import {
   SectionContainer as _SectionContainer,
-  H1 as _H1,
   TextContainer as _TextContainer,
-  Paragraph as _Paragraph,
-  ImageWrapper as _ImageWrapper
+  ImageWrapper as _ImageWrapper,
+  Typography
 } from "components";
 import { FlywheelCard as _FlywheelCard } from "collections";
 
-export const SectionContainer = styled(({ ...props }) => (
-  <_SectionContainer variant='primary' {...props} />
-))`
+export const SectionContainer = styled(_SectionContainer).attrs({ variant: "primary" })`
   @media ${({ theme }) => theme.breakpoint.max.S} {
     padding: 0;
     padding-bottom: 16px;
   }
 `;
 
-export const Title = styled(_H1)`
+export const Title = styled(Typography.H1)`
   width: 100%;
   padding: 80px 0;
   border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
@@ -37,7 +34,7 @@ export const TextContainer = styled(_TextContainer)`
   }
 `;
 
-export const Paragraph = styled(_Paragraph)`
+export const Text = styled(Typography.Paragraph)`
   padding-right: 60px;
 
   &:first-child {
@@ -70,7 +67,7 @@ export const FlywheelWrapper = styled("div")`
   }
 `;
 
-export const FlywheelCardWrapper = styled("div")`
+export const FlywheelCard = styled(_FlywheelCard)`
   margin-top: auto;
 
   &:first-child {
@@ -85,7 +82,6 @@ export const FlywheelCardWrapper = styled("div")`
     }
   }
 `;
-export const FlywheelCard = styled(({ ...props }) => <_FlywheelCard {...props} />)``;
 
 export const ImageWrapper = styled(_ImageWrapper)`
   grid-column: 2 / 3;

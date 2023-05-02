@@ -1,9 +1,5 @@
 import styled from "styled-components";
-import {
-  Paragraph as _Paragraph,
-  ImageWrapper as _ImageWrapper,
-  Button as _Button
-} from "components";
+import { Typography, ImageWrapper as _ImageWrapper, Button as _Button } from "components";
 
 export const LogoWrapper = styled("div")`
   height: fit-content;
@@ -17,7 +13,7 @@ export const ImageWrapper = styled(_ImageWrapper)`
   width: 100%;
 `;
 
-export const LogoText = styled(props => <_Paragraph variant='md' {...props} />)`
+export const LogoText = styled(Typography.Paragraph).attrs({ variant: "md" })`
   color: ${({ theme }) => theme.colors.white};
   padding-left: 15px;
 `;

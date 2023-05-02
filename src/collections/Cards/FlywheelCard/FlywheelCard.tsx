@@ -3,13 +3,12 @@ import Image from "next/image";
 import { useMediaQuery } from "hooks";
 
 export interface FlywheelCardProps {
-  key: number;
   card: {
     title: string;
     description: string;
     icon: {
-      src: "string";
-      alt: "string";
+      src: string;
+      alt: string;
       width: number;
       height: number;
     };
@@ -20,7 +19,7 @@ export const FlywheelCard = ({ card, ...props }: FlywheelCardProps) => {
   const [isSmallScreenDevice] = useMediaQuery({ type: "max", breakpoint: "S" });
 
   return (
-    <S.TextContainer>
+    <S.CardWrapper {...props}>
       {isSmallScreenDevice && (
         <S.ImageWrapper>
           <Image
@@ -31,8 +30,8 @@ export const FlywheelCard = ({ card, ...props }: FlywheelCardProps) => {
           />
         </S.ImageWrapper>
       )}
-      <S.H2>{card.title}</S.H2>
-      <S.Paragraph>{card.description}</S.Paragraph>
-    </S.TextContainer>
+      <S.Title>{card.title}</S.Title>
+      <S.Text>{card.description}</S.Text>
+    </S.CardWrapper>
   );
 };

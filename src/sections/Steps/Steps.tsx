@@ -6,7 +6,7 @@ export interface StepsProps {}
 export const Steps = ({ ...props }: StepsProps) => {
   return (
     <S.SectionContainer>
-      <S.H1 dangerouslySetInnerHTML={{ __html: stepsContent.title }} />
+      <S.Title dangerouslySetInnerHTML={{ __html: stepsContent.title }} />
 
       <S.StepsCardsWrapper>
         {stepsContent.cards.map((card, index) => (

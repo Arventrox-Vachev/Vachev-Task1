@@ -6,7 +6,7 @@ export interface JoinWaitingListFormProps {}
 export const JoinWaitingListForm = ({ ...props }: JoinWaitingListFormProps) => {
   return (
     <S.FormContainer {...props}>
-      <S.H2 dangerouslySetInnerHTML={{ __html: joinWaitingListFormContent.title }} />
+      <S.Title dangerouslySetInnerHTML={{ __html: joinWaitingListFormContent.title }} />
 
       <S.InputWrapper>
         <S.InputField type='text' placeholder={joinWaitingListFormContent.emailHolder} />

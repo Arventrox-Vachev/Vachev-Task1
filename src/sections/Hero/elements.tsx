@@ -2,14 +2,11 @@ import styled from "styled-components";
 import {
   SectionContainer as _SectionContainer,
   TextContainer as _TextContainer,
-  H1 as _H1,
-  H3 as _H3
+  Typography
 } from "components";
 import { JoinWaitingListForm as _JoinWaitingListForm } from "collections";
 
-export const SectionContainer = styled(({ ...props }) => (
-  <_SectionContainer variant='secondary' {...props} />
-))`
+export const SectionContainer = styled(_SectionContainer).attrs({ variant: "secondary" })`
   background-image: url(./imgs/HERO.png);
   background-repeat: no-repeat;
   background-size: 1052px;
@@ -29,7 +26,7 @@ export const TextContainer = styled(_TextContainer)`
   margin-right: auto;
 `;
 
-export const H1 = styled(_H1)`
+export const Title = styled(Typography.H1)`
   padding-bottom: 40px;
   text-align: left;
 
@@ -39,11 +36,11 @@ export const H1 = styled(_H1)`
   }
 `;
 
-export const H3 = styled(_H3)`
+export const SubHeading = styled(Typography.H3)`
   padding-bottom: 28px;
+  font-weight: 300;
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    padding-bottom: 0;
     padding-right: 45px;
   }
 
@@ -52,4 +49,6 @@ export const H3 = styled(_H3)`
   }
 `;
 
-export const JoinWaitingListForm = styled(_JoinWaitingListForm)``;
+export const JoinWaitingListForm = styled(_JoinWaitingListForm)`
+  max-width: 501px;
+`;

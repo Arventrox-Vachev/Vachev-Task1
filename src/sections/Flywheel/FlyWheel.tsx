@@ -11,15 +11,13 @@ export const FlyWheel = ({ ...props }: FlyWheelProps) => {
 
       <S.TextContainer>
         {flywheelContent.description.map((desc, index) => (
-          <S.Paragraph key={index}>{desc}</S.Paragraph>
+          <S.Text key={index}>{desc}</S.Text>
         ))}
       </S.TextContainer>
 
       <S.FlywheelWrapper>
         {flywheelContent.cards.map((card, index) => (
-          <S.FlywheelCardWrapper key={index}>
-            <S.FlywheelCard card={card} />
-          </S.FlywheelCardWrapper>
+          <S.FlywheelCard key={index} card={card} />
         ))}
 
         <S.ImageWrapper>

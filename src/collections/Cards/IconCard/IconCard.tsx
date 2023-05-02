@@ -27,8 +27,8 @@ export const IconCard = ({ card, ...props }: IconCardProps) => {
       </S.ImageWrapper>
 
       <S.TextContainer>
-        <S.IconTitle>{card.title}</S.IconTitle>
-        <S.IconParagraph>{card.description}</S.IconParagraph>
+        <S.Title>{card.title}</S.Title>
+        <S.Text>{card.description}</S.Text>
       </S.TextContainer>
     </S.IconWrapper>
   );

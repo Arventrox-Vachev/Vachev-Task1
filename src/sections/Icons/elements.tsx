@@ -1,12 +1,10 @@
 import styled from "styled-components";
-import { SectionContainer as _SectionContainer, H1 as _H1 } from "components";
+import { SectionContainer as _SectionContainer, Typography } from "components";
 import { IconCard as _IconCard } from "collections";
 
-export const SectionContainer = styled(({ ...props }) => (
-  <_SectionContainer variant='primary' {...props} />
-))``;
+export const SectionContainer = styled(_SectionContainer).attrs({ variant: "primary" })``;
 
-export const H1 = styled(_H1)`
+export const Title = styled(Typography.H1)`
   width: 100%;
   padding: 80px 0;
   border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};

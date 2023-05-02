@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SectionContainer as _SectionContainer, H1 as _H1 } from "components";
+import { SectionContainer as _SectionContainer, Typography } from "components";
 import { Logo as _Logo, JoinWaitingListForm as _JoinWaitingListForm } from "collections";
 
 export const SectionContainer = styled(_SectionContainer)`
@@ -19,7 +19,7 @@ export const SectionContainer = styled(_SectionContainer)`
   }
 `;
 
-export const H1 = styled(_H1)`
+export const Title = styled(Typography.H1)`
   width: 100%;
   margin-bottom: 40px;
 `;

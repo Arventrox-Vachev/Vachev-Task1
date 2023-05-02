@@ -7,7 +7,7 @@ export interface HeaderProps {}
 export const Header = ({ ...props }: HeaderProps & HTMLHeaderProps) => {
   return (
     <S.Header {...props}>
-      <S.Logo {...props} />
+      <S.Logo />
       <S.Button>{headerContent.buttonText}</S.Button>
     </S.Header>
   );

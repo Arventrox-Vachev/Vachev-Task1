@@ -1,11 +1,5 @@
 import styled from "styled-components";
-import { FooterProps } from "./Footer";
-import {
-  TextContainer as _TextContainer,
-  Paragraph as _Paragraph,
-  Link as _Link,
-  H3 as _H3
-} from "components";
+import { TextContainer as _TextContainer, Link as _Link, Typography } from "components";
 import { Logo as _Logo } from "collections";
 
 export const Footer = styled("footer")`
@@ -37,11 +31,11 @@ export const HolderContainer = styled("div")`
   }
 `;
 
-export const TextContainer = styled(props => <_TextContainer {...props} />)`
+export const TextContainer = styled(_TextContainer)`
   display: flex;
 
   > div {
-    padding-right: 40px;
+    padding-right: 21px;
   }
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
@@ -51,7 +45,7 @@ export const TextContainer = styled(props => <_TextContainer {...props} />)`
   }
 `;
 
-export const Logo = styled(props => <_Logo variant='sm' {...props} />)`
+export const Logo = styled(props => <_Logo {...props} />).attrs({ variant: "sm" })`
   padding-right: 6px;
 
   > div {
@@ -68,7 +62,7 @@ export const Logo = styled(props => <_Logo variant='sm' {...props} />)`
   }
 `;
 
-export const Paragraph = styled(props => <_Paragraph variant='xs' {...props} />)`
+export const Text = styled(Typography.Paragraph).attrs({ variant: "xs" })`
   padding: 8px 40px;
   padding-right: 0;
   border-left: 2px solid ${({ theme }) => theme.colors.primary};
@@ -96,7 +90,7 @@ export const NavSubContainer = styled("div")`
   flex-direction: column;
 `;
 
-export const Link = styled(({ ...props }) => <_Link {...props} />)`
+export const Link = styled(_Link)`
   margin-bottom: 15px;
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
@@ -106,11 +100,11 @@ export const Link = styled(({ ...props }) => <_Link {...props} />)`
   }
 `;
 
-export const H3 = styled(({ ...props }) => <_H3 {...props} />)`
+export const Title = styled(Typography.H3)`
   margin-bottom: 30px;
 `;
 
-export const Copyright = styled(props => <_Paragraph variant='xs' {...props} />)`
+export const Copyright = styled(Typography.Paragraph).attrs({ variant: "xs" })`
   margin-top: auto;
   display: flex;
 

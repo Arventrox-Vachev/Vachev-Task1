@@ -9,9 +9,9 @@ export const Icons = ({ ...props }: IconsProps) => {
 
   return (
     <S.SectionContainer>
-      {!isSmallScreenDevice && <S.H1 dangerouslySetInnerHTML={{ __html: iconsContent.title }} />}
+      {!isSmallScreenDevice && <S.Title dangerouslySetInnerHTML={{ __html: iconsContent.title }} />}
       {isSmallScreenDevice && (
-        <S.H1 dangerouslySetInnerHTML={{ __html: iconsContent.mobileTitle }} />
+        <S.Title dangerouslySetInnerHTML={{ __html: iconsContent.mobileTitle }} />
       )}
 
       <S.IconsWrapper>

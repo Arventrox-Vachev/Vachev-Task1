@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import {
-  H2 as _H2,
   Label as _Label,
   Button as _Button,
   Checkbox as _Checkbox,
-  InputField as _InputField
+  InputField as _InputField,
+  Typography
 } from "components";
 
 export const FormContainer = styled(({ padding, maxWidth, ...props }) => <form {...props} />)`
@@ -42,7 +42,7 @@ export const InputWrapper = styled("div")`
   }
 `;
 
-export const H2 = styled(({ ...props }) => <_H2 {...props} />)`
+export const Title = styled(Typography.H2)`
   > span {
     color: ${({ theme }) => theme.colors.yellow};
   }
@@ -52,7 +52,7 @@ export const Checkbox = styled(_Checkbox)``;
 
 export const InputField = styled(_InputField)``;
 
-export const Label = styled(({ ...props }) => <_Label {...props} />)`
+export const Label = styled(_Label)`
   margin-left: 8px;
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
@@ -60,4 +60,4 @@ export const Label = styled(({ ...props }) => <_Label {...props} />)`
   }
 `;
 
-export const Button = styled(({ ...props }) => <_Button variant='secondary' {...props} />)``;
+export const Button = styled(_Button).attrs({ variant: "secondary" })``;

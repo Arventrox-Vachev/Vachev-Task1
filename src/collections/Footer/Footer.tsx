@@ -13,14 +13,14 @@ export const Footer = ({ ...props }: FooterProps & HTMLFooterProps) => {
       <S.HolderContainer>
         <S.TextContainer>
           <S.Logo />
-          {!isSmallScreenDevice && <S.Paragraph>{footerContent.description}</S.Paragraph>}
-          {isSmallScreenDevice && <S.Paragraph>{footerContent.mobileText}</S.Paragraph>}
+          {!isSmallScreenDevice && <S.Text>{footerContent.description}</S.Text>}
+          {isSmallScreenDevice && <S.Text>{footerContent.mobileText}</S.Text>}
         </S.TextContainer>
 
         <S.NavContainer>
           {footerContent.items.map((item, index) => (
             <S.NavSubContainer key={index}>
-              <S.H3>{item.title}</S.H3>
+              <S.Title>{item.title}</S.Title>
 
               {item.links.map((link, index) => (
                 <S.Link key={index} dangerouslySetInnerHTML={{ __html: link }} />
