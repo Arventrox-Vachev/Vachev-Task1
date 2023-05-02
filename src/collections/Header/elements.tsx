@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import type { HeaderProps } from "./Header";
 import { Button as _Button } from "components";
 import { Logo as _Logo } from "collections";
+import type { HeaderProps } from "./Header";
 
 export const Header = styled("header")<HeaderProps>`
   display: flex;

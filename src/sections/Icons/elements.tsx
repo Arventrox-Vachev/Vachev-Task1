@@ -7,7 +7,6 @@ export const SectionContainer = styled(_SectionContainer).attrs({ variant: "prim
 export const Title = styled(Typography.H1)`
   width: 100%;
   padding: 80px 30px;
-
   border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
   text-align: center;
 

@@ -27,10 +27,7 @@ export const Title = styled(Typography.H1)`
 
 export const TextContainer = styled(_TextContainer)`
   flex-direction: column;
-
-  padding: clamp(21px, 17vw, 233px);
-  padding-bottom: 40px;
-  padding-top: 40px;
+  padding: 40px clamp(21px, 17vw, 233px);
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
     padding: 37px 21px;
@@ -68,8 +65,7 @@ export const FlywheelWrapper = styled("div")`
   }
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
-    padding: 20px;
-    padding-top: 0;
+    padding: 0 20px 20px;
     display: flex;
     flex-direction: column-reverse;
   }
@@ -86,8 +82,8 @@ export const FlywheelCard = styled(_FlywheelCard)`
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
     margin: 0 auto;
-    align-items: center;
     display: flex;
+    align-items: center;
     flex-direction: column;
     text-align: center;
 

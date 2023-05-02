@@ -28,7 +28,6 @@ export const SectionContainer = styled(_SectionContainer).attrs({ variant: "seco
   @media ${({ theme }) => theme.breakpoint.max.S} {
     background-size: 551px;
     background-position-y: -26px;
-    background-position-x: max(-49vw, 100%);
     background-position-x: clamp(-177px, 78%, -75px);
   }
 `;
@@ -49,8 +48,7 @@ export const Title = styled(Typography.H1)`
   text-align: left;
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
-    padding-bottom: 23px;
-    padding-right: 53px;
+    padding: 0 53px 23px 0;
   }
 `;
 
@@ -67,6 +65,4 @@ export const SubHeading = styled(Typography.H3)`
   }
 `;
 
-export const JoinWaitingListForm = styled(_JoinWaitingListForm)`
-  max-width: 501px;
-`;
+export const JoinWaitingListForm = styled(_JoinWaitingListForm)``;

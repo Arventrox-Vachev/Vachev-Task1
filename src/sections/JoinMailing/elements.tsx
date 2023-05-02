@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { SectionContainer as _SectionContainer, Typography } from "components";
-import { Logo as _Logo, JoinWaitingListForm as _JoinWaitingListForm } from "collections";
+import { JoinWaitingListForm as _JoinWaitingListForm } from "collections";
 
 export const SectionContainer = styled(_SectionContainer)`
   flex-direction: column;
@@ -24,10 +24,11 @@ export const Title = styled(Typography.H1)`
   margin-bottom: 40px;
 `;
 
-export const JoinWaitingListForm = styled(props => (
-  <_JoinWaitingListForm padding='20px' maxWidth='520px' {...props} />
-))`
+export const JoinWaitingListForm = styled(_JoinWaitingListForm)`
+  max-width: 520px;
+
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    max-width: 320px;
+    padding: 20px;
+    margin: 0 20px;
   }
 `;

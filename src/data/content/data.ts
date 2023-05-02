@@ -230,6 +230,6 @@ export const footerContent = {
     }
   ],
 
-  copyright: "© 2022, CampaignMeister is a product of <span>Human Data Associates</span>",
-  mobileCopyright: "CampaignMeister is a product of <span>Human Data Associates</span> © 2022"
+  copyright: "© 2022, CampaignMeister is a product of&nbsp;<span> Human Data Associates </span>",
+  mobileCopyright: "CampaignMeister is a product of <span> Human Data Associates </span> © 2022"
 };

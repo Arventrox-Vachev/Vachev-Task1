@@ -7,15 +7,15 @@ import {
   Typography
 } from "components";
 
-export const FormContainer = styled(({ padding, maxWidth, ...props }) => <form {...props} />)`
-  max-width: ${({ maxWidth }) => maxWidth || "501px"};
+export const FormContainer = styled("form")`
+  max-width: 501px;
   width: 100%;
   padding: 20px 22px;
   border-radius: 16px;
   background-color: ${({ theme }) => theme.colors.primary};
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    padding: ${({ padding }) => padding || "20px 22px"};
+    padding: 20px 22px;
   }
 `;
 
