@@ -9,13 +9,17 @@ export const CardWrapper = styled("div")`
   flex-direction: column;
   max-width: 280px;
   width: 100%;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    max-width: fit-content;
+  }
 `;
 
 export const Title = styled(Typography.H2)`
   margin-bottom: 20px;
   color: ${({ theme }) => theme.colors.yellow};
 
-  @media ${({ theme }) => theme.breakpoint.max.S} {
+  @media ${({ theme }) => theme.breakpoint.max.M} {
     margin: 21px 0;
   }
 `;
@@ -24,4 +28,5 @@ export const Text = styled(Typography.Paragraph).attrs({ variant: "sm" })``;
 
 export const ImageWrapper = styled(_ImageWrapper)`
   min-width: 102px;
+  justify-content: flex-start;
 `;

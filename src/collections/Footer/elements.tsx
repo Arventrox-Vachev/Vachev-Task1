@@ -18,7 +18,7 @@ export const Footer = styled("footer")`
 `;
 
 export const HolderContainer = styled("div")`
-  padding-right: 137px;
+  padding-right: min(10vw, 137px);
   margin-left: auto;
   margin-right: auto;
 
@@ -26,6 +26,7 @@ export const HolderContainer = styled("div")`
   gap: 10vw;
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
+    padding-right: min(24vw, 137px);
     flex-direction: column;
     gap: 42px;
   }
@@ -38,7 +39,7 @@ export const TextContainer = styled(_TextContainer)`
     padding-right: 21px;
   }
 
-  @media ${({ theme }) => theme.breakpoint.max.S} {
+  @media ${({ theme }) => theme.breakpoint.max.M} {
     width: 100%;
     flex-direction: column;
     align-items: center;
@@ -57,7 +58,7 @@ export const Logo = styled(props => <_Logo {...props} />).attrs({ variant: "sm" 
     padding-left: 6px;
   }
 
-  @media ${({ theme }) => theme.breakpoint.max.S} {
+  @media ${({ theme }) => theme.breakpoint.max.M} {
     padding-bottom: 9px;
   }
 `;
@@ -67,7 +68,7 @@ export const Text = styled(Typography.Paragraph).attrs({ variant: "xs" })`
   padding-right: 0;
   border-left: 2px solid ${({ theme }) => theme.colors.primary};
 
-  @media ${({ theme }) => theme.breakpoint.max.S} {
+  @media ${({ theme }) => theme.breakpoint.max.M} {
     width: 100%;
     padding: 15px 0;
     border: none;

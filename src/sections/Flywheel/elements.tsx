@@ -16,18 +16,21 @@ export const SectionContainer = styled(_SectionContainer).attrs({ variant: "prim
 
 export const Title = styled(Typography.H1)`
   width: 100%;
-  padding: 80px 0;
+  padding: 80px 30px;
   border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
   text-align: center;
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    padding: 42px 0;
+    padding: 42px 20px;
   }
 `;
 
 export const TextContainer = styled(_TextContainer)`
   flex-direction: column;
-  padding: 40px 233px;
+
+  padding: clamp(21px, 17vw, 233px);
+  padding-bottom: 40px;
+  padding-top: 40px;
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
     padding: 37px 21px;
@@ -46,6 +49,7 @@ export const Text = styled(Typography.Paragraph)`
     &:first-child {
       margin: 0;
     }
+
     &:last-child {
       display: none;
     }
@@ -59,7 +63,11 @@ export const FlywheelWrapper = styled("div")`
   display: grid;
   row-gap: 40px;
 
-  @media ${({ theme }) => theme.breakpoint.max.S} {
+  @media ${({ theme }) => theme.breakpoint.max.L} {
+    padding: 14px 50px 80px 50px;
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
     padding: 20px;
     padding-top: 0;
     display: flex;
@@ -76,9 +84,10 @@ export const FlywheelCard = styled(_FlywheelCard)`
     margin-right: auto;
   }
 
-  @media ${({ theme }) => theme.breakpoint.max.S} {
+  @media ${({ theme }) => theme.breakpoint.max.M} {
     &:first-child {
       order: 1;
+      margin-left: 0;
     }
   }
 `;
@@ -88,9 +97,12 @@ export const ImageWrapper = styled(_ImageWrapper)`
   grid-row: 2;
   min-width: 500px;
 
-  @media ${({ theme }) => theme.breakpoint.max.S} {
-    order: 1;
+  @media ${({ theme }) => theme.breakpoint.max.L} {
+    min-width: 330px;
+  }
 
-    min-width: auto;
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    order: 1;
+    min-width: 281px;
   }
 `;

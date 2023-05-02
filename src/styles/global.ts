@@ -35,5 +35,16 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
     }
     
+    main{
+        width:100%;
+        margin-left:auto;
+        margin-right:auto;
+        padding:0 40px;
+
+        @media ${({ theme }) => theme.breakpoint.max.S} {
+            padding:0 20px ;
+
+    }
+    }
  
 `;

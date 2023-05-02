@@ -18,7 +18,7 @@ const sectionStyles: Record<
     align-items: center;
 
     @media ${({ theme }) => theme.breakpoint.max.S} {
-      max-width: 320px;
+      max-width: 559px;
       margin-bottom: 40px;
     }
   `,
@@ -27,9 +27,14 @@ const sectionStyles: Record<
     padding-top: 30px;
     padding-bottom: 80px;
 
+    @media ${({ theme }) => theme.breakpoint.max.M} {
+      max-width: 899px;
+      padding: 350px 0 40px 0;
+    }
+
     @media ${({ theme }) => theme.breakpoint.max.S} {
-      max-width: 360px;
-      padding: 259px 20px 40px 20px;
+      max-width: 599px;
+      padding: 259px 0 40px 0;
     }
   `
 };

@@ -8,7 +8,8 @@ export const SectionContainer = styled(_SectionContainer).attrs({ variant: "prim
 
 export const Title = styled(Typography.H1)`
   width: 100%;
-  padding: 80px 0;
+  padding: 80px 30px;
+
   border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
@@ -20,7 +21,7 @@ export const Title = styled(Typography.H1)`
 export const StepsCardsWrapper = styled("div")`
   display: flex;
 
-  @media ${({ theme }) => theme.breakpoint.max.S} {
+  @media ${({ theme }) => theme.breakpoint.max.M} {
     flex-direction: column;
   }
 `;

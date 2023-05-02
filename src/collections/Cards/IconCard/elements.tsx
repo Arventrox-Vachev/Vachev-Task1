@@ -11,7 +11,7 @@ export const IconWrapper = styled("div")`
   width: 100%;
   gap: 20px;
 
-  @media ${({ theme }) => theme.breakpoint.max.S} {
+  @media ${({ theme }) => theme.breakpoint.max.M} {
     margin-bottom: 79px;
 
     &:last-child {

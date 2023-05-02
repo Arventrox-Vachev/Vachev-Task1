@@ -22,21 +22,35 @@ export const CardContainer = styled("div")`
     padding-right: 32px;
   }
 
-  @media ${({ theme }) => theme.breakpoint.max.S} {
+  @media ${({ theme }) => theme.breakpoint.max.L} {
     padding: 54px 24px 40px 24px;
     align-items: center;
-    border: none;
 
     & ~ & {
-      padding: 24px 24px 40px 24px;
+      padding: 54px 24px 40px 24px;
+    }
+
+    &:last-child {
+      padding: 54px 24px 40px 24px;
+    }
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    padding: 54px 24px 20px 24px;
+    border: none;
+    border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
+
+    & ~ & {
+      padding-top: 41px;
+      padding-bottom: 0px;
       > div {
         margin-bottom: 33px;
       }
     }
 
     &:last-child {
-      padding: 0px 24px 0px 24px;
-
+      padding: 39px 24px 0px 24px;
+      border: none;
       > div {
         margin-bottom: 23px;
       }

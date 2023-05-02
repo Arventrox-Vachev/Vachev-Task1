@@ -6,12 +6,13 @@ export const SectionContainer = styled(_SectionContainer).attrs({ variant: "prim
 
 export const Title = styled(Typography.H1)`
   width: 100%;
-  padding: 80px 0;
+  padding: 80px 30px;
+
   border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
   text-align: center;
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    padding: 42px 0;
+    padding: 42px 20px;
   }
 `;
 
@@ -19,10 +20,10 @@ export const IconsWrapper = styled("div")`
   margin: 80px 60px 102px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 120px;
+  column-gap: max(40px, 8vw);
   row-gap: 81px;
 
-  @media ${({ theme }) => theme.breakpoint.max.S} {
+  @media ${({ theme }) => theme.breakpoint.max.M} {
     grid-template-columns: repeat(1, 1fr);
     margin: 20px;
     gap: 0;
