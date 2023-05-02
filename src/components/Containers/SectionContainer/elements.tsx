@@ -29,7 +29,7 @@ const sectionStyles: Record<
 
     @media ${({ theme }) => theme.breakpoint.max.M} {
       max-width: 899px;
-      padding: 350px 0 40px 0;
+      padding: 360px 0 40px 0;
     }
 
     @media ${({ theme }) => theme.breakpoint.max.S} {

@@ -16,7 +16,7 @@ export const Title = styled(Typography.H1)`
   }
 `;
 
-export const IconsWrapper = styled("div")`
+export const IconsContainer = styled("div")`
   margin: 80px 60px 102px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -30,4 +30,12 @@ export const IconsWrapper = styled("div")`
   }
 `;
 
-export const IconCard = styled(_IconCard)``;
+export const IconCard = styled(_IconCard)`
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    margin-bottom: 79px;
+
+    &:last-child {
+      margin-bottom: 19px;
+    }
+  }
+`;

@@ -26,4 +26,6 @@ export const StepsCardsWrapper = styled("div")`
   }
 `;
 
-export const StepsCard = styled(_StepsCard)``;
+export const StepsCard = styled(_StepsCard)`
+  flex-basis: 33.333%;
+`;

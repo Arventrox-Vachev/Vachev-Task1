@@ -6,13 +6,8 @@ import {
 } from "components";
 
 export const CardWrapper = styled("div")`
-  flex-direction: column;
   max-width: 280px;
   width: 100%;
-
-  @media ${({ theme }) => theme.breakpoint.max.M} {
-    max-width: fit-content;
-  }
 `;
 
 export const Title = styled(Typography.H2)`

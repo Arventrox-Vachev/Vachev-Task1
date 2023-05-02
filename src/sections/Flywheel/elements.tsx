@@ -85,10 +85,20 @@ export const FlywheelCard = styled(_FlywheelCard)`
   }
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
     &:first-child {
       order: 1;
-      margin-left: 0;
     }
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    align-items: flex-start;
+    text-align: left;
   }
 `;
 

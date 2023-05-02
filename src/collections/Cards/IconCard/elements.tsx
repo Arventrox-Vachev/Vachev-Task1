@@ -10,14 +10,6 @@ export const IconWrapper = styled("div")`
   max-width: 560px;
   width: 100%;
   gap: 20px;
-
-  @media ${({ theme }) => theme.breakpoint.max.M} {
-    margin-bottom: 79px;
-
-    &:last-child {
-      margin-bottom: 19px;
-    }
-  }
 `;
 
 export const ImageWrapper = styled(_ImageWrapper)`

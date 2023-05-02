@@ -14,11 +14,11 @@ export const Icons = ({ ...props }: IconsProps) => {
         <S.Title dangerouslySetInnerHTML={{ __html: iconsContent.mobileTitle }} />
       )}
 
-      <S.IconsWrapper>
+      <S.IconsContainer>
         {iconsContent.cards.map((card, index) => (
           <S.IconCard key={index} card={card} />
         ))}
-      </S.IconsWrapper>
+      </S.IconsContainer>
     </S.SectionContainer>
   );
 };

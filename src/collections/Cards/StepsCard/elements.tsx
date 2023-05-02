@@ -8,7 +8,6 @@ import {
 export const CardContainer = styled("div")`
   display: flex;
   flex-direction: column;
-  flex-basis: 33.333%;
   border-right: 2px solid ${({ theme }) => theme.colors.secondary};
   padding: 81px 60px 40px 60px;
 
@@ -43,6 +42,7 @@ export const CardContainer = styled("div")`
     & ~ & {
       padding-top: 41px;
       padding-bottom: 0px;
+
       > div {
         margin-bottom: 33px;
       }
@@ -51,6 +51,7 @@ export const CardContainer = styled("div")`
     &:last-child {
       padding: 39px 24px 0px 24px;
       border: none;
+
       > div {
         margin-bottom: 23px;
       }
