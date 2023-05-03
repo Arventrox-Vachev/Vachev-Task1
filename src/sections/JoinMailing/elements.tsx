@@ -22,6 +22,15 @@ export const SectionContainer = styled(_SectionContainer)`
 export const Title = styled(Typography.H1)`
   width: 100%;
   margin-bottom: 40px;
+
+  //resets the color for the first word
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    > span {
+      &:first-child {
+        color: ${({ theme }) => theme.colors.white};
+      }
+    }
+  }
 `;
 
 export const JoinWaitingListForm = styled(_JoinWaitingListForm)`

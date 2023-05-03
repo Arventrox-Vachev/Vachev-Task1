@@ -12,8 +12,8 @@ export const Footer = styled("footer")`
   overflow-x: hidden;
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    padding-top: 37px;
-    margin-top: 47px;
+    padding: 40px;
+    margin-top: 45px;
   }
 `;
 
@@ -23,10 +23,11 @@ export const HolderContainer = styled("div")`
   margin-right: auto;
 
   display: flex;
-  gap: 10vw;
+  column-gap: min(10vw, 145px);
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    padding-right: min(24vw, 137px);
+    width: 100%;
+    padding: 0;
     flex-direction: column;
     gap: 42px;
   }
@@ -43,46 +44,50 @@ export const TextContainer = styled(_TextContainer)`
     width: 100%;
     flex-direction: column;
     align-items: center;
+    flex-basis: 30%;
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    flex-basis: 100%;
+    align-items: flex-start;
   }
 `;
 
 export const Logo = styled(props => <_Logo {...props} />).attrs({ variant: "sm" })`
   padding-right: 6px;
-
-  > div {
-    padding: 0;
-  }
-
+  font-size: 16px;
   > p {
-    padding-top: 4px;
-    padding-left: 6px;
+    padding: 4px 0 0 6px;
   }
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
-    padding-bottom: 9px;
+    padding-bottom: 15px;
   }
 `;
 
 export const Text = styled(Typography.Paragraph).attrs({ variant: "xs" })`
-  padding: 8px 40px;
-  padding-right: 0;
+  padding: 8px 0 8px 40px;
   border-left: 2px solid ${({ theme }) => theme.colors.primary};
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
-    width: 100%;
     padding: 15px 0;
     border: none;
     border-top: 2px solid ${({ theme }) => theme.colors.primary};
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    width: 100%;
+    max-width: 280px;
   }
 `;
 
 export const NavContainer = styled("div")`
   display: flex;
-  gap: 62px;
+  column-gap: 62px;
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
     flex-direction: column;
-    gap: 30px;
+    row-gap: 30px;
   }
 `;
 
@@ -94,6 +99,7 @@ export const NavSubContainer = styled("div")`
 export const Link = styled(_Link)`
   margin-bottom: 15px;
 
+  //removes the last element because it doesn't figure in the design
   @media ${({ theme }) => theme.breakpoint.max.S} {
     > span {
       display: none;
@@ -116,7 +122,6 @@ export const Copyright = styled(Typography.Paragraph).attrs({ variant: "xs" })`
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
     flex-direction: column;
-    padding-right: 10px;
     margin-top: 45px;
 
     > span {

@@ -43,7 +43,6 @@ export const GlobalStyles = createGlobalStyle`
 
         @media ${({ theme }) => theme.breakpoint.max.S} {
             padding:0 20px ;
-
     }
     }
  
