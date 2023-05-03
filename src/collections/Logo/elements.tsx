@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Typography, ImageWrapper as _ImageWrapper, Button as _Button } from "components";
 
-export const LogoWrapper = styled("div")`
+export const LogoContainer = styled("div")`
   height: fit-content;
   display: flex;
   align-items: center;

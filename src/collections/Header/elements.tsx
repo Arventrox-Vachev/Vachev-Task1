@@ -14,6 +14,7 @@ export const Header = styled("header")<HeaderProps>`
   }
 `;
 
+// doesn't work if its just styled(_Logo)
 export const Logo = styled(({ ...props }) => <_Logo {...props} />)``;
 
 export const Button = styled(_Button)`

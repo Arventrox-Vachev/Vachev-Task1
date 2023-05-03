@@ -111,4 +111,8 @@ export const ImageWrapper = styled(_ImageWrapper)`
     order: 1;
     min-width: 281px;
   }
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    min-width: auto;
+  }
 `;

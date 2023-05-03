@@ -6,7 +6,7 @@ export interface LogoProps {}
 
 export const Logo = ({ ...props }: LogoProps) => {
   return (
-    <S.LogoWrapper {...props}>
+    <S.LogoContainer {...props}>
       <S.ImageWrapper>
         <Image
           src={logoContent.src}
@@ -16,6 +16,6 @@ export const Logo = ({ ...props }: LogoProps) => {
         />
       </S.ImageWrapper>
       <S.LogoText {...props}>{logoContent.logoText}</S.LogoText>
-    </S.LogoWrapper>
+    </S.LogoContainer>
   );
 };

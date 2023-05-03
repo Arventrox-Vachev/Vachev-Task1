@@ -53,9 +53,11 @@ export const TextContainer = styled(_TextContainer)`
   }
 `;
 
+// doesn't work if its just styled(_Logo)
 export const Logo = styled(props => <_Logo {...props} />).attrs({ variant: "sm" })`
   padding-right: 6px;
   font-size: 16px;
+
   > p {
     padding: 4px 0 0 6px;
   }
