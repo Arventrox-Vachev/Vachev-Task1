@@ -9,9 +9,9 @@ import { JoinWaitingListForm as _JoinWaitingListForm } from "collections";
 export const SectionContainer = styled(_SectionContainer).attrs({ variant: "secondary" })`
   background-image: url(./imgs/HERO.png);
   background-repeat: no-repeat;
-  background-size: 78%;
-  background-position-y: 2vw;
-  background-position-x: 109%;
+  background-size: min(75%, 1080px);
+  background-position-y: 3.5vh;
+  background-position-x: 100%;
 
   @media ${({ theme }) => theme.breakpoint.max.L} {
     background-size: 80%;
@@ -20,15 +20,15 @@ export const SectionContainer = styled(_SectionContainer).attrs({ variant: "seco
   }
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
-    background-size: contain;
+    background-size: clamp(600px, 130%, 950px);
     background-position-y: 0;
-    background-position-x: -12vw;
+    background-position-x: right;
   }
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
     background-size: 551px;
-    background-position-y: -26px;
-    background-position-x: clamp(-177px, 78%, -75px);
+    background-position-y: -28px;
+    background-position-x: clamp(-158px, 100%, 50px);
   }
 `;
 
@@ -39,6 +39,14 @@ export const TextContainer = styled(_TextContainer)`
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
     flex-basis: 100%;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    flex-basis: 100%;
+    text-align: left;
     align-items: center;
   }
 `;
@@ -48,7 +56,11 @@ export const Title = styled(Typography.H1)`
   text-align: left;
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
+    text-align: center;
+  }
+  @media ${({ theme }) => theme.breakpoint.max.S} {
     padding: 0 53px 23px 0;
+    text-align: left;
   }
 `;
 

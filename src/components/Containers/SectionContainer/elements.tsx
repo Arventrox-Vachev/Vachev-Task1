@@ -18,33 +18,34 @@ const sectionStyles: Record<
     align-items: center;
 
     @media ${({ theme }) => theme.breakpoint.max.S} {
-      max-width: 559px;
       margin-bottom: 40px;
     }
   `,
 
   secondary: css`
+    padding: 0 40px;
     padding-top: 30px;
     padding-bottom: 80px;
+    margin: 0;
 
     @media ${({ theme }) => theme.breakpoint.max.M} {
-      max-width: 899px;
-      padding: 360px 0 40px 0;
+      padding: 420px 0 40px 0;
     }
 
     @media ${({ theme }) => theme.breakpoint.max.S} {
-      max-width: 599px;
-      padding: 259px 0 40px 0;
+      margin: 0;
+      padding: 240px 0 20px 0;
     }
   `
 };
 
 export const SectionContainer = styled("section")<SectionContainerProps>`
   display: flex;
-  max-width: 1360px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 40px;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    margin: 0 20px;
+  }
 
   ${({ variant }) => sectionStyles[variant!]}
 `;
