@@ -12,8 +12,7 @@ export const Footer = styled("footer")`
   overflow-x: hidden;
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    padding: 40px;
-    margin-top: 45px;
+    padding: 44px 40px;
   }
 `;
 

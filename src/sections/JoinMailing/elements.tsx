@@ -38,6 +38,5 @@ export const JoinWaitingListForm = styled(_JoinWaitingListForm)`
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
     padding: 20px;
-    margin: 0 20px;
   }
 `;

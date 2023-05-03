@@ -18,7 +18,6 @@ export const Title = styled(Typography.H1)`
   width: 100%;
   padding: 80px 30px;
   border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
-  text-align: center;
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
     padding: 42px 20px;

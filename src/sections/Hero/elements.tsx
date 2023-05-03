@@ -11,18 +11,16 @@ export const SectionContainer = styled(_SectionContainer).attrs({ variant: "seco
   background-repeat: no-repeat;
   background-size: min(75%, 1080px);
   background-position-y: 3.5vh;
-  background-position-x: 100%;
+  background-position-x: right;
 
   @media ${({ theme }) => theme.breakpoint.max.L} {
     background-size: 75%;
     background-position-y: 50%;
-    background-position-x: 100%;
   }
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
     background-size: clamp(600px, 130%, 950px);
     background-position-y: 0;
-    background-position-x: right;
   }
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
@@ -45,9 +43,7 @@ export const TextContainer = styled(_TextContainer)`
   }
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    flex-basis: 100%;
     text-align: left;
-    align-items: center;
   }
 `;
 
@@ -68,12 +64,12 @@ export const SubHeading = styled(Typography.H3)`
   padding-bottom: 28px;
   font-weight: 300;
 
-  @media ${({ theme }) => theme.breakpoint.max.M} {
-    padding-right: 45px;
-  }
-
   &:last-of-type {
     padding-bottom: 40px;
+  }
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    padding-right: 45px;
   }
 `;
 

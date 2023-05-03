@@ -16,16 +16,10 @@ const sectionStyles: Record<
     border-radius: 16px;
     flex-direction: column;
     align-items: center;
-
-    @media ${({ theme }) => theme.breakpoint.max.S} {
-      margin-bottom: 40px;
-    }
   `,
 
   secondary: css`
-    padding: 0 40px;
-    padding-top: 30px;
-    padding-bottom: 80px;
+    padding: 30px 40px 80px;
     margin: 0;
 
     @media ${({ theme }) => theme.breakpoint.max.M} {
@@ -42,9 +36,11 @@ const sectionStyles: Record<
 export const SectionContainer = styled("section")<SectionContainerProps>`
   display: flex;
   margin: 0 40px;
+  max-width: 1440px;
+  width: 100%;
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    margin: 0 20px;
+    margin: 0 20px 40px;
   }
 
   ${({ variant }) => sectionStyles[variant!]}
