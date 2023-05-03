@@ -16,6 +16,11 @@ const sectionStyles: Record<
     border-radius: 16px;
     flex-direction: column;
     align-items: center;
+    width: calc(100% - 80px);
+
+    @media ${({ theme }) => theme.breakpoint.max.S} {
+      width: calc(100% - 40px);
+    }
   `,
 
   secondary: css`
@@ -35,13 +40,7 @@ const sectionStyles: Record<
 
 export const SectionContainer = styled("section")<SectionContainerProps>`
   display: flex;
-  margin: 0 40px;
   max-width: 1440px;
   width: 100%;
-
-  @media ${({ theme }) => theme.breakpoint.max.S} {
-    margin: 0 20px 40px;
-  }
-
   ${({ variant }) => sectionStyles[variant!]}
 `;
