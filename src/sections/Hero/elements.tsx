@@ -14,9 +14,9 @@ export const SectionContainer = styled(_SectionContainer).attrs({ variant: "seco
   background-position-x: 100%;
 
   @media ${({ theme }) => theme.breakpoint.max.L} {
-    background-size: 80%;
+    background-size: 75%;
     background-position-y: 50%;
-    background-position-x: 120%;
+    background-position-x: 100%;
   }
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
