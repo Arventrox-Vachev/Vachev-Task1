@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import { Button as _Button } from "components";
-import { Logo as _Logo } from "collections";
-import type { HeaderProps } from "./Header";
+import { Logo as _Logo } from "collections/Logo";
 
-export const Header = styled("header")<HeaderProps>`
-  padding: 23.5px 41px;
+export const Header = styled("header")`
+  padding: 20px 41px;
   display: flex;
   align-items: center;
   border-bottom: 2px solid ${({ theme }) => theme.colors.primary};
@@ -15,7 +14,7 @@ export const Header = styled("header")<HeaderProps>`
 `;
 
 // doesn't work if its just styled(_Logo)
-export const Logo = styled(({ ...props }) => <_Logo {...props} />)``;
+export const Logo = styled(_Logo)``;
 
 export const Button = styled(_Button)`
   margin-left: auto;

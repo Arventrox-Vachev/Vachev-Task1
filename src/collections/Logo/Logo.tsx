@@ -1,21 +1,19 @@
 import * as S from "./elements";
-import Image from "next/image";
-import { logoContent } from "data";
+import Image, { ImageProps } from "next/image";
+import { HTMLDivProps } from "types";
 
-export interface LogoProps {}
+export interface LogoProps {
+  title: string;
+  image: ImageProps;
+}
 
-export const Logo = ({ ...props }: LogoProps) => {
+export const Logo = ({ title, image, ...props }: LogoProps & HTMLDivProps) => {
   return (
     <S.LogoContainer {...props}>
       <S.ImageWrapper>
-        <Image
-          src={logoContent.src}
-          alt={logoContent.alt}
-          width={logoContent.width}
-          height={logoContent.height}
-        />
+        <Image {...image} />
       </S.ImageWrapper>
-      <S.LogoText {...props}>{logoContent.logoText}</S.LogoText>
+      <S.LogoText>{title}</S.LogoText>
     </S.LogoContainer>
   );
 };

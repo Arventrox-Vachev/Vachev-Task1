@@ -1,14 +1,20 @@
 import * as S from "./elements";
 import type { HTMLHeaderProps } from "types";
-import { headerContent } from "data";
+import { ImageProps } from "next/image";
 
-export interface HeaderProps {}
+export interface HeaderProps {
+  buttonText: string;
+  logo: {
+    title: string;
+    image: ImageProps;
+  };
+}
 
-export const Header = ({ ...props }: HeaderProps & HTMLHeaderProps) => {
+export const Header = ({ buttonText, logo, ...props }: HeaderProps & HTMLHeaderProps) => {
   return (
     <S.Header {...props}>
-      <S.Logo />
-      <S.Button>{headerContent.buttonText}</S.Button>
+      <S.Logo {...logo} />
+      <S.Button>{buttonText}</S.Button>
     </S.Header>
   );
 };

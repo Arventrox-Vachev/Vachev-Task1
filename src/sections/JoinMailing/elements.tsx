@@ -5,7 +5,7 @@ import { JoinWaitingListForm as _JoinWaitingListForm } from "collections";
 export const SectionContainer = styled(_SectionContainer)`
   flex-direction: column;
   align-items: center;
-  padding: 80px 0;
+  padding-top: 80px;
 
   background-image: url(./imgs/Data.png);
   background-repeat: no-repeat;
@@ -14,7 +14,7 @@ export const SectionContainer = styled(_SectionContainer)`
   background-position-y: -38px;
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    padding: 36px 0;
+    padding: 36px 20px;
     background-position-y: -114px;
   }
 `;
@@ -22,6 +22,10 @@ export const SectionContainer = styled(_SectionContainer)`
 export const Title = styled(Typography.H1)`
   width: 100%;
   margin-bottom: 40px;
+
+  > span {
+    color: ${({ theme }) => theme.colors.yellow};
+  }
 
   //resets the color for the first word
   @media ${({ theme }) => theme.breakpoint.max.S} {

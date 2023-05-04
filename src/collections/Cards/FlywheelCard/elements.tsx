@@ -1,9 +1,5 @@
 import styled from "styled-components";
-import {
-  TextContainer as _TextContainer,
-  Typography,
-  ImageWrapper as _ImageWrapper
-} from "components";
+import { Typography } from "components";
 
 export const FlywheelCardContainer = styled("div")`
   max-width: 280px;
@@ -21,7 +17,10 @@ export const Title = styled(Typography.H2)`
 
 export const Text = styled(Typography.Paragraph).attrs({ variant: "sm" })``;
 
-export const ImageWrapper = styled(_ImageWrapper)`
-  min-width: 102px;
-  justify-content: flex-start;
+export const ImageWrapper = styled("div")`
+  display: flex;
+
+  @media ${({ theme }) => theme.breakpoint.min.M} {
+    display: none;
+  }
 `;

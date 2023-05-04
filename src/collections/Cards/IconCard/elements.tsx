@@ -1,9 +1,5 @@
 import styled from "styled-components";
-import {
-  TextContainer as _TextContainer,
-  Typography,
-  ImageWrapper as _ImageWrapper
-} from "components";
+import { Typography } from "components";
 
 export const IconWrapper = styled("div")`
   display: flex;
@@ -12,12 +8,12 @@ export const IconWrapper = styled("div")`
   gap: 20px;
 `;
 
-export const ImageWrapper = styled(_ImageWrapper)`
+export const ImageWrapper = styled("div")`
   margin-bottom: auto;
   min-width: 80px;
 `;
 
-export const TextContainer = styled(_TextContainer)`
+export const TextContainer = styled("div")`
   display: flex;
   flex-direction: column;
   max-width: 451px;

@@ -1,28 +1,50 @@
 import * as S from "./elements";
 import type { HTMLFooterProps } from "types";
-import { footerContent } from "data";
 import { useMediaQuery } from "hooks";
+import { ImageProps } from "next/image";
 
-export interface FooterProps {}
+export interface FooterProps {
+  desktopDescription: string;
+  mobileDescription: string;
+  logo: {
+    title: string;
+    image: ImageProps;
+  };
+  navItems: {
+    title: string;
+    links: string[];
+  }[];
+  desktopCopyright: string;
+  mobileCopyright: string;
+}
 
-export const Footer = ({ ...props }: FooterProps & HTMLFooterProps) => {
+export const Footer = ({
+  desktopDescription,
+  mobileDescription,
+  logo,
+  navItems,
+  desktopCopyright,
+  mobileCopyright,
+  ...props
+}: FooterProps & HTMLFooterProps) => {
   const [isSmallScreenDevice] = useMediaQuery({ type: "max", breakpoint: "S" });
+  const copyright = isSmallScreenDevice ? mobileCopyright : desktopCopyright;
+  const description = isSmallScreenDevice ? mobileDescription : desktopDescription;
 
   return (
     <S.Footer {...props}>
       <S.HolderContainer>
         <S.TextContainer>
-          <S.Logo />
-          {!isSmallScreenDevice && <S.Text>{footerContent.description}</S.Text>}
-          {isSmallScreenDevice && <S.Text>{footerContent.mobileText}</S.Text>}
+          <S.Logo {...logo} />
+          <S.Text>{description}</S.Text>
         </S.TextContainer>
 
         <S.NavContainer>
-          {footerContent.items.map((item, index) => (
+          {navItems.map((navItem, index) => (
             <S.NavSubContainer key={index}>
-              <S.Title>{item.title}</S.Title>
+              <S.Title>{navItem.title}</S.Title>
 
-              {item.links.map((link, index) => (
+              {navItem.links.map((link, index) => (
                 <S.Link key={index} dangerouslySetInnerHTML={{ __html: link }} />
               ))}
             </S.NavSubContainer>
@@ -30,12 +52,7 @@ export const Footer = ({ ...props }: FooterProps & HTMLFooterProps) => {
         </S.NavContainer>
       </S.HolderContainer>
 
-      {!isSmallScreenDevice && (
-        <S.Copyright dangerouslySetInnerHTML={{ __html: footerContent.copyright }} />
-      )}
-      {isSmallScreenDevice && (
-        <S.Copyright dangerouslySetInnerHTML={{ __html: footerContent.mobileCopyright }} />
-      )}
+      <S.Copyright dangerouslySetInnerHTML={{ __html: copyright }} />
     </S.Footer>
   );
 };

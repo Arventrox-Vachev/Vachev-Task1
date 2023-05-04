@@ -1,14 +1,20 @@
 import styled from "styled-components";
-import { SectionContainer as _SectionContainer, Typography } from "components";
+import { SectionContainer as _SectionContainer, Typography, Card as _Card } from "components";
 import { IconCard as _IconCard } from "collections";
 
-export const SectionContainer = styled(_SectionContainer).attrs({ variant: "primary" })``;
+export const SectionContainer = styled(_SectionContainer)``;
+
+export const Card = styled(_Card)``;
 
 export const Title = styled(Typography.H1)`
   width: 100%;
   padding: 80px 30px;
   border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
   text-align: center;
+
+  > span {
+    color: ${({ theme }) => theme.colors.yellow};
+  }
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
     padding: 42px 20px;

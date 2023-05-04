@@ -1,34 +1,23 @@
 import * as S from "./elements";
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
+import { HTMLDivProps } from "types";
 
 export interface IconCardProps {
-  card: {
-    title: string;
-    description: string;
-    icon: {
-      src: string;
-      alt: string;
-      width: number;
-      height: number;
-    };
-  };
+  title: string;
+  description: string;
+  image: ImageProps;
 }
 
-export const IconCard = ({ card, ...props }: IconCardProps) => {
+export const IconCard = ({ title, description, image, ...props }: IconCardProps & HTMLDivProps) => {
   return (
     <S.IconWrapper {...props}>
       <S.ImageWrapper>
-        <Image
-          src={card.icon.src}
-          alt={card.icon.alt}
-          width={card.icon.width}
-          height={card.icon.height}
-        />
+        <Image {...image} />
       </S.ImageWrapper>
 
       <S.TextContainer>
-        <S.Title>{card.title}</S.Title>
-        <S.Text>{card.description}</S.Text>
+        <S.Title>{title}</S.Title>
+        <S.Text>{description}</S.Text>
       </S.TextContainer>
     </S.IconWrapper>
   );

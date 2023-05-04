@@ -1,12 +1,14 @@
 import * as S from "./elements";
-import { mailingListContent } from "data";
+import { HTMLSectionProps } from "types";
 
-export interface JoinMailingProps {}
+export interface JoinMailingProps {
+  title: string;
+}
 
-export const JoinMailing = ({ ...props }: JoinMailingProps) => {
+export const JoinMailing = ({ title, ...props }: JoinMailingProps & HTMLSectionProps) => {
   return (
-    <S.SectionContainer>
-      <S.Title dangerouslySetInnerHTML={{ __html: mailingListContent.title }} />
+    <S.SectionContainer {...props}>
+      <S.Title dangerouslySetInnerHTML={{ __html: title }} />
       <S.JoinWaitingListForm />
     </S.SectionContainer>
   );

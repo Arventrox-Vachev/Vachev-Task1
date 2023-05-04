@@ -1,24 +1,31 @@
 import * as S from "./elements";
 import { useMediaQuery } from "hooks";
-import { iconsContent } from "data";
+import { ImageProps } from "next/image";
 
-export interface IconsProps {}
+export interface IconsProps {
+  title: string;
+  mobileTitle: string;
+  cards: {
+    title: string;
+    description: string;
+    image: ImageProps;
+  }[];
+}
 
-export const Icons = ({ ...props }: IconsProps) => {
+export const Icons = ({ title, mobileTitle, cards, ...props }: IconsProps) => {
   const [isSmallScreenDevice] = useMediaQuery({ type: "max", breakpoint: "S" });
-
+  const sectionTitle = isSmallScreenDevice ? mobileTitle : title;
   return (
-    <S.SectionContainer>
-      {!isSmallScreenDevice && <S.Title dangerouslySetInnerHTML={{ __html: iconsContent.title }} />}
-      {isSmallScreenDevice && (
-        <S.Title dangerouslySetInnerHTML={{ __html: iconsContent.mobileTitle }} />
-      )}
+    <S.SectionContainer {...props}>
+      <S.Card>
+        <S.Title dangerouslySetInnerHTML={{ __html: sectionTitle }} />
 
-      <S.IconsContainer>
-        {iconsContent.cards.map((card, index) => (
-          <S.IconCard key={index} card={card} />
-        ))}
-      </S.IconsContainer>
+        <S.IconsContainer>
+          {cards.map((cardProps, index) => (
+            <S.IconCard key={index} {...cardProps} />
+          ))}
+        </S.IconsContainer>
+      </S.Card>
     </S.SectionContainer>
   );
 };

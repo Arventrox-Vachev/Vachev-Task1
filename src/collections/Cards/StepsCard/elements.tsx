@@ -1,9 +1,5 @@
 import styled from "styled-components";
-import {
-  ImageWrapper as _ImageWrapperWrapper,
-  TextContainer as _TextContainer,
-  Typography
-} from "components";
+import { Typography } from "components";
 
 export const CardContainer = styled("div")`
   display: flex;
@@ -59,9 +55,13 @@ export const CardContainer = styled("div")`
   }
 `;
 
-export const ImageWrapper = styled(_ImageWrapperWrapper)``;
+export const ImageWrapper = styled("div")`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
-export const TextContainer = styled(_TextContainer)`
+export const TextContainer = styled("div")`
   display: flex;
   flex-direction: column;
   padding-right: 24px;

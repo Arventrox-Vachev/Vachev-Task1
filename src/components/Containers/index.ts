@@ -1,3 +1,2 @@
 export * from "./SectionContainer";
-export * from "./TextContainer";
-export * from "./ImageWrapper";
+export * from "./Card";

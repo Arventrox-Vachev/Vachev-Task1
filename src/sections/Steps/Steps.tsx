@@ -1,18 +1,30 @@
 import * as S from "./elements";
-import { stepsContent } from "data";
+import { ImageProps } from "next/image";
+import { HTMLSectionProps } from "types";
 
-export interface StepsProps {}
+export interface StepsProps {
+  title: string;
+  cards: {
+    number: number;
+    title: string;
+    subtitle: string;
+    description: string;
+    image: ImageProps;
+  }[];
+}
 
-export const Steps = ({ ...props }: StepsProps) => {
+export const Steps = ({ title, cards, ...props }: StepsProps & HTMLSectionProps) => {
   return (
-    <S.SectionContainer>
-      <S.Title dangerouslySetInnerHTML={{ __html: stepsContent.title }} />
+    <S.SectionContainer {...props}>
+      <S.Card>
+        <S.Title dangerouslySetInnerHTML={{ __html: title }} />
 
-      <S.StepsCardsWrapper>
-        {stepsContent.cards.map((card, index) => (
-          <S.StepsCard key={index} card={card} />
-        ))}
-      </S.StepsCardsWrapper>
+        <S.StepsCardsWrapper>
+          {cards.map((cardProps, index) => (
+            <S.StepsCard key={index} {...cardProps} />
+          ))}
+        </S.StepsCardsWrapper>
+      </S.Card>
     </S.SectionContainer>
   );
 };

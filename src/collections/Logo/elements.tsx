@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Typography, ImageWrapper as _ImageWrapper, Button as _Button } from "components";
+import { Typography, Button as _Button } from "components";
 
 export const LogoContainer = styled("div")`
   height: fit-content;
@@ -8,9 +8,10 @@ export const LogoContainer = styled("div")`
   justify-content: center;
 `;
 
-export const ImageWrapper = styled(_ImageWrapper)`
-  width: 100%;
-  min-width: 60.59px;
+export const ImageWrapper = styled("div")`
+  display: flex;
+  align-items: center;
+  min-width: 53px;
 `;
 
 export const LogoText = styled(Typography.Paragraph).attrs({ variant: "md" })`

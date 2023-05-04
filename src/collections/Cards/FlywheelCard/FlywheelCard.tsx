@@ -1,37 +1,26 @@
 import * as S from "./elements";
-import Image from "next/image";
-import { useMediaQuery } from "hooks";
+import Image, { ImageProps } from "next/image";
+import { HTMLDivProps } from "types";
 
 export interface FlywheelCardProps {
-  card: {
-    title: string;
-    description: string;
-    icon: {
-      src: string;
-      alt: string;
-      width: number;
-      height: number;
-    };
-  };
+  title: string;
+  description: string;
+  image: ImageProps;
 }
 
-export const FlywheelCard = ({ card, ...props }: FlywheelCardProps) => {
-  const [isSmallScreenDevice] = useMediaQuery({ type: "max", breakpoint: "M" });
-
+export const FlywheelCard = ({
+  title,
+  description,
+  image,
+  ...props
+}: FlywheelCardProps & HTMLDivProps) => {
   return (
     <S.FlywheelCardContainer {...props}>
-      {isSmallScreenDevice && (
-        <S.ImageWrapper>
-          <Image
-            src={card.icon.src}
-            alt={card.icon.alt}
-            width={card.icon.width}
-            height={card.icon.height}
-          />
-        </S.ImageWrapper>
-      )}
-      <S.Title>{card.title}</S.Title>
-      <S.Text>{card.description}</S.Text>
+      <S.ImageWrapper>
+        <Image {...image} />
+      </S.ImageWrapper>
+      <S.Title>{title}</S.Title>
+      <S.Text>{description}</S.Text>
     </S.FlywheelCardContainer>
   );
 };

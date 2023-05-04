@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { TextContainer as _TextContainer, Link as _Link, Typography } from "components";
-import { Logo as _Logo } from "collections";
+import { Link as _Link, Typography } from "components";
+import { Logo as _Logo } from "collections/Logo";
 
 export const Footer = styled("footer")`
   min-height: 322px;
@@ -17,7 +17,7 @@ export const Footer = styled("footer")`
 `;
 
 export const HolderContainer = styled("div")`
-  padding-right: min(10vw, 137px);
+  padding-right: min(10vw, 135px);
   margin-left: auto;
   margin-right: auto;
 
@@ -32,8 +32,10 @@ export const HolderContainer = styled("div")`
   }
 `;
 
-export const TextContainer = styled(_TextContainer)`
+export const TextContainer = styled("div")`
   display: flex;
+  align-items: center;
+  height: fit-content;
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
     width: 100%;
@@ -49,12 +51,17 @@ export const TextContainer = styled(_TextContainer)`
 `;
 
 // doesn't work if its just styled(_Logo)
-export const Logo = styled(props => <_Logo {...props} />).attrs({ variant: "sm" })`
+export const Logo = styled(_Logo)`
   font-size: 16px;
   padding-right: 41px;
 
   > p {
-    padding: 4px 0 0 6px;
+    font-size: 16px;
+    padding: 4px 0 0 10px;
+  }
+
+  > div {
+    max-width: 51px;
   }
 
   @media ${({ theme }) => theme.breakpoint.max.M} {

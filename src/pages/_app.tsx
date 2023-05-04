@@ -4,6 +4,7 @@ import Head from "next/head";
 import { ThemeProvider } from "styled-components";
 import { theme, GlobalStyles } from "styles";
 import { Header, Footer } from "collections";
+import { headerProps, footerProps } from "data";
 import TagManager from "react-gtm-module";
 
 const tagManagerArgs = {
@@ -26,9 +27,9 @@ function MyApp({ Component, pageProps: { ...pageProps } }: AppProps) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <GlobalStyles />
-      <Header />
+      <Header {...headerProps} />
       <Component {...pageProps} />
-      <Footer />
+      <Footer {...footerProps} />
     </ThemeProvider>
   );
 }

@@ -1,10 +1,8 @@
 import * as S from "./elements";
-import { HTMLDivProps } from "types";
+import { HTMLSectionProps } from "types";
 
-export interface SectionContainerProps {
-  variant?: "primary" | "secondary";
-}
+export interface SectionContainerProps {}
 
-export const SectionContainer = ({ ...props }: SectionContainerProps & HTMLDivProps) => (
+export const SectionContainer = ({ ...props }: SectionContainerProps & HTMLSectionProps) => (
   <S.SectionContainer {...props} />
 );
