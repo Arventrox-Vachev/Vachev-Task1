@@ -32,6 +32,7 @@ export const IconsContainer = styled("div")`
     grid-template-columns: repeat(1, 1fr);
     margin: 20px;
     gap: 0;
+    gap: 0;
   }
 `;
 
