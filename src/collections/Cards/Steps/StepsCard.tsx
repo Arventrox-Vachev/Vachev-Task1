@@ -27,7 +27,7 @@ export const StepsCard = ({
       <S.TextContainer>
         <S.NumberWrapper>{number}</S.NumberWrapper>
         <S.Title>{title}</S.Title>
-        <S.HighlightedText>{subtitle}</S.HighlightedText>
+        <S.Subtitle>{subtitle}</S.Subtitle>
         <S.Text>{description}</S.Text>
       </S.TextContainer>
     </S.StepsCardContainer>
