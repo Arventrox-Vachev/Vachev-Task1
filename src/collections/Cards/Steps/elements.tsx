@@ -102,7 +102,7 @@ export const Title = styled(Typography.H2)`
   color: ${({ theme }) => theme.colors.yellow};
 `;
 
-export const HighlightedText = styled(Typography.Paragraph).attrs({ variant: "sm" })`
+export const Subtitle = styled(Typography.Paragraph).attrs({ variant: "sm" })`
   font-weight: 500;
 `;
 

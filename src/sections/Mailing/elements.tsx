@@ -7,7 +7,7 @@ export const SectionContainer = styled(_SectionContainer)`
   align-items: center;
   padding-top: 80px;
 
-  background-image: url(./imgs/Data.png);
+  background-image: url(./imgs/data_banner.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 88px;

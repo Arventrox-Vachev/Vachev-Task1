@@ -20,13 +20,13 @@ export const JoinWaitingListForm = ({
       <S.Title dangerouslySetInnerHTML={{ __html: title }} />
 
       <S.InputWrapper>
-        <S.InputField type='text' placeholder={emailHolder} />
+        <S.InputField placeholder={emailHolder} />
         <S.Button>{buttonText}</S.Button>
       </S.InputWrapper>
 
       {policiesText.map((policy, index) => (
         <S.InputWrapper key={index}>
-          <S.Checkbox type='checkbox'></S.Checkbox>
+          <S.Checkbox />
           <S.Label dangerouslySetInnerHTML={{ __html: policy }} />
         </S.InputWrapper>
       ))}

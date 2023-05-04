@@ -1,6 +1,6 @@
 import * as S from "./elements";
-import type { HTMLHeaderProps } from "types";
 import { ImageProps } from "next/image";
+import type { HTMLHeaderProps } from "types";
 
 export interface HeaderProps {
   buttonText: string;
