@@ -1,4 +1,6 @@
-export const headerProps = {
+import { HeaderProps } from "collections";
+
+export const headerProps: HeaderProps = {
   buttonText: "Login",
   logo: {
     title: "CampaignMeister",

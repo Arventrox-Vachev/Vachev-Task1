@@ -13,7 +13,6 @@ export const Header = styled("header")`
   }
 `;
 
-// doesn't work if its just styled(_Logo)
 export const Logo = styled(_Logo)``;
 
 export const Button = styled(_Button)`

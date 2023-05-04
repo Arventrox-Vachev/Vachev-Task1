@@ -1,4 +1,6 @@
-export const heroSectionProps = {
+import { HeroProps } from "sections";
+
+export const heroSectionProps: HeroProps = {
   title:
     "<span>The ugly truth: Your campaign data are a mess.</span> By fixing it, you can improve your campaign performance with over 25%.",
   subtitles: [
@@ -10,5 +12,14 @@ export const heroSectionProps = {
     alt: "hero",
     width: 740,
     height: 499
+  },
+  joinWaitingListFormProps: {
+    title: "<span>Join</span> waiting list for access",
+    emailHolder: "Enter email",
+    buttonText: "Join",
+    policiesText: [
+      "I agree to the <span>Terms & Conditions</span> and the <span>Privacy Policy</span>",
+      "I want to subscribe to the newsletter "
+    ]
   }
 };

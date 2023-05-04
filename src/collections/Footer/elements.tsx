@@ -50,7 +50,6 @@ export const TextContainer = styled("div")`
   }
 `;
 
-// doesn't work if its just styled(_Logo)
 export const Logo = styled(_Logo)`
   font-size: 16px;
   padding-right: 41px;
