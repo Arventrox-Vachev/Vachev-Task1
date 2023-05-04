@@ -45,7 +45,7 @@ export const Footer = ({
               <S.Title>{navItem.title}</S.Title>
 
               {navItem.links.map((link, index) => (
-                <S.Link key={index} dangerouslySetInnerHTML={{ __html: link }} />
+                <S.AnchorLink key={index} dangerouslySetInnerHTML={{ __html: link }} />
               ))}
             </S.NavSubContainer>
           ))}

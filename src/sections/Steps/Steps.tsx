@@ -16,7 +16,7 @@ export interface StepsProps {
 export const Steps = ({ title, cards, ...props }: StepsProps & HTMLSectionProps) => {
   return (
     <S.SectionContainer {...props}>
-      <S.Card>
+      <S.CardContainer>
         <S.Title dangerouslySetInnerHTML={{ __html: title }} />
 
         <S.StepsCardsWrapper>
@@ -24,7 +24,7 @@ export const Steps = ({ title, cards, ...props }: StepsProps & HTMLSectionProps)
             <S.StepsCard key={index} {...cardProps} />
           ))}
         </S.StepsCardsWrapper>
-      </S.Card>
+      </S.CardContainer>
     </S.SectionContainer>
   );
 };

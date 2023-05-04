@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { LinkProps } from "./Link";
 
-export const Link = styled("a")`
+export const AnchorLink = styled("a")`
   color: ${({ theme }) => theme.colors.link};
   font-family: "Barlow", sans-serif;
   font-style: normal;

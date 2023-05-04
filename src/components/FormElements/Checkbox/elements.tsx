@@ -16,12 +16,12 @@ export const Checkbox = styled("input")`
   }
 
   &:checked {
-    background-image: url(./imgs/active-button.png);
+    background-image: url(./imgs/active_button-image.png);
     background-size: contain;
     border: none;
 
     @media ${({ theme }) => theme.breakpoint.max.S} {
-      background-image: url(./imgs/mobile-active-button.png);
+      background-image: url(./imgs/mobile_active_button-image.png);
       min-width: 32px;
       min-height: 32px;
     }

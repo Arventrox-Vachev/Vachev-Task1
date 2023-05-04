@@ -8,7 +8,7 @@ export const heroSectionProps: HeroProps = {
     "Boost your  performance by fixing your data across all channels, brands and agencies."
   ],
   image: {
-    src: "/imgs/Hero-image.png",
+    src: "/imgs/hero-image.png",
     alt: "hero",
     width: 740,
     height: 499

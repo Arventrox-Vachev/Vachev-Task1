@@ -1,4 +1,5 @@
 import * as S from "./elements";
+import { HTMLFormProps } from "types";
 
 export interface JoinWaitingListFormProps {
   title: string;
@@ -13,7 +14,7 @@ export const JoinWaitingListForm = ({
   buttonText,
   policiesText,
   ...props
-}: JoinWaitingListFormProps) => {
+}: JoinWaitingListFormProps & HTMLFormProps) => {
   return (
     <S.FormContainer {...props}>
       <S.Title dangerouslySetInnerHTML={{ __html: title }} />

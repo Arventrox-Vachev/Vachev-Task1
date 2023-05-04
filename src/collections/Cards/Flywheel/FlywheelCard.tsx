@@ -19,6 +19,7 @@ export const FlywheelCard = ({
       <S.ImageWrapper>
         <Image {...image} />
       </S.ImageWrapper>
+
       <S.Title>{title}</S.Title>
       <S.Text>{description}</S.Text>
     </S.FlywheelCardContainer>

@@ -8,25 +8,22 @@ export const SectionContainer = styled(_SectionContainer)`
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
     flex-direction: column-reverse;
-    padding: 0;
     margin-top: 0;
   }
 `;
 
 export const ItemsContainer = styled("div")`
-  flex-direction: column;
   flex-basis: 501px;
   margin-right: auto;
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
     flex-basis: 100%;
-    padding: 20px 20px 0;
-    text-align: center;
-    align-items: center;
+    padding: 20px 60px 0;
   }
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    text-align: left;
+    padding: 0;
+    margin-top: 45px;
   }
 `;
 
@@ -40,7 +37,6 @@ export const Title = styled(Typography.H1)`
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
     text-align: center;
-    margin-bottom: 0;
   }
 
   @media ${({ theme }) => theme.breakpoint.max.S} {

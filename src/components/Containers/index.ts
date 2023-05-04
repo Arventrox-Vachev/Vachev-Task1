@@ -1,2 +1,2 @@
-export * from "./SectionContainer";
+export * from "./Section";
 export * from "./Card";

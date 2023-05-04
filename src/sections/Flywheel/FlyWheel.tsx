@@ -22,7 +22,7 @@ export const FlyWheel = ({
 }: FlyWheelProps & HTMLSectionProps) => {
   return (
     <S.SectionContainer {...props}>
-      <S.Card>
+      <S.CardContainer>
         <S.Title dangerouslySetInnerHTML={{ __html: title }} />
 
         <S.TextContainer>
@@ -40,7 +40,7 @@ export const FlyWheel = ({
             <Image {...image} />
           </S.ImageWrapper>
         </S.FlywheelWrapper>
-      </S.Card>
+      </S.CardContainer>
     </S.SectionContainer>
   );
 };

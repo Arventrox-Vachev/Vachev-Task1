@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Typography } from "components";
 
-export const CardContainer = styled("div")`
+export const StepsCardContainer = styled("div")`
   display: flex;
   flex-direction: column;
   border-right: 2px solid ${({ theme }) => theme.colors.secondary};
