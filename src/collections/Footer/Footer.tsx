@@ -35,7 +35,7 @@ export const Footer = ({
     <S.Footer {...props}>
       <S.HolderContainer>
         <S.TextContainer>
-          {/* <S.Logo {...logo} /> */}
+          <S.Logo {...logo} />
           <S.Text>{description}</S.Text>
         </S.TextContainer>
 
@@ -45,7 +45,7 @@ export const Footer = ({
               <S.Title>{navItem.title}</S.Title>
 
               {navItem.links.map((link, index) => (
-                <S.Link key={index} dangerouslySetInnerHTML={{ __html: link }} />
+                <S.AnchorLink key={index} dangerouslySetInnerHTML={{ __html: link }} />
               ))}
             </S.NavSubContainer>
           ))}

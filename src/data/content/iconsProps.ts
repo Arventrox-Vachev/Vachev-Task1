@@ -1,4 +1,6 @@
-export const iconsProps = {
+import { IconsProps } from "sections";
+
+export const iconsProps: IconsProps = {
   title: "The <span>Building Blocks</span> of CampaignMeister",
   mobileTitle: "Why <span>use</span> CampaignMeister ?",
   cards: [

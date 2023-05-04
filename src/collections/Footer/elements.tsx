@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link as _Link, Typography } from "components";
+import { AnchorLink as _AnchorLink, Typography } from "components";
 import { Logo as _Logo } from "collections/Logo";
 
 export const Footer = styled("footer")`
@@ -12,7 +12,7 @@ export const Footer = styled("footer")`
   overflow-x: hidden;
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    padding: 44px 40px;
+    padding: 48px 40px;
   }
 `;
 
@@ -50,7 +50,6 @@ export const TextContainer = styled("div")`
   }
 `;
 
-// doesn't work if its just styled(_Logo)
 export const Logo = styled(_Logo)`
   font-size: 16px;
   padding-right: 41px;
@@ -100,7 +99,7 @@ export const NavSubContainer = styled("div")`
   flex-direction: column;
 `;
 
-export const Link = styled(_Link)`
+export const AnchorLink = styled(_AnchorLink)`
   margin-bottom: 15px;
 
   //removes the last element because it doesn't figure in the design

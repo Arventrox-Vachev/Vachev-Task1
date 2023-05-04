@@ -1,6 +1,7 @@
 import * as S from "./elements";
 import { useMediaQuery } from "hooks";
 import { ImageProps } from "next/image";
+import { HTMLSectionProps } from "types";
 
 export interface IconsProps {
   title: string;
@@ -12,12 +13,13 @@ export interface IconsProps {
   }[];
 }
 
-export const Icons = ({ title, mobileTitle, cards, ...props }: IconsProps) => {
+export const Icons = ({ title, mobileTitle, cards, ...props }: IconsProps & HTMLSectionProps) => {
   const [isSmallScreenDevice] = useMediaQuery({ type: "max", breakpoint: "S" });
   const sectionTitle = isSmallScreenDevice ? mobileTitle : title;
+
   return (
     <S.SectionContainer {...props}>
-      <S.Card>
+      <S.CardContainer>
         <S.Title dangerouslySetInnerHTML={{ __html: sectionTitle }} />
 
         <S.IconsContainer>
@@ -25,7 +27,7 @@ export const Icons = ({ title, mobileTitle, cards, ...props }: IconsProps) => {
             <S.IconCard key={index} {...cardProps} />
           ))}
         </S.IconsContainer>
-      </S.Card>
+      </S.CardContainer>
     </S.SectionContainer>
   );
 };

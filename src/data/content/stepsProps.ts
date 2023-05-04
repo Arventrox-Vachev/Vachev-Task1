@@ -8,7 +8,7 @@ export const stepsProps = {
       description:
         "Create Smart Campaigns with clear goals, objectives and tactics across all brands, channels and agencies. Import all historic campaigns and learn about your performance drivers immediately.",
       image: {
-        src: "/imgs/image-step1.png",
+        src: "/imgs/step1-image.png",
         alt: "Organize",
         width: 193,
         height: 197
@@ -21,7 +21,7 @@ export const stepsProps = {
       description:
         "We combine all relevant data sources and ensure data quality through automated tests. Be informed upfront to any trend change through our automated anomaly detection.",
       image: {
-        src: "/imgs/image-step2.png",
+        src: "/imgs/step2-image.png",
         alt: "Analyze",
         width: 193,
         height: 197
@@ -34,7 +34,7 @@ export const stepsProps = {
       description:
         "Our Smart Insights Engine will combine historic campaign performance, marketing mix modeling and validated learnings to give you a clear holistic understanding in marketing performance and incrementality.",
       image: {
-        src: "/imgs/image-step3.png",
+        src: "/imgs/step3-image.png",
         alt: "Optimize",
         width: 193,
         height: 197

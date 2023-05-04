@@ -1,10 +1,14 @@
 import styled from "styled-components";
-import { SectionContainer as _SectionContainer, Typography, Card as _Card } from "components";
+import {
+  SectionContainer as _SectionContainer,
+  Typography,
+  CardContainer as _CardContainer
+} from "components";
 import { IconCard as _IconCard } from "collections";
 
 export const SectionContainer = styled(_SectionContainer)``;
 
-export const Card = styled(_Card)``;
+export const CardContainer = styled(_CardContainer)``;
 
 export const Title = styled(Typography.H1)`
   width: 100%;

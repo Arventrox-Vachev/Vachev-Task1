@@ -1,6 +1,6 @@
 import { NextPage } from "next";
-import { Hero, FlyWheel, Icons, Steps, JoinMailing } from "sections";
-import { heroSectionProps, flywheelProps, iconsProps, mailingListProps, stepsProps } from "data";
+import { Hero, FlyWheel, Icons, Steps, Mailing } from "sections";
+import { heroSectionProps, flywheelProps, iconsProps, mailingProps, stepsProps } from "data";
 
 const Home: NextPage = () => {
   return (
@@ -9,7 +9,7 @@ const Home: NextPage = () => {
       <FlyWheel {...flywheelProps} />
       <Icons {...iconsProps} />
       <Steps {...stepsProps} />
-      <JoinMailing {...mailingListProps} />
+      <Mailing {...mailingProps} />
     </main>
   );
 };

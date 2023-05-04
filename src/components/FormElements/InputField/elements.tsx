@@ -28,9 +28,4 @@ export const InputField = styled("input")`
     background-color: #ffffff;
     color: ${({ theme }) => theme.colors.black};
   }
-
-  //For later
-  /* &:valid {
-    border: 2px solid #3be100;
-  } */
 `;

@@ -6,9 +6,21 @@ export interface HeroProps {
   title: string;
   subtitles: string[];
   image: ImageProps;
+  joinWaitingListFormProps: {
+    title: string;
+    emailHolder: string;
+    buttonText: string;
+    policiesText: string[];
+  };
 }
 
-export const Hero = ({ title, subtitles, image, ...props }: HeroProps & HTMLSectionProps) => {
+export const Hero = ({
+  title,
+  subtitles,
+  image,
+  joinWaitingListFormProps,
+  ...props
+}: HeroProps & HTMLSectionProps) => {
   return (
     <S.SectionContainer {...props}>
       <S.ItemsContainer>
@@ -17,7 +29,7 @@ export const Hero = ({ title, subtitles, image, ...props }: HeroProps & HTMLSect
           <S.SubHeading key={index}>{subtitle}</S.SubHeading>
         ))}
 
-        <S.JoinWaitingListForm />
+        <S.JoinWaitingListForm {...joinWaitingListFormProps} />
       </S.ItemsContainer>
 
       <S.ImageWrapper>

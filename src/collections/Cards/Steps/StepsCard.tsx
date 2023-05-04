@@ -19,16 +19,17 @@ export const StepsCard = ({
   ...props
 }: StepsCardProps & HTMLDivProps) => {
   return (
-    <S.CardContainer {...props}>
+    <S.StepsCardContainer {...props}>
       <S.ImageWrapper>
         <Image {...image} />
       </S.ImageWrapper>
+
       <S.TextContainer>
         <S.NumberWrapper>{number}</S.NumberWrapper>
         <S.Title>{title}</S.Title>
         <S.HighlightedText>{subtitle}</S.HighlightedText>
         <S.Text>{description}</S.Text>
       </S.TextContainer>
-    </S.CardContainer>
+    </S.StepsCardContainer>
   );
 };

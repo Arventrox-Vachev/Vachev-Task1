@@ -1,3 +1,3 @@
-export * from "./FlywheelCard";
-export * from "./IconCard";
-export * from "./StepsCard";
+export * from "./Flywheel";
+export * from "./Icon";
+export * from "./Steps";
