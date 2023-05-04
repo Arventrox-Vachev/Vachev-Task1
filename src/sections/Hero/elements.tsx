@@ -11,7 +11,7 @@ export const SectionContainer = styled(_SectionContainer)`
     margin-top: 0;
   }
 `;
-
+//
 export const ItemsContainer = styled("div")`
   flex-basis: 501px;
   margin-right: auto;
