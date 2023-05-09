@@ -2,13 +2,18 @@ import * as S from "./elements";
 import Image, { ImageProps } from "next/image";
 import { HTMLDivProps } from "types";
 
-export interface IconCardProps {
+export interface IconsCardProps {
   title: string;
   description: string;
   image: ImageProps;
 }
 
-export const IconCard = ({ title, description, image, ...props }: IconCardProps & HTMLDivProps) => {
+export const IconsCard = ({
+  title,
+  description,
+  image,
+  ...props
+}: IconsCardProps & HTMLDivProps) => {
   return (
     <S.IconWrapper {...props}>
       <S.ImageWrapper>

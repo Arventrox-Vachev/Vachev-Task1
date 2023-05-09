@@ -3,27 +3,24 @@ import { SectionContainer as _SectionContainer, Typography } from "components";
 import { JoinWaitingListForm as _JoinWaitingListForm } from "collections";
 
 export const SectionContainer = styled(_SectionContainer)`
-  margin-top: 33px;
-  display: flex;
+  padding-top: 32px;
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
+    padding-top: 0;
+    display: flex;
     flex-direction: column-reverse;
-    margin-top: 0;
-  }
-`;
-
-export const ItemsContainer = styled("div")`
-  flex-basis: 501px;
-  margin-right: auto;
-
-  @media ${({ theme }) => theme.breakpoint.max.M} {
-    flex-basis: 100%;
-    padding: 20px 60px 0;
   }
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
     padding: 0;
-    margin-top: 45px;
+  }
+`;
+
+export const ItemsContainer = styled("div")`
+  max-width: 500px;
+
+  @media ${({ theme }) => theme.breakpoint.max.S} {
+    padding: 0 20px;
   }
 `;
 
@@ -35,14 +32,9 @@ export const Title = styled(Typography.H1)`
     color: ${({ theme }) => theme.colors.yellow};
   }
 
-  @media ${({ theme }) => theme.breakpoint.max.M} {
-    text-align: center;
-  }
-
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    padding-right: 53px;
-    margin-bottom: 17px;
-    text-align: left;
+    margin-bottom: 20px;
+    padding-right: 80px;
   }
 `;
 
@@ -55,23 +47,26 @@ export const SubHeading = styled(Typography.H3)`
   }
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    padding-right: 45px;
+    padding-right: 44px;
   }
 `;
 
 export const ImageWrapper = styled("div")`
+  margin-left: auto;
   display: flex;
   align-items: center;
-  margin-top: 10px;
-
   background: radial-gradient(
     50% 50% at 50% 50%,
     rgba(31, 63, 112, 0.8) 0%,
     rgba(28, 47, 76, 0) 100%
   );
 
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    margin: 0 auto;
+  }
+
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    margin-top: 0;
+    margin-bottom: 16px;
   }
 `;
 

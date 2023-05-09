@@ -9,12 +9,12 @@ export const LogoContainer = styled("div")`
 `;
 
 export const ImageWrapper = styled("div")`
+  min-width: 52px;
   display: flex;
   align-items: center;
-  min-width: 53px;
 `;
 
 export const LogoText = styled(Typography.Paragraph).attrs({ variant: "md" })`
+  margin-left: 16px;
   color: ${({ theme }) => theme.colors.white};
-  padding-left: 15px;
 `;

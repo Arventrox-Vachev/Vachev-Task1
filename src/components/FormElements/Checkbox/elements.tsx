@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 export const Checkbox = styled("input")`
+  height: 20px;
+  width: 20px;
   margin: 0;
 
   appearance: none;
-  -webkit-appearance: none;
-  height: 20px;
-  width: 20px;
   border: 2px solid ${({ theme }) => theme.colors.link};
   border-radius: 4px;
   cursor: pointer;
@@ -16,20 +15,20 @@ export const Checkbox = styled("input")`
   }
 
   &:checked {
+    border: none;
     background-image: url(./imgs/active_button-image.png);
     background-size: contain;
-    border: none;
 
     @media ${({ theme }) => theme.breakpoint.max.S} {
-      background-image: url(./imgs/mobile_active_button-image.png);
       min-width: 32px;
       min-height: 32px;
+      background-image: url(./imgs/mobile_active_button-image.png);
     }
   }
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    height: auto;
-    width: auto;
+    height: 32px;
+    width: 32px;
     padding: 14px;
   }
 `;

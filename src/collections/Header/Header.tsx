@@ -1,13 +1,10 @@
 import * as S from "./elements";
-import { ImageProps } from "next/image";
 import type { HTMLHeaderProps } from "types";
+import { LogoProps } from "collections/Logo";
 
 export interface HeaderProps {
   buttonText: string;
-  logo: {
-    title: string;
-    image: ImageProps;
-  };
+  logo: LogoProps;
 }
 
 export const Header = ({ buttonText, logo, ...props }: HeaderProps & HTMLHeaderProps) => {

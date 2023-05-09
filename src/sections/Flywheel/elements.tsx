@@ -12,44 +12,50 @@ export const CardContainer = styled(_CardContainer)``;
 
 export const Title = styled(Typography.H1)`
   width: 100%;
-  padding: 80px 40px;
+  padding: 0 40px 80px;
+  margin-bottom: 40px;
   border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
 
   > span {
     color: ${({ theme }) => theme.colors.yellow};
   }
 
-  @media ${({ theme }) => theme.breakpoint.max.S} {
-    padding: 42px 20px;
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    padding: 0 20px 40px;
   }
 `;
 
 export const TextContainer = styled("div")`
+  padding: 0px 232px;
+  margin-bottom: 40px;
+
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 40px;
+
+  @media ${({ theme }) => theme.breakpoint.max.L} {
+    padding: 0 120px;
+  }
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
-    padding: 37px 40px;
+    padding: 0 60px;
   }
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    padding: 37px 21px;
+    padding: 0 20px;
   }
 `;
 
 export const Text = styled(Typography.Paragraph)`
-  max-width: 894px;
-  width: 100%;
   padding-right: 60px;
+  margin-bottom: 12px;
 
   &:first-child {
-    margin-bottom: 29px;
+    margin-bottom: 28px;
   }
 
-  @media ${({ theme }) => theme.breakpoint.max.S} {
+  @media ${({ theme }) => theme.breakpoint.max.M} {
     padding-right: 0px;
 
     &:first-child {
@@ -64,17 +70,15 @@ export const Text = styled(Typography.Paragraph)`
 
 export const FlywheelWrapper = styled("div")`
   width: 100%;
-  padding: 14px 116px 80px 116px;
-
+  padding: 0 116px;
   display: grid;
-  row-gap: 40px;
 
   @media ${({ theme }) => theme.breakpoint.max.L} {
-    padding: 14px 50px 80px 50px;
+    padding: 12px 52px;
   }
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
-    padding: 0 20px 40px;
+    padding: 0 20px;
     display: flex;
     flex-direction: column-reverse;
   }
@@ -84,9 +88,8 @@ export const FlywheelCard = styled(_FlywheelCard)`
   margin-top: auto;
 
   &:first-child {
+    margin: 0 auto 40px;
     grid-column: 1/4;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
@@ -98,6 +101,10 @@ export const FlywheelCard = styled(_FlywheelCard)`
 
     &:first-child {
       order: 1;
+    }
+
+    & + & {
+      margin: 0 auto 40px;
     }
   }
 
@@ -112,19 +119,17 @@ export const ImageWrapper = styled("div")`
   display: flex;
   align-items: center;
   justify-content: center;
+
   grid-column: 2 / 3;
   grid-row: 2;
 
   @media ${({ theme }) => theme.breakpoint.max.L} {
-    min-width: 330px;
+    min-width: 332px;
   }
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
-    order: 1;
-    min-width: 281px;
-  }
-
-  @media ${({ theme }) => theme.breakpoint.max.S} {
     min-width: auto;
+    margin-bottom: 40px;
+    order: 1;
   }
 `;

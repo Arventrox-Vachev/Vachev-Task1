@@ -8,56 +8,57 @@ import {
 } from "components";
 
 export const FormContainer = styled("form")`
-  max-width: 501px;
+  max-width: 500px;
   width: 100%;
-  padding: 20px 22px;
+  padding: 20px;
   border-radius: 16px;
   background-color: ${({ theme }) => theme.colors.primary};
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    padding: 20px 22px;
+    padding: 20px 24px;
   }
 `;
 
 export const InputWrapper = styled("div")`
+  margin-bottom: 16px;
   display: flex;
 
-  &:first-of-type {
-    padding: 16px 0 13px;
-    gap: 20px;
-  }
-
   & + & {
+    margin-bottom: 8px;
     align-items: center;
   }
 
   &:last-child {
-    margin-top: 10px;
+    margin-bottom: 0px;
   }
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
     &:last-child {
-      margin-top: 6px;
+      margin-top: 4px;
     }
   }
 `;
 
 export const Title = styled(Typography.H2)`
+  margin-bottom: 16px;
+
   > span {
     color: ${({ theme }) => theme.colors.yellow};
   }
 `;
 
-export const Checkbox = styled(_Checkbox)``;
-
-export const InputField = styled(_InputField)``;
-
-export const Label = styled(_Label)`
-  margin-left: 8px;
+export const Checkbox = styled(_Checkbox)`
+  margin-right: 8px;
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    margin-left: 18px;
+    margin-right: 16px;
   }
 `;
+
+export const InputField = styled(_InputField)`
+  margin-right: 20px;
+`;
+
+export const Label = styled(_Label)``;
 
 export const Button = styled(_Button).attrs({ variant: "secondary" })``;

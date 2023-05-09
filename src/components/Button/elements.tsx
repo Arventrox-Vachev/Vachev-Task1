@@ -11,7 +11,7 @@ const buttonStyles: Record<
   FlattenInterpolation<ThemedStyledProps<ButtonProps, DefaultTheme>>
 > = {
   primary: css`
-    width: 119px;
+    width: 120px;
 
     color: ${({ theme }) => theme.colors.white};
     background-color: ${({ theme }) => theme.colors.primary};
@@ -27,11 +27,11 @@ const buttonStyles: Record<
   `,
 
   secondary: css`
-    width: 125px;
+    width: 124px;
 
     color: ${({ theme }) => theme.colors.primary};
     background-color: ${({ theme }) => theme.colors.yellow};
-    padding: 14px 37px;
+    padding: 12px 36px;
     border: none;
     transition: color 500ms ease, background-color 500ms ease;
     border: 2px solid transparent;
@@ -45,7 +45,7 @@ const buttonStyles: Record<
 };
 
 export const Button = styled("button")<ButtonProps>`
-  height: 51px;
+  height: 50px;
 
   font-family: "Barlow", sans-serif;
   font-style: normal;
@@ -63,6 +63,6 @@ export const Button = styled("button")<ButtonProps>`
   ${({ variant }) => buttonStyles[variant!]}
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    width: 79px;
+    width: 80px;
   }
 `;

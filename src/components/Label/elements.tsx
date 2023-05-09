@@ -6,7 +6,6 @@ export const Label = styled("label")`
   font-weight: 300;
   font-size: 12px;
   line-height: 140%;
-  padding-top: 3px;
 
   > span {
     color: ${({ theme }) => theme.colors.yellow};

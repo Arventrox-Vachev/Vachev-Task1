@@ -1,14 +1,11 @@
 import * as S from "./elements";
 import { HTMLSectionProps } from "types";
+import { JoinWaitingListFormProps } from "collections";
+import Image from "next/image";
 
 export interface MailingProps {
   title: string;
-  joinWaitingListFormProps: {
-    title: string;
-    emailHolder: string;
-    buttonText: string;
-    policiesText: string[];
-  };
+  joinWaitingListFormProps: JoinWaitingListFormProps;
 }
 
 export const Mailing = ({

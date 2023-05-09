@@ -4,47 +4,65 @@ import {
   Typography,
   CardContainer as _CardContainer
 } from "components";
-import { IconCard as _IconCard } from "collections";
+import { IconsCard as _IconsCard } from "collections";
 
 export const SectionContainer = styled(_SectionContainer)``;
 
-export const CardContainer = styled(_CardContainer)``;
+export const CardContainer = styled(_CardContainer)`
+  padding-bottom: 104px;
+
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    padding-bottom: 36px;
+  }
+`;
 
 export const Title = styled(Typography.H1)`
   width: 100%;
-  padding: 80px 30px;
+  padding: 0 40px 80px;
+  margin-bottom: 80px;
   border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};
-  text-align: center;
 
   > span {
     color: ${({ theme }) => theme.colors.yellow};
   }
 
-  @media ${({ theme }) => theme.breakpoint.max.S} {
-    padding: 42px 20px;
+  @media ${({ theme }) => theme.breakpoint.max.M} {
+    padding: 0 20px 40px;
+    margin-bottom: 24px;
   }
 `;
 
 export const IconsContainer = styled("div")`
-  margin: 80px 60px 102px;
+  padding: 0 60px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: max(40px, 8vw);
-  row-gap: 81px;
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
-    grid-template-columns: repeat(1, 1fr);
-    margin: 20px;
-    gap: 0;
+    padding: 0 20px;
+    grid-template-columns: 1fr;
   }
 `;
 
-export const IconCard = styled(_IconCard)`
+export const IconsCard = styled(_IconsCard)`
+  margin-bottom: 80px;
+
+  &:nth-child(even) {
+    margin-left: auto;
+  }
+
+  &:nth-last-child(-n + 2) {
+    margin-bottom: 0;
+  }
+
   @media ${({ theme }) => theme.breakpoint.max.M} {
-    margin-bottom: 79px;
+    margin-bottom: 80px;
+
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 80px;
+    }
 
     &:last-child {
-      margin-bottom: 19px;
+      margin-bottom: 0;
     }
   }
 `;

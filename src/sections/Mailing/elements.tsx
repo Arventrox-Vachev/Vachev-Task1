@@ -3,19 +3,21 @@ import { SectionContainer as _SectionContainer, Typography } from "components";
 import { JoinWaitingListForm as _JoinWaitingListForm } from "collections";
 
 export const SectionContainer = styled(_SectionContainer)`
+  padding-top: 80px;
   flex-direction: column;
   align-items: center;
-  padding-top: 80px;
 
   background-image: url(./imgs/data_banner.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 88px;
-  background-position-y: -38px;
+  background-position-y: -40px;
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
-    padding: 36px 20px;
-    background-position-y: -114px;
+    margin-bottom: 32px;
+    position: relative;
+    top: -40px;
+    background-position-y: -68px;
   }
 `;
 
