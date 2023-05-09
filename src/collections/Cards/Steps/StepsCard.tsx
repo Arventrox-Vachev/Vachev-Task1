@@ -7,7 +7,7 @@ export interface StepsCardProps {
   number: number;
   title: string;
   desktopSubtitle: string;
-  mobileSubtitle: string;
+  mobileSubtitle?: string;
   description: string;
   image: ImageProps;
 }
