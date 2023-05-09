@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { Typography } from "components";
 
 export const IconWrapper = styled("div")`
-  display: flex;
-  max-width: 560px;
   width: 100%;
-  gap: 20px;
+  max-width: 560px;
+  display: flex;
+  justify-self: left;
 
   @media ${({ theme }) => theme.breakpoint.max.M} {
     margin: 0 auto;
@@ -13,15 +13,15 @@ export const IconWrapper = styled("div")`
 `;
 
 export const ImageWrapper = styled("div")`
-  margin-bottom: auto;
   min-width: 80px;
+  margin: 0 20px auto 0;
 `;
 
 export const TextContainer = styled("div")`
+  max-width: 450px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  max-width: 451px;
-  width: 100%;
 `;
 
 export const Title = styled(Typography.Paragraph).attrs({ variant: "sm" })`

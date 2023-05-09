@@ -1,11 +1,13 @@
 import * as S from "./elements";
 import Image, { ImageProps } from "next/image";
 import { HTMLDivProps } from "types";
+import { useMediaQuery } from "hooks";
 
-interface StepsCardProps {
+export interface StepsCardProps {
   number: number;
   title: string;
-  subtitle: string;
+  desktopSubtitle: string;
+  mobileSubtitle: string;
   description: string;
   image: ImageProps;
 }
@@ -13,11 +15,15 @@ interface StepsCardProps {
 export const StepsCard = ({
   number,
   title,
-  subtitle,
+  desktopSubtitle,
+  mobileSubtitle,
   description,
   image,
   ...props
 }: StepsCardProps & HTMLDivProps) => {
+  const [isSmallScreenDevice] = useMediaQuery({ type: "max", breakpoint: "S" });
+  const subtitle = isSmallScreenDevice && mobileSubtitle ? mobileSubtitle : desktopSubtitle;
+
   return (
     <S.StepsCardContainer {...props}>
       <S.ImageWrapper>

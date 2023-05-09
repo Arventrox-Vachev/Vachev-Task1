@@ -6,6 +6,7 @@ export const theme: DefaultTheme = {
   colors: {
     primary: "#173158",
     secondary: "#081831",
+    transparentPrimary: "rgba(20, 60, 100, 0.7);",
     black: "#000000",
     white: "#ffffff",
     vividRed: "#cf2e2e",

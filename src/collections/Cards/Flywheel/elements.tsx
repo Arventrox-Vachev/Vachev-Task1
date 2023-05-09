@@ -9,15 +9,12 @@ export const FlywheelCardContainer = styled("div")`
 export const Title = styled(Typography.H2)`
   margin-bottom: 20px;
   color: ${({ theme }) => theme.colors.yellow};
-
-  @media ${({ theme }) => theme.breakpoint.max.M} {
-    margin: 21px 0;
-  }
 `;
 
 export const Text = styled(Typography.Paragraph).attrs({ variant: "sm" })``;
 
 export const ImageWrapper = styled("div")`
+  margin-bottom: 20px;
   display: flex;
 
   @media ${({ theme }) => theme.breakpoint.min.M} {

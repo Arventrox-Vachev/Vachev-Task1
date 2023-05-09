@@ -19,7 +19,7 @@ export const footerProps: FooterProps = {
         "The art of optimizing",
         "Boost your campaigns",
         "Start optimizing now",
-        "<span>CampaignMeisters building blocks</span>"
+        "CampaignMeisters building blocks"
       ]
     },
     {

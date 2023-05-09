@@ -2,14 +2,12 @@ import * as S from "./elements";
 import type { HTMLFooterProps } from "types";
 import { useMediaQuery } from "hooks";
 import { ImageProps } from "next/image";
+import { LogoProps } from "collections/Logo";
 
 export interface FooterProps {
   desktopDescription: string;
   mobileDescription: string;
-  logo: {
-    title: string;
-    image: ImageProps;
-  };
+  logo: LogoProps;
   navItems: {
     title: string;
     links: string[];
@@ -33,26 +31,30 @@ export const Footer = ({
 
   return (
     <S.Footer {...props}>
-      <S.HolderContainer>
-        <S.TextContainer>
-          <S.Logo {...logo} />
-          <S.Text>{description}</S.Text>
-        </S.TextContainer>
+      <S.Container>
+        <S.HolderContainer>
+          <S.TextContainer>
+            <S.Logo {...logo} />
+            <S.Text>{description}</S.Text>
+          </S.TextContainer>
 
-        <S.NavContainer>
-          {navItems.map((navItem, index) => (
-            <S.NavSubContainer key={index}>
-              <S.Title>{navItem.title}</S.Title>
+          <S.NavContainer>
+            {navItems.map((navItem, index) => (
+              <S.NavSubContainer key={index}>
+                <S.Title>{navItem.title}</S.Title>
 
-              {navItem.links.map((link, index) => (
-                <S.AnchorLink key={index} dangerouslySetInnerHTML={{ __html: link }} />
-              ))}
-            </S.NavSubContainer>
-          ))}
-        </S.NavContainer>
-      </S.HolderContainer>
+                {navItem.links.map((link, index) => (
+                  <S.Link href='/' key={index}>
+                    {link}
+                  </S.Link>
+                ))}
+              </S.NavSubContainer>
+            ))}
+          </S.NavContainer>
+        </S.HolderContainer>
 
-      <S.Copyright dangerouslySetInnerHTML={{ __html: copyright }} />
+        <S.Copyright dangerouslySetInnerHTML={{ __html: copyright }} />
+      </S.Container>
     </S.Footer>
   );
 };

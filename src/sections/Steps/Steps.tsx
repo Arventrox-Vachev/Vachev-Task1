@@ -1,16 +1,10 @@
 import * as S from "./elements";
-import { ImageProps } from "next/image";
 import { HTMLSectionProps } from "types";
+import { StepsCardProps } from "collections";
 
 export interface StepsProps {
   title: string;
-  cards: {
-    number: number;
-    title: string;
-    subtitle: string;
-    description: string;
-    image: ImageProps;
-  }[];
+  cards: StepsCardProps[];
 }
 
 export const Steps = ({ title, cards, ...props }: StepsProps & HTMLSectionProps) => {

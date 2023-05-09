@@ -1,16 +1,12 @@
 import * as S from "./elements";
 import { useMediaQuery } from "hooks";
-import { ImageProps } from "next/image";
 import { HTMLSectionProps } from "types";
+import { IconsCardProps } from "collections";
 
 export interface IconsProps {
   title: string;
   mobileTitle: string;
-  cards: {
-    title: string;
-    description: string;
-    image: ImageProps;
-  }[];
+  cards: IconsCardProps[];
 }
 
 export const Icons = ({ title, mobileTitle, cards, ...props }: IconsProps & HTMLSectionProps) => {
@@ -24,7 +20,7 @@ export const Icons = ({ title, mobileTitle, cards, ...props }: IconsProps & HTML
 
         <S.IconsContainer>
           {cards.map((cardProps, index) => (
-            <S.IconCard key={index} {...cardProps} />
+            <S.IconsCard key={index} {...cardProps} />
           ))}
         </S.IconsContainer>
       </S.CardContainer>

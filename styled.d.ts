@@ -10,6 +10,7 @@ declare module "styled-components" {
   type Colors =
     | "primary"
     | "secondary"
+    | "transparentPrimary"
     | "black"
     | "white"
     | "vividRed"

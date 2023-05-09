@@ -1,17 +1,13 @@
 import * as S from "./elements";
 import Image, { ImageProps } from "next/image";
 import { HTMLSectionProps } from "types";
+import { JoinWaitingListFormProps } from "collections";
 
 export interface HeroProps {
   title: string;
   subtitles: string[];
   image: ImageProps;
-  joinWaitingListFormProps: {
-    title: string;
-    emailHolder: string;
-    buttonText: string;
-    policiesText: string[];
-  };
+  joinWaitingListFormProps: JoinWaitingListFormProps;
 }
 
 export const Hero = ({

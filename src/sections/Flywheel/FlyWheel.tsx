@@ -1,15 +1,12 @@
 import * as S from "./elements";
 import Image, { ImageProps } from "next/image";
+import { FlywheelCardProps } from "collections";
 import { HTMLSectionProps } from "types";
 
 export interface FlyWheelProps {
   title: string;
   description: string[];
-  cards: {
-    title: string;
-    description: string;
-    image: ImageProps;
-  }[];
+  cards: FlywheelCardProps[];
   image: ImageProps;
 }
 
