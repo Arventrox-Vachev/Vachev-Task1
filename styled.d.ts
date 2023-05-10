@@ -14,6 +14,7 @@ declare module "styled-components" {
     | "black"
     | "white"
     | "vividRed"
+    | "green"
     | "yellow"
     | "grey"
     | "link";
