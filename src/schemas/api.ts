@@ -1,3 +1,3 @@
 import { z } from "zod";
 
-export const HelloSchema = z.object({ userName: z.string() });
+export const helloSchema = z.object({ userName: z.string() });
