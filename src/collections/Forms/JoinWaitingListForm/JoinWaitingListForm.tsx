@@ -1,7 +1,6 @@
 import * as S from "./elements";
-import { useState } from "react";
 import { useZodForm } from "hooks";
-import { HTMLFormProps } from "types";
+import { HTMLDivProps, HTMLFormProps } from "types";
 import { joinWaitingListSchema } from "schemas";
 import Image, { ImageProps } from "next/image";
 
@@ -24,7 +23,7 @@ export const JoinWaitingListForm = ({
   policiesText: { TOS, newsLetter },
   image,
   ...props
-}: JoinWaitingListFormProps & HTMLFormProps) => {
+}: JoinWaitingListFormProps & HTMLDivProps) => {
   const { control, handleSubmit, formState, setValue, watch } = useZodForm(joinWaitingListSchema, {
     email: "",
     agreedToTOS: false,
@@ -32,22 +31,21 @@ export const JoinWaitingListForm = ({
   });
   const { isSubmitSuccessful } = formState;
 
-  const {} = watch();
   const submitHandler = handleSubmit(data => {
     console.log(data);
   });
 
   return (
-    <S.JoinWaitingContainer>
+    <S.JoinWaitingContainer {...props}>
       {!isSubmitSuccessful ? (
-        <S.Form onSubmit={submitHandler} {...props}>
+        <S.Form onSubmit={submitHandler}>
           <S.Title dangerouslySetInnerHTML={{ __html: title }} />
           <S.Container>
             <S.InputField
               placeholder={emailHolder}
               name='email'
               control={control}
-              validationImgs={validationImgs}
+              {...validationImgs}
             />
             <S.Button>{buttonText}</S.Button>
           </S.Container>

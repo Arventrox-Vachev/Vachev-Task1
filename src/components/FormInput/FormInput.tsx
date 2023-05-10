@@ -1,7 +1,7 @@
 import * as S from "./elements";
 import { useController, FieldValues, Control, Path } from "react-hook-form";
 import type { HTMLInputProps } from "types";
-import { ChangeEventHandler, useCallback } from "react";
+import { ChangeEventHandler, useCallback, useEffect, useState } from "react";
 import Image, { ImageProps } from "next/image";
 
 export interface FormTextInputProps<T extends FieldValues = any>
@@ -9,7 +9,8 @@ export interface FormTextInputProps<T extends FieldValues = any>
   name: Path<T>;
   label?: string;
   control: Control<T, any>;
-  validationImgs: { validImg: ImageProps; invalidImg: ImageProps };
+  validImg: ImageProps;
+  invalidImg: ImageProps;
 }
 
 export const FormInput = <T extends FieldValues = any>({
@@ -19,7 +20,8 @@ export const FormInput = <T extends FieldValues = any>({
   className,
   disabled = false,
   maxLength,
-  validationImgs: { invalidImg, validImg },
+  validImg,
+  invalidImg,
   ...props
 }: FormTextInputProps<T>) => {
   const {
@@ -32,8 +34,13 @@ export const FormInput = <T extends FieldValues = any>({
     rules: { required: true },
     defaultValue: "" as any
   });
+  const [image, setImage] = useState<ImageProps | null>(null);
 
-  const validationImg = error ? value && invalidImg : value && validImg;
+  useEffect(() => {
+    if (!isSubmitted) return;
+    if (error) setImage(invalidImg);
+    else setImage(validImg);
+  }, [error, isSubmitted, validImg, invalidImg]);
 
   return (
     <S.Container className={className}>
@@ -51,9 +58,9 @@ export const FormInput = <T extends FieldValues = any>({
           hasError={!!error}
           isSubmitted={isSubmitted}
         />
-        {isSubmitted && (
+        {image && (
           <S.ImageWrapper>
-            <Image {...validationImg}></Image>
+            <Image {...image}></Image>
           </S.ImageWrapper>
         )}
       </S.InputWrapper>
