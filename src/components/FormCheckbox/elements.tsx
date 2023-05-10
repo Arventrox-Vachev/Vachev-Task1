@@ -16,7 +16,7 @@ export const Label = styled("label")`
   font-size: 12px;
   line-height: 140%;
 
-  > span {
+  > a {
     color: ${({ theme }) => theme.colors.yellow};
     text-decoration: underline;
   }

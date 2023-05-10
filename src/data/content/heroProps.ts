@@ -33,7 +33,7 @@ export const heroSectionProps: HeroProps = {
       }
     },
     policiesText: {
-      TOS: "I agree to the <span>Terms & Conditions</span> and the <span>Privacy Policy</span>",
+      TOS: `I agree to the <a href="/">Terms & Conditions</a> and the <a href="/">Privacy Policy</a>`,
       newsLetter: "I want to subscribe to the newsletter "
     },
     image: {
