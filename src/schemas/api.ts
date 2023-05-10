@@ -1,5 +1,3 @@
-import { object, string } from "yup";
+import { z } from "zod";
 
-export const helloSchema = object({
-  userName: string().required("User Name field is required.")
-});
+export const HelloSchema = z.object({ userName: z.string() });

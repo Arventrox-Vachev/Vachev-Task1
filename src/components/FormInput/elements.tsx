@@ -1,56 +1,67 @@
-import styled from "styled-components";
-import type { FormInputProps } from "./FormInput";
+import styled, { css } from "styled-components";
+import { Typography } from "components/Typography";
 
-export const Container = styled("div")``;
-
-export const InputWrapper = styled("div")`
-  display: flex;
-  flex-direction: column;
+export const Container = styled("div")`
   width: 100%;
 `;
 
-export const Label = styled("label")`
-  color: ${({ theme }) => theme.colors.black};
-  white-space: nowrap;
-  font-family: "Crimson Text", Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.8;
-  margin-bottom: 0.2em;
-`;
-
-export const ErrorText = styled("p")`
-  color: ${({ theme }) => theme.colors.vividRed};
-  white-space: nowrap;
-  font-family: "Crimson Text", Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.8;
-  margin-bottom: 5px;
-  margin: 0;
-`;
-
-export const Input = styled("input")<FormInputProps>`
-  appearance: none;
+export const InputWrapper = styled("div")`
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border: unset;
-  background-color: transparent;
-  color: ${({ theme }) => theme.colors.black};
-  outline: none;
-  background: transparent;
-  padding: 0.8em;
+  flex-direction: row;
+  width: 100%;
+  position: relative;
+  display: inline-block;
+`;
 
-  font-family: "Playfair Display", Arial, sans-serif;
-  font-size: 0.8em;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50px;
+export const Label = styled("label")``;
 
-  &:focus {
-    border: 1px solid ${({ theme }) => theme.colors.black};
-    box-shadow: 0 0 4px 0 ${({ theme }) => theme.colors.primary};
+export const ErrorText = styled(Typography.Paragraph).attrs({ variant: "sm" })`
+  color: ${({ theme }) => theme.colors.vividRed};
+`;
+
+export const InputField = styled("input")<{ hasError: boolean; isSubmitted: boolean }>`
+  height: 50px;
+  width: 100%;
+  padding: 0 44px 0 16px;
+
+  border-color: transparent;
+  border-radius: 4px;
+  background-color: ${({ theme }) => theme.colors.grey};
+  color: ${({ theme }) => theme.colors.link};
+
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+
+  border: 2px solid
+    ${({ theme, hasError, isSubmitted }) =>
+      isSubmitted && (hasError ? theme.colors.vividRed : theme.colors.green)};
+
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.link};
   }
 
-  transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  &:focus {
+    background-color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.black};
+  }
+
+  &:not(:placeholder-shown) {
+    background-color: #ffffff;
+    color: ${({ theme }) => theme.colors.black};
+  }
+`;
+
+export const ImageWrapper = styled("div")`
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
 `;

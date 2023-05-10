@@ -9,7 +9,8 @@ export const theme: DefaultTheme = {
     transparentPrimary: "rgba(20, 60, 100, 0.7);",
     black: "#000000",
     white: "#ffffff",
-    vividRed: "#cf2e2e",
+    vividRed: "#FF0000",
+    green: "#3BE100",
     yellow: "#fcd130",
     grey: "rgba(255, 255, 255, 0.7);",
     link: "#7184ab"

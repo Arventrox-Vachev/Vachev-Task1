@@ -5,5 +5,3 @@ export * from "./FormTextArea";
 export * from "./FormCheckbox";
 export * from "./Containers";
 export * from "./Link";
-export * from "./Label";
-export * from "./FormElements";

@@ -1,43 +1,36 @@
 import styled from "styled-components";
-import {
-  Label as _Label,
-  Button as _Button,
-  Checkbox as _Checkbox,
-  InputField as _InputField,
-  Typography
-} from "components";
+import { Button as _Button, FormInput, FormCheckbox, Typography } from "components";
 
-export const FormContainer = styled("form")`
+export const JoinWaitingContainer = styled("div")`
+  background-color: ${({ theme }) => theme.colors.primary};
   max-width: 500px;
+  min-height: 204px;
   width: 100%;
   padding: 20px;
   border-radius: 16px;
-  background-color: ${({ theme }) => theme.colors.primary};
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
     padding: 20px 24px;
   }
 `;
 
-export const InputWrapper = styled("div")`
-  margin-bottom: 16px;
+export const SuccessContainer = styled("div")`
+  width: 100%;
   display: flex;
+  align-items: center;
+  flex-direction: column;
 
-  & + & {
-    margin-bottom: 8px;
-    align-items: center;
-  }
-
-  &:last-child {
-    margin-bottom: 0px;
-  }
-
-  @media ${({ theme }) => theme.breakpoint.max.S} {
-    &:last-child {
-      margin-top: 4px;
-    }
+  > h2 {
+    margin-bottom: 44px;
   }
 `;
+
+export const ImageWrapper = styled("div")`
+  display: flex;
+  align-items: center;
+`;
+
+export const Form = styled("form")``;
 
 export const Title = styled(Typography.H2)`
   margin-bottom: 16px;
@@ -47,18 +40,27 @@ export const Title = styled(Typography.H2)`
   }
 `;
 
-export const Checkbox = styled(_Checkbox)`
+export const Container = styled("div")`
+  display: flex;
+  width: 100%;
+`;
+
+export const Checkbox = styled(FormCheckbox)`
   margin-right: 8px;
+
+  &:last-child {
+    margin-top: 8px;
+  }
 
   @media ${({ theme }) => theme.breakpoint.max.S} {
     margin-right: 16px;
+    margin-bottom: 4px;
   }
-`;
+` as typeof FormCheckbox;
 
-export const InputField = styled(_InputField)`
+export const InputField = styled(FormInput)`
+  margin-bottom: 16px;
   margin-right: 20px;
-`;
-
-export const Label = styled(_Label)``;
+` as typeof FormInput;
 
 export const Button = styled(_Button).attrs({ variant: "secondary" })``;
