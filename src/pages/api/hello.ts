@@ -1,15 +1,15 @@
-// import nc from "next-connect";
-// import { NextApiRequest, NextApiResponse } from "next";
-// import { helloSchema } from "schemas";
-// import { ApiResponseBase } from "types";
+import nc from "next-connect";
+import { NextApiRequest, NextApiResponse } from "next";
+import { helloSchema } from "schemas";
+import { ApiResponseBase } from "types";
 
-// export interface HelloRequest extends NextApiRequest {
-//   body: { userName: string };
-// }
+export interface HelloRequest extends NextApiRequest {
+  body: { userName: string };
+}
 
-// export interface HelloResponse {
-//   message: `Hello ${string}!`;
-// }
+export interface HelloResponse {
+  message: `Hello ${string}!`;
+}
 
 // const handler = nc<HelloRequest, NextApiResponse<ApiResponseBase<HelloResponse>>>({
 //   onError: (err, req, res, next) => {
