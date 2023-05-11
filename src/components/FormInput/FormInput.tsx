@@ -8,9 +8,9 @@ export interface FormTextInputProps<T extends FieldValues = any>
   extends Omit<HTMLInputProps, "name" | "defaultValue"> {
   name: Path<T>;
   label?: string;
+  validImg?: ImageProps;
+  invalidImg?: ImageProps;
   control: Control<T, any>;
-  validImg: ImageProps;
-  invalidImg: ImageProps;
 }
 
 export const FormInput = <T extends FieldValues = any>({
@@ -34,12 +34,13 @@ export const FormInput = <T extends FieldValues = any>({
     rules: { required: true },
     defaultValue: "" as any
   });
-  const [image, setImage] = useState<ImageProps | null>(null);
+  const [image, setImage] = useState<ImageProps | undefined>(undefined);
 
   useEffect(() => {
+    setImage(undefined);
     if (!isSubmitted) return;
-    if (error) setImage(invalidImg);
-    else setImage(validImg);
+    if (error && invalidImg!.src) setImage(invalidImg);
+    if (!error && validImg!.src) setImage(validImg);
   }, [error, isSubmitted, validImg, invalidImg]);
 
   return (
