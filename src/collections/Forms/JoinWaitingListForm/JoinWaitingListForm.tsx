@@ -9,7 +9,7 @@ export interface JoinWaitingListFormProps {
   successTitle: string;
   emailHolder: string;
   buttonText: string;
-  validationImgs: { validImg: string; invalidImg: string };
+  validationImgs: { validImgSrc: string; invalidImgSrc: string };
   policiesText: { tOS: string; newsLetter: string };
   image: ImageProps;
 }
@@ -44,6 +44,7 @@ export const JoinWaitingListForm = ({
             <S.InputField
               placeholder={emailHolder}
               name='email'
+              hideValidIndicator={false}
               control={control}
               {...validationImgs}
             />

@@ -19,8 +19,8 @@ export const heroSectionProps: HeroProps = {
     emailHolder: "Enter email",
     buttonText: "Join",
     validationImgs: {
-      validImg: "/imgs/check-image.png",
-      invalidImg: "/imgs/x-image.png"
+      validImgSrc: "/imgs/check-image.png",
+      invalidImgSrc: "/imgs/x-image.png"
     },
     policiesText: {
       tOS: `I agree to the <a href="/">Terms & Conditions</a> and the <a href="/">Privacy Policy</a>`,

@@ -12,8 +12,8 @@ export const mailingProps: MailingProps = {
       newsLetter: "I want to subscribe to the newsletter "
     },
     validationImgs: {
-      validImg: "/imgs/check-image.png",
-      invalidImg: "/imgs/x-image.png"
+      validImgSrc: "/imgs/check-image.png",
+      invalidImgSrc: "/imgs/x-image.png"
     },
     image: {
       src: "/imgs/success-image.png",
