@@ -9,8 +9,8 @@ export interface JoinWaitingListFormProps {
   successTitle: string;
   emailHolder: string;
   buttonText: string;
-  validationImgs: { validImg: ImageProps; invalidImg: ImageProps };
-  policiesText: { TOS: string; newsLetter: string };
+  validationImgs: { validImg: string; invalidImg: string };
+  policiesText: { tOS: string; newsLetter: string };
   image: ImageProps;
 }
 
@@ -20,7 +20,7 @@ export const JoinWaitingListForm = ({
   emailHolder,
   buttonText,
   validationImgs,
-  policiesText: { TOS, newsLetter },
+  policiesText: { tOS, newsLetter },
   image,
   ...props
 }: JoinWaitingListFormProps & HTMLDivProps) => {
@@ -49,7 +49,7 @@ export const JoinWaitingListForm = ({
             />
             <S.Button>{buttonText}</S.Button>
           </S.Container>
-          <S.Checkbox name='agreedToTOS' label={TOS} control={control} />
+          <S.Checkbox name='agreedToTOS' label={tOS} control={control} />
           <S.Checkbox name='newsLetter' label={newsLetter} control={control} />
         </S.Form>
       ) : (

@@ -1,15 +1,15 @@
 import * as S from "./elements";
 import { useController, FieldValues, Control, Path } from "react-hook-form";
 import type { HTMLInputProps } from "types";
-import { ChangeEventHandler, useCallback, useEffect, useState } from "react";
-import Image, { ImageProps } from "next/image";
+import { ChangeEventHandler, useCallback } from "react";
+import Image from "next/image";
 
 export interface FormTextInputProps<T extends FieldValues = any>
   extends Omit<HTMLInputProps, "name" | "defaultValue"> {
   name: Path<T>;
   label?: string;
-  validImg?: ImageProps;
-  invalidImg?: ImageProps;
+  validImg?: string;
+  invalidImg?: string;
   control: Control<T, any>;
 }
 
@@ -34,14 +34,8 @@ export const FormInput = <T extends FieldValues = any>({
     rules: { required: true },
     defaultValue: "" as any
   });
-  const [image, setImage] = useState<ImageProps | undefined>(undefined);
-
-  useEffect(() => {
-    setImage(undefined);
-    if (!isSubmitted) return;
-    if (error && invalidImg!.src) setImage(invalidImg);
-    if (!error && validImg!.src) setImage(validImg);
-  }, [error, isSubmitted, validImg, invalidImg]);
+  let image: string | undefined;
+  if (isSubmitted) image = error ? invalidImg : validImg;
 
   return (
     <S.Container className={className}>
@@ -61,7 +55,7 @@ export const FormInput = <T extends FieldValues = any>({
         />
         {image && (
           <S.ImageWrapper>
-            <Image {...image}></Image>
+            <Image src={image} alt='validation-icon' width={24} height={24} />
           </S.ImageWrapper>
         )}
       </S.InputWrapper>

@@ -8,22 +8,12 @@ export const mailingProps: MailingProps = {
     emailHolder: "Enter email",
     buttonText: "Join",
     policiesText: {
-      TOS: `I agree to the <a href="/">Terms & Conditions</a> and the <a href="">Privacy Policy</a>`,
+      tOS: `I agree to the <a href="/">Terms & Conditions</a> and the <a href="">Privacy Policy</a>`,
       newsLetter: "I want to subscribe to the newsletter "
     },
     validationImgs: {
-      validImg: {
-        src: "/imgs/check-image.png",
-        alt: "valid",
-        width: 24,
-        height: 24
-      },
-      invalidImg: {
-        src: "/imgs/x-image.png",
-        alt: "invalid",
-        width: 24,
-        height: 24
-      }
+      validImg: "/imgs/check-image.png",
+      invalidImg: "/imgs/x-image.png"
     },
     image: {
       src: "/imgs/success-image.png",
