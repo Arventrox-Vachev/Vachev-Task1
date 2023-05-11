@@ -8,8 +8,9 @@ export interface FormTextInputProps<T extends FieldValues = any>
   extends Omit<HTMLInputProps, "name" | "defaultValue"> {
   name: Path<T>;
   label?: string;
-  validImg?: string;
-  invalidImg?: string;
+  validImgSrc: string;
+  hideValidIndicator: boolean;
+  invalidImgSrc: string;
   control: Control<T, any>;
 }
 
@@ -20,8 +21,9 @@ export const FormInput = <T extends FieldValues = any>({
   className,
   disabled = false,
   maxLength,
-  validImg,
-  invalidImg,
+  validImgSrc,
+  invalidImgSrc,
+  hideValidIndicator = true,
   ...props
 }: FormTextInputProps<T>) => {
   const {
@@ -34,8 +36,6 @@ export const FormInput = <T extends FieldValues = any>({
     rules: { required: true },
     defaultValue: "" as any
   });
-  let image: string | undefined;
-  if (isSubmitted) image = error ? invalidImg : validImg;
 
   return (
     <S.Container className={className}>
@@ -53,9 +53,14 @@ export const FormInput = <T extends FieldValues = any>({
           hasError={!!error}
           isSubmitted={isSubmitted}
         />
-        {image && (
+        {!hideValidIndicator && isSubmitted && (
           <S.ImageWrapper>
-            <Image src={image} alt='validation-icon' width={24} height={24} />
+            <Image
+              src={error ? invalidImgSrc : validImgSrc}
+              alt='validation-icon'
+              width={24}
+              height={24}
+            />
           </S.ImageWrapper>
         )}
       </S.InputWrapper>
