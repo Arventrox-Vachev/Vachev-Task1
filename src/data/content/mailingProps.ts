@@ -20,7 +20,7 @@ export const mailingProps: MailingProps = {
       },
       invalidImg: {
         src: "/imgs/x-image.png",
-        alt: "valid",
+        alt: "invalid",
         width: 24,
         height: 24
       }
