@@ -21,8 +21,8 @@ export const FlywheelCard = ({
         <Image src={cardImage.filename} alt={cardImage.alt} width={102} height={102} />
       </S.ImageWrapper>
 
-      <S.Title>{heading}</S.Title>
-      <S.Text>{description}</S.Text>
+      <S.Heading>{heading}</S.Heading>
+      <S.Description>{description}</S.Description>
     </S.FlywheelCardContainer>
   );
 };

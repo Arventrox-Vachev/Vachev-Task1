@@ -14,7 +14,7 @@ export const ImageWrapper = styled("div")`
   align-items: center;
 `;
 
-export const LogoText = styled(Typography.Paragraph).attrs({ variant: "md" })`
+export const Text = styled(Typography.Paragraph).attrs({ variant: "md" })`
   margin-left: 16px;
   color: ${({ theme }) => theme.colors.white};
 `;

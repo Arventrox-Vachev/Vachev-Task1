@@ -22,7 +22,7 @@ export const FlyWheel = ({ blok, ...props }: FlyWheelProps & HTMLSectionProps) =
   return (
     <S.SectionContainer {...props} {...storyblokEditable(blok)}>
       <S.CardContainer>
-        <S.Title dangerouslySetInnerHTML={{ __html: heading }} />
+        <S.Heading dangerouslySetInnerHTML={{ __html: heading }} />
 
         <S.TextContainer>
           <S.Description>{description}</S.Description>

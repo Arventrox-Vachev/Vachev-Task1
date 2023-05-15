@@ -1,11 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { storyblokInit, apiPlugin } from "@storyblok/react";
+import { storyblokInit, apiPlugin, getStoryblokApi, ISbStoryData } from "@storyblok/react";
 import { ThemeProvider } from "styled-components";
 import { theme, GlobalStyles } from "styles";
 import { Header, Footer } from "collections";
-import { headerProps, footerProps } from "data";
 import TagManager from "react-gtm-module";
 import { FlyWheel, Hero, Icons, Mailing, Steps } from "sections";
 import { Page } from "components/Bloks/Page";
@@ -15,7 +14,6 @@ const tagManagerArgs = {
 };
 
 const components = {
-  header: Header,
   hero_section: Hero,
   flywheel_section: FlyWheel,
   icons_section: Icons,
@@ -30,10 +28,25 @@ storyblokInit({
   components
 });
 
-function MyApp({ Component, pageProps: { ...pageProps } }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     // TagManager.initialize(tagManagerArgs);
   }, []);
+  const [headerData, setHeaderData] = useState<ISbStoryData | null>(null);
+
+  useEffect(() => {
+    async function fetchHeaderData() {
+      const storyblokApi = getStoryblokApi();
+      const { data } = await storyblokApi.getStory("header", {
+        version: "draft" // or "published"
+      });
+      setHeaderData(data.story);
+    }
+    fetchHeaderData();
+  }, []);
+
+  if (!headerData) return null;
+  console.log(headerData.content);
 
   return (
     <ThemeProvider theme={theme}>
@@ -46,9 +59,9 @@ function MyApp({ Component, pageProps: { ...pageProps } }: AppProps) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <GlobalStyles />
-      <Header {...headerProps} />
+      <Header headerProps={headerData.content} />
       <Component {...pageProps} />
-      <Footer {...footerProps} />
+      {/* <Footer /> */}
     </ThemeProvider>
   );
 }

@@ -3,7 +3,7 @@ import { HeaderProps } from "collections";
 export const headerProps: HeaderProps = {
   buttonText: "Login",
   logo: {
-    title: "CampaignMeister",
+    text: "CampaignMeister",
     image: {
       src: "/imgs/logo-image.png",
       alt: "Some text",

@@ -1,16 +1,17 @@
 import * as S from "./elements";
 import type { HTMLHeaderProps } from "types";
-import { LogoProps } from "collections/Logo";
+import { SbBlokData, storyblokEditable } from "@storyblok/react";
 
 export interface HeaderProps {
-  buttonText: string;
-  logo: LogoProps;
+  headerProps: SbBlokData;
 }
 
-export const Header = ({ buttonText, logo, ...props }: HeaderProps & HTMLHeaderProps) => {
+export const Header = ({ headerProps, ...props }: HeaderProps & HTMLHeaderProps) => {
+  const { buttonText, logo } = headerProps;
+
   return (
-    <S.Header {...props}>
-      <S.Logo {...logo} />
+    <S.Header {...props} {...storyblokEditable(headerProps)}>
+      {logo && <S.Logo {...logo[0]} />}
       <S.Button>{buttonText}</S.Button>
     </S.Header>
   );
