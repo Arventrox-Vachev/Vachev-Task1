@@ -24,10 +24,10 @@ export const TextContainer = styled("div")`
   flex-direction: column;
 `;
 
-export const Title = styled(Typography.Paragraph).attrs({ variant: "sm" })`
+export const Heading = styled(Typography.Paragraph).attrs({ variant: "sm" })`
   margin-bottom: 20px;
   font-weight: 500;
   color: ${({ theme }) => theme.colors.yellow};
 `;
 
-export const Text = styled(Typography.Paragraph).attrs({ variant: "sm" })``;
+export const Description = styled(Typography.Paragraph).attrs({ variant: "sm" })``;

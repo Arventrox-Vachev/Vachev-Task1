@@ -24,7 +24,7 @@ export const ItemsContainer = styled("div")`
   }
 `;
 
-export const Title = styled(Typography.H1)`
+export const Heading = styled(Typography.H1)`
   margin-bottom: 40px;
   text-align: left;
 

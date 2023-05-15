@@ -9,24 +9,24 @@ export interface FlyWheelProps {
 }
 
 interface FlywheelBlokData extends SbBlokData {
-  title: string;
-  text: string;
-  text2: string;
-  flywheel_image: { alt: string; filename: string };
+  heading: string;
+  description: string;
+  description2: string;
+  flywheelImage: { alt: string; filename: string };
   flywheelCards: FlywheelCardProps[];
 }
 
 export const FlyWheel = ({ blok, ...props }: FlyWheelProps & HTMLSectionProps) => {
-  const { title, text, text2, flywheel_image, flywheelCards } = blok;
+  const { heading, description, description2, flywheelImage, flywheelCards } = blok;
 
   return (
     <S.SectionContainer {...props} {...storyblokEditable(blok)}>
       <S.CardContainer>
-        <S.Title dangerouslySetInnerHTML={{ __html: title }} />
+        <S.Title dangerouslySetInnerHTML={{ __html: heading }} />
 
         <S.TextContainer>
-          <S.Text>{text}</S.Text>
-          <S.Text>{text2}</S.Text>
+          <S.Description>{description}</S.Description>
+          <S.Description>{description2}</S.Description>
         </S.TextContainer>
 
         <S.FlywheelWrapper>
@@ -35,12 +35,7 @@ export const FlyWheel = ({ blok, ...props }: FlyWheelProps & HTMLSectionProps) =
           ))}
 
           <S.ImageWrapper>
-            <Image
-              src={flywheel_image.filename}
-              alt={flywheel_image.alt}
-              width={551}
-              height={551}
-            />
+            <Image src={flywheelImage.filename} alt={flywheelImage.alt} width={551} height={551} />
           </S.ImageWrapper>
         </S.FlywheelWrapper>
       </S.CardContainer>

@@ -28,7 +28,12 @@ export const ErrorText = styled(Typography.Paragraph).attrs({ variant: "xs" })`
   font-weight: 300;
 `;
 
-export const Checkbox = styled("input")<{ hasError: boolean; isSubmitted: boolean }>`
+export const Checkbox = styled("input")<{
+  hasError: boolean;
+  isSubmitted: boolean;
+  desktopActiveImage: string;
+  mobileActiveImage: string;
+}>`
   height: 20px;
   width: 20px;
   margin: 0;
@@ -47,7 +52,8 @@ export const Checkbox = styled("input")<{ hasError: boolean; isSubmitted: boolea
 
   &:checked {
     border: none;
-    background-image: url(./imgs/active_button-image.png);
+    background-image: url(${({ desktopActiveImage }) => desktopActiveImage});
+
     background-size: contain;
   }
 
@@ -57,7 +63,7 @@ export const Checkbox = styled("input")<{ hasError: boolean; isSubmitted: boolea
     padding: 14px;
 
     &:checked {
-      background-image: url(./imgs/mobile_active_button-image.png);
+      background-image: url(${({ mobileActiveImage }) => mobileActiveImage});
     }
   }
 `;

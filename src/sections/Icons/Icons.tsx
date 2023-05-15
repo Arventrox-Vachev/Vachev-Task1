@@ -9,22 +9,24 @@ export interface IconsProps {
 }
 
 interface IconsBlokData extends SbBlokData {
-  title: string;
-  mobileTitle: string;
-  icon_cards: IconsCardProps[];
+  heading: string;
+  mobileHeading: string;
+  iconCards: IconsCardProps[];
 }
 
 export const Icons = ({ blok, ...props }: IconsProps & HTMLSectionProps) => {
   const [isSmallScreenDevice] = useMediaQuery({ type: "max", breakpoint: "S" });
-  const { title, mobileTitle, icon_cards } = blok;
+  const { heading, mobileHeading, iconCards } = blok;
 
   return (
     <S.SectionContainer {...props} {...storyblokEditable(blok)}>
       <S.CardContainer>
-        <S.Title dangerouslySetInnerHTML={{ __html: isSmallScreenDevice ? mobileTitle : title }} />
+        <S.Heading
+          dangerouslySetInnerHTML={{ __html: isSmallScreenDevice ? mobileHeading : heading }}
+        />
 
         <S.IconsContainer>
-          {icon_cards.map((cardProps, index) => (
+          {iconCards.map((cardProps, index) => (
             <S.IconsCard key={index} {...cardProps} />
           ))}
         </S.IconsContainer>

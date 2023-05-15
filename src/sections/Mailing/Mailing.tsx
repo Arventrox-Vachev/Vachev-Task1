@@ -8,14 +8,20 @@ export interface MailingProps {
 }
 
 interface MailingBlockData extends SbBlokData {
-  title: string;
+  heading: string;
+  backgroundImage: { filename: string };
   joinWaitingListForm: JoinWaitingListFormProps;
 }
 export const Mailing = ({ blok, ...props }: MailingProps & HTMLSectionProps) => {
-  const { title, joinWaitingListForm } = blok;
+  const { heading, backgroundImage, joinWaitingListForm } = blok;
+
   return (
-    <S.SectionContainer {...props} {...storyblokEditable(blok)}>
-      <S.Title dangerouslySetInnerHTML={{ __html: title }} />
+    <S.SectionContainer
+      backgroundImage={backgroundImage.filename}
+      {...props}
+      {...storyblokEditable(blok)}
+    >
+      <S.Heading dangerouslySetInnerHTML={{ __html: heading }} />
       <S.JoinWaitingListForm {...joinWaitingListForm[0]} />
     </S.SectionContainer>
   );

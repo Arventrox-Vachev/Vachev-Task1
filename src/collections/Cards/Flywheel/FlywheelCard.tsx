@@ -4,24 +4,24 @@ import { HTMLDivProps } from "types";
 
 export interface FlywheelCardProps {
   _uid: string;
-  title: string;
+  heading: string;
   description: string;
-  image: { alt: string; filename: string };
+  cardImage: { alt: string; filename: string };
 }
 
 export const FlywheelCard = ({
-  title,
+  heading,
   description,
-  image,
+  cardImage,
   ...props
 }: FlywheelCardProps & HTMLDivProps) => {
   return (
     <S.FlywheelCardContainer {...props}>
       <S.ImageWrapper>
-        <Image src={image.filename} alt={image.alt} width={102} height={102} />
+        <Image src={cardImage.filename} alt={cardImage.alt} width={102} height={102} />
       </S.ImageWrapper>
 
-      <S.Title>{title}</S.Title>
+      <S.Title>{heading}</S.Title>
       <S.Text>{description}</S.Text>
     </S.FlywheelCardContainer>
   );

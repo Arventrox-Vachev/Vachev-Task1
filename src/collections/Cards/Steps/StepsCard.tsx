@@ -4,21 +4,22 @@ import { HTMLDivProps } from "types";
 import { useMediaQuery } from "hooks";
 
 export interface StepsCardProps {
+  _uid: string;
   number: number;
-  title: string;
-  desktop_subtitle: string;
-  mobileSubtitle?: string;
+  heading: string;
+  desktopSubheading: string;
+  mobileSubHeading?: string;
   description: string;
-  image: ImageProps | any;
+  cardImage: ImageProps | any;
 }
 
 export const StepsCard = ({
   number,
-  title,
-  desktop_subtitle,
-  mobileSubtitle,
+  heading,
+  desktopSubheading,
+  mobileSubHeading,
   description,
-  image,
+  cardImage,
   ...props
 }: StepsCardProps & HTMLDivProps) => {
   const [isSmallScreenDevice] = useMediaQuery({ type: "max", breakpoint: "S" });
@@ -26,16 +27,16 @@ export const StepsCard = ({
   return (
     <S.StepsCardContainer {...props}>
       <S.ImageWrapper>
-        <Image src={image.filename} alt={image.alt} width={193} height={197} />
+        <Image src={cardImage.filename} alt={cardImage.alt} width={193} height={197} />
       </S.ImageWrapper>
 
       <S.TextContainer>
         <S.NumberWrapper>{number}</S.NumberWrapper>
-        <S.Title>{title}</S.Title>
-        <S.Subtitle>
-          {isSmallScreenDevice && mobileSubtitle ? mobileSubtitle : desktop_subtitle}
-        </S.Subtitle>
-        <S.Text>{description}</S.Text>
+        <S.Heading>{heading}</S.Heading>
+        <S.Subheading>
+          {isSmallScreenDevice && mobileSubHeading ? mobileSubHeading : desktopSubheading}
+        </S.Subheading>
+        <S.Description>{description}</S.Description>
       </S.TextContainer>
     </S.StepsCardContainer>
   );

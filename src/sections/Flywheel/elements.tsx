@@ -47,7 +47,7 @@ export const TextContainer = styled("div")`
   }
 `;
 
-export const Text = styled(Typography.Paragraph)`
+export const Description = styled(Typography.Paragraph)`
   padding-right: 60px;
   margin-bottom: 12px;
 
