@@ -8,6 +8,7 @@ import { Header, Footer } from "collections";
 import TagManager from "react-gtm-module";
 import { FlyWheel, Hero, Icons, Mailing, Steps } from "sections";
 import { Page } from "components/Bloks/Page";
+import { footerProps } from "data";
 
 const tagManagerArgs = {
   gtmId: "GTM-XXXXXXX"
@@ -61,7 +62,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <GlobalStyles />
       <Header headerProps={headerData.content} />
       <Component {...pageProps} />
-      {/* <Footer /> */}
+      <Footer {...footerProps} />
     </ThemeProvider>
   );
 }
