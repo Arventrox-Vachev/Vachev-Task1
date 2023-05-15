@@ -1,16 +1,31 @@
 import * as S from "./elements";
-import { useZodForm } from "hooks";
-import { HTMLDivProps, HTMLFormProps } from "types";
-import { joinWaitingListSchema } from "schemas";
 import Image from "next/image";
-import { SbBlokData } from "@storyblok/react";
+import { useZodForm } from "hooks";
+import { HTMLDivProps } from "types";
+import { joinWaitingListSchema } from "schemas";
 
 export interface JoinWaitingListFormProps {
-  joinWaitingListForm: SbBlokData[] | HTMLFormProps;
+  title: string;
+  success_title: string;
+  email_holder: string;
+  button_text: string;
+  tos_text: string;
+  newsletter_text: string;
+  success_image: { alt: string; filename: string };
+  invalidImage: { alt: string; filename: string };
+  validImage: { alt: string; filename: string };
 }
 
 export const JoinWaitingListForm = ({
-  joinWaitingListForm,
+  title,
+  success_title,
+  email_holder,
+  button_text,
+  tos_text,
+  newsletter_text,
+  success_image,
+  invalidImage,
+  validImage,
   ...props
 }: JoinWaitingListFormProps & HTMLDivProps) => {
   const { control, handleSubmit, formState, setValue, watch } = useZodForm(joinWaitingListSchema, {
@@ -19,18 +34,6 @@ export const JoinWaitingListForm = ({
     newsLetter: false
   });
   const { isSubmitSuccessful } = formState;
-
-  const {
-    title,
-    success_title,
-    email_holder,
-    button_text,
-    tos_text,
-    newsletter_text,
-    success_image,
-    invalidImage,
-    validImage
-  } = joinWaitingListForm[0];
 
   const submitHandler = handleSubmit(data => {
     console.log(data);
@@ -59,7 +62,7 @@ export const JoinWaitingListForm = ({
         <S.SuccessContainer>
           <S.Title dangerouslySetInnerHTML={{ __html: success_title }} />
           <S.ImageWrapper>
-            <Image src={success_image.filename} alt='' width={196} height={147} />
+            <Image src={success_image.filename} alt={success_image.alt} width={196} height={147} />
           </S.ImageWrapper>
         </S.SuccessContainer>
       )}

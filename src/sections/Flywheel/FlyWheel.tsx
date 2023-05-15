@@ -2,15 +2,22 @@ import * as S from "./elements";
 import Image from "next/image";
 import { HTMLSectionProps } from "types";
 import { storyblokEditable, SbBlokData } from "@storyblok/react";
+import { FlywheelCardProps } from "collections";
 
 export interface FlyWheelProps {
-  blok: SbBlokData | any;
+  blok: FlywheelBlokData;
+}
+
+interface FlywheelBlokData extends SbBlokData {
+  title: string;
+  text: string;
+  text2: string;
+  flywheel_image: { alt: string; filename: string };
+  flywheelCards: FlywheelCardProps[];
 }
 
 export const FlyWheel = ({ blok, ...props }: FlyWheelProps & HTMLSectionProps) => {
   const { title, text, text2, flywheel_image, flywheelCards } = blok;
-
-  // console.log(flywheelCards);
 
   return (
     <S.SectionContainer {...props} {...storyblokEditable(blok)}>

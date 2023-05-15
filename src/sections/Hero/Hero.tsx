@@ -2,14 +2,22 @@ import * as S from "./elements";
 import Image from "next/image";
 import { HTMLSectionProps } from "types";
 import { storyblokEditable, SbBlokData } from "@storyblok/react";
+import { JoinWaitingListFormProps } from "collections";
 
 export interface HeroProps {
-  blok: SbBlokData | any;
+  blok: HeroBlokData;
+}
+
+interface HeroBlokData extends SbBlokData {
+  title: string;
+  subtitle: string;
+  subtitle2: string;
+  image: { alt: string; filename: string };
+  joinWaitingListForm: JoinWaitingListFormProps;
 }
 
 export const Hero = ({ blok, ...props }: HeroProps & HTMLSectionProps) => {
   const { image, title, subtitle, subtitle2, joinWaitingListForm } = blok;
-  // console.log(blok);
 
   return (
     <S.SectionContainer {...props} {...storyblokEditable(blok)}>
@@ -17,8 +25,7 @@ export const Hero = ({ blok, ...props }: HeroProps & HTMLSectionProps) => {
         <S.Title dangerouslySetInnerHTML={{ __html: title }} />
         <S.SubHeading>{subtitle}</S.SubHeading>
         <S.SubHeading>{subtitle2}</S.SubHeading>
-
-        <S.JoinWaitingListForm joinWaitingListForm={joinWaitingListForm} />
+        <S.JoinWaitingListForm {...joinWaitingListForm[0]} />
       </S.ItemsContainer>
 
       <S.ImageWrapper>

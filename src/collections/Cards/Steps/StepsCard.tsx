@@ -22,7 +22,6 @@ export const StepsCard = ({
   ...props
 }: StepsCardProps & HTMLDivProps) => {
   const [isSmallScreenDevice] = useMediaQuery({ type: "max", breakpoint: "S" });
-  const subtitle = isSmallScreenDevice && mobileSubtitle ? mobileSubtitle : desktop_subtitle;
 
   return (
     <S.StepsCardContainer {...props}>
@@ -33,7 +32,9 @@ export const StepsCard = ({
       <S.TextContainer>
         <S.NumberWrapper>{number}</S.NumberWrapper>
         <S.Title>{title}</S.Title>
-        <S.Subtitle>{subtitle}</S.Subtitle>
+        <S.Subtitle>
+          {isSmallScreenDevice && mobileSubtitle ? mobileSubtitle : desktop_subtitle}
+        </S.Subtitle>
         <S.Text>{description}</S.Text>
       </S.TextContainer>
     </S.StepsCardContainer>

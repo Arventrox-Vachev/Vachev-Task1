@@ -26,8 +26,6 @@ export const Footer = ({
   ...props
 }: FooterProps & HTMLFooterProps) => {
   const [isSmallScreenDevice] = useMediaQuery({ type: "max", breakpoint: "S" });
-  const copyright = isSmallScreenDevice ? mobileCopyright : desktopCopyright;
-  const description = isSmallScreenDevice ? mobileDescription : desktopDescription;
 
   return (
     <S.Footer {...props}>
@@ -35,7 +33,7 @@ export const Footer = ({
         <S.HolderContainer>
           <S.TextContainer>
             <S.Logo {...logo} />
-            <S.Text>{description}</S.Text>
+            <S.Text>{isSmallScreenDevice ? mobileDescription : desktopDescription}</S.Text>
           </S.TextContainer>
 
           <S.NavContainer>
@@ -53,7 +51,11 @@ export const Footer = ({
           </S.NavContainer>
         </S.HolderContainer>
 
-        <S.Copyright dangerouslySetInnerHTML={{ __html: copyright }} />
+        <S.Copyright
+          dangerouslySetInnerHTML={{
+            __html: isSmallScreenDevice ? mobileCopyright : desktopCopyright
+          }}
+        />
       </S.Container>
     </S.Footer>
   );
