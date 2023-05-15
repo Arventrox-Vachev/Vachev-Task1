@@ -5,7 +5,7 @@ import { HTMLDivProps } from "types";
 export interface FlywheelCardProps {
   title: string;
   description: string;
-  image: ImageProps;
+  image: ImageProps | any;
 }
 
 export const FlywheelCard = ({
@@ -17,7 +17,7 @@ export const FlywheelCard = ({
   return (
     <S.FlywheelCardContainer {...props}>
       <S.ImageWrapper>
-        <Image {...image} />
+        <Image src={image.filename} alt='' width={102} height={102} />
       </S.ImageWrapper>
 
       <S.Title>{title}</S.Title>

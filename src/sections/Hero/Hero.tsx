@@ -1,35 +1,28 @@
 import * as S from "./elements";
-import Image, { ImageProps } from "next/image";
+import Image from "next/image";
 import { HTMLSectionProps } from "types";
-import { JoinWaitingListFormProps } from "collections";
+import { storyblokEditable, SbBlokData } from "@storyblok/react";
 
 export interface HeroProps {
-  title: string;
-  subtitles: string[];
-  image: ImageProps;
-  joinWaitingListFormProps: JoinWaitingListFormProps;
+  blok: SbBlokData | any;
 }
 
-export const Hero = ({
-  title,
-  subtitles,
-  image,
-  joinWaitingListFormProps,
-  ...props
-}: HeroProps & HTMLSectionProps) => {
+export const Hero = ({ blok, ...props }: HeroProps & HTMLSectionProps) => {
+  const { image, title, subtitle, subtitle2, joinWaitingListForm } = blok;
+  // console.log(blok);
+
   return (
-    <S.SectionContainer {...props}>
+    <S.SectionContainer {...props} {...storyblokEditable(blok)}>
       <S.ItemsContainer>
         <S.Title dangerouslySetInnerHTML={{ __html: title }} />
-        {subtitles.map((subtitle, index) => (
-          <S.SubHeading key={index}>{subtitle}</S.SubHeading>
-        ))}
+        <S.SubHeading>{subtitle}</S.SubHeading>
+        <S.SubHeading>{subtitle2}</S.SubHeading>
 
-        <S.JoinWaitingListForm {...joinWaitingListFormProps} />
+        <S.JoinWaitingListForm joinWaitingListForm={joinWaitingListForm} />
       </S.ItemsContainer>
 
       <S.ImageWrapper>
-        <Image {...image} />
+        <Image src={image.filename} alt={image.alt} width={740} height={500} />
       </S.ImageWrapper>
     </S.SectionContainer>
   );

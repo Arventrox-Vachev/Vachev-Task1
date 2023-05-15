@@ -1,40 +1,39 @@
 import * as S from "./elements";
-import Image, { ImageProps } from "next/image";
-import { FlywheelCardProps } from "collections";
+import Image from "next/image";
 import { HTMLSectionProps } from "types";
+import { storyblokEditable, SbBlokData } from "@storyblok/react";
 
 export interface FlyWheelProps {
-  title: string;
-  description: string[];
-  cards: FlywheelCardProps[];
-  image: ImageProps;
+  blok: SbBlokData | any;
 }
 
-export const FlyWheel = ({
-  title,
-  description,
-  cards,
-  image,
-  ...props
-}: FlyWheelProps & HTMLSectionProps) => {
+export const FlyWheel = ({ blok, ...props }: FlyWheelProps & HTMLSectionProps) => {
+  const { title, text, text2, flywheel_image, flywheelCards } = blok;
+
+  // console.log(flywheelCards);
+
   return (
-    <S.SectionContainer {...props}>
+    <S.SectionContainer {...props} {...storyblokEditable(blok)}>
       <S.CardContainer>
         <S.Title dangerouslySetInnerHTML={{ __html: title }} />
 
         <S.TextContainer>
-          {description.map((desc, index) => (
-            <S.Text key={index}>{desc}</S.Text>
-          ))}
+          <S.Text>{text}</S.Text>
+          <S.Text>{text2}</S.Text>
         </S.TextContainer>
 
         <S.FlywheelWrapper>
-          {cards.map((cardProps, index) => (
-            <S.FlywheelCard key={index} {...cardProps} />
+          {flywheelCards.map(cardProps => (
+            <S.FlywheelCard key={cardProps._uid} {...cardProps} />
           ))}
 
           <S.ImageWrapper>
-            <Image {...image} />
+            <Image
+              src={flywheel_image.filename}
+              alt={flywheel_image.alt}
+              width={551}
+              height={551}
+            />
           </S.ImageWrapper>
         </S.FlywheelWrapper>
       </S.CardContainer>

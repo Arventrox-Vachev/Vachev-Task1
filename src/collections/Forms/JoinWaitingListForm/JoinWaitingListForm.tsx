@@ -2,26 +2,15 @@ import * as S from "./elements";
 import { useZodForm } from "hooks";
 import { HTMLDivProps, HTMLFormProps } from "types";
 import { joinWaitingListSchema } from "schemas";
-import Image, { ImageProps } from "next/image";
+import Image from "next/image";
+import { SbBlokData } from "@storyblok/react";
 
 export interface JoinWaitingListFormProps {
-  title: string;
-  successTitle: string;
-  emailHolder: string;
-  buttonText: string;
-  validationImgs: { validImgSrc: string; invalidImgSrc: string };
-  policiesText: { tOS: string; newsLetter: string };
-  image: ImageProps;
+  joinWaitingListForm: SbBlokData[] | HTMLFormProps;
 }
 
 export const JoinWaitingListForm = ({
-  title,
-  successTitle,
-  emailHolder,
-  buttonText,
-  validationImgs,
-  policiesText: { tOS, newsLetter },
-  image,
+  joinWaitingListForm,
   ...props
 }: JoinWaitingListFormProps & HTMLDivProps) => {
   const { control, handleSubmit, formState, setValue, watch } = useZodForm(joinWaitingListSchema, {
@@ -30,6 +19,18 @@ export const JoinWaitingListForm = ({
     newsLetter: false
   });
   const { isSubmitSuccessful } = formState;
+
+  const {
+    title,
+    success_title,
+    email_holder,
+    button_text,
+    tos_text,
+    newsletter_text,
+    success_image,
+    invalidImage,
+    validImage
+  } = joinWaitingListForm[0];
 
   const submitHandler = handleSubmit(data => {
     console.log(data);
@@ -42,22 +43,23 @@ export const JoinWaitingListForm = ({
           <S.Title dangerouslySetInnerHTML={{ __html: title }} />
           <S.Container>
             <S.InputField
-              placeholder={emailHolder}
+              placeholder={email_holder}
               name='email'
               hideValidIndicator={false}
               control={control}
-              {...validationImgs}
+              validImgSrc={validImage}
+              invalidImgSrc={invalidImage}
             />
-            <S.Button>{buttonText}</S.Button>
+            <S.Button>{button_text}</S.Button>
           </S.Container>
-          <S.Checkbox name='agreedToTOS' label={tOS} control={control} />
-          <S.Checkbox name='newsLetter' label={newsLetter} control={control} />
+          <S.Checkbox name='agreedToTOS' label={tos_text} control={control} />
+          <S.Checkbox name='newsLetter' label={newsletter_text} control={control} />
         </S.Form>
       ) : (
         <S.SuccessContainer>
-          <S.Title dangerouslySetInnerHTML={{ __html: successTitle }} />
+          <S.Title dangerouslySetInnerHTML={{ __html: success_title }} />
           <S.ImageWrapper>
-            <Image {...image} />
+            <Image src={success_image.filename} alt='' width={196} height={147} />
           </S.ImageWrapper>
         </S.SuccessContainer>
       )}

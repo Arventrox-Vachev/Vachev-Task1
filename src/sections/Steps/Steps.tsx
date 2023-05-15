@@ -1,21 +1,22 @@
 import * as S from "./elements";
 import { HTMLSectionProps } from "types";
-import { StepsCardProps } from "collections";
+import { storyblokEditable, SbBlokData } from "@storyblok/react";
 
 export interface StepsProps {
-  title: string;
-  cards: StepsCardProps[];
+  blok: SbBlokData | any;
 }
 
-export const Steps = ({ title, cards, ...props }: StepsProps & HTMLSectionProps) => {
+export const Steps = ({ blok, ...props }: StepsProps & HTMLSectionProps) => {
+  const { title, steps_cards } = blok;
+
   return (
-    <S.SectionContainer {...props}>
+    <S.SectionContainer {...props} {...storyblokEditable(blok)}>
       <S.CardContainer>
         <S.Title dangerouslySetInnerHTML={{ __html: title }} />
 
         <S.StepsCardsWrapper>
-          {cards.map((cardProps, index) => (
-            <S.StepsCard key={index} {...cardProps} />
+          {steps_cards.map(cardProps => (
+            <S.StepsCard key={cardProps._uid} {...cardProps} />
           ))}
         </S.StepsCardsWrapper>
       </S.CardContainer>

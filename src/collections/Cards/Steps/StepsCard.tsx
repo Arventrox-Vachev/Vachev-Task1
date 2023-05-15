@@ -6,28 +6,28 @@ import { useMediaQuery } from "hooks";
 export interface StepsCardProps {
   number: number;
   title: string;
-  desktopSubtitle: string;
+  desktop_subtitle: string;
   mobileSubtitle?: string;
   description: string;
-  image: ImageProps;
+  image: ImageProps | any;
 }
 
 export const StepsCard = ({
   number,
   title,
-  desktopSubtitle,
+  desktop_subtitle,
   mobileSubtitle,
   description,
   image,
   ...props
 }: StepsCardProps & HTMLDivProps) => {
   const [isSmallScreenDevice] = useMediaQuery({ type: "max", breakpoint: "S" });
-  const subtitle = isSmallScreenDevice && mobileSubtitle ? mobileSubtitle : desktopSubtitle;
+  const subtitle = isSmallScreenDevice && mobileSubtitle ? mobileSubtitle : desktop_subtitle;
 
   return (
     <S.StepsCardContainer {...props}>
       <S.ImageWrapper>
-        <Image {...image} />
+        <Image src={image.filename} alt={image.alt} width={193} height={197} />
       </S.ImageWrapper>
 
       <S.TextContainer>

@@ -3,7 +3,7 @@ import Image, { ImageProps } from "next/image";
 import { HTMLDivProps } from "types";
 
 export interface LogoProps {
-  title: string;
+  logo_text: string;
   image: ImageProps;
 }
 

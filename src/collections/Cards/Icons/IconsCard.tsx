@@ -5,7 +5,7 @@ import { HTMLDivProps } from "types";
 export interface IconsCardProps {
   title: string;
   description: string;
-  image: ImageProps;
+  image: ImageProps | any;
 }
 
 export const IconsCard = ({
@@ -17,7 +17,7 @@ export const IconsCard = ({
   return (
     <S.IconWrapper {...props}>
       <S.ImageWrapper>
-        <Image {...image} />
+        <Image src={image.filename} alt={image.alt} width={80} height={80} />
       </S.ImageWrapper>
 
       <S.TextContainer>
