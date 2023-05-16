@@ -5,10 +5,9 @@ import { storyblokInit, apiPlugin, getStoryblokApi, ISbStoryData } from "@storyb
 import { ThemeProvider } from "styled-components";
 import { theme, GlobalStyles } from "styles";
 import { Header, Footer } from "collections";
-import TagManager from "react-gtm-module";
 import { FlyWheel, Hero, Icons, Mailing, Steps } from "sections";
-import { Page } from "components/Bloks/Page";
-import { footerProps } from "data";
+import { Page } from "components";
+import TagManager from "react-gtm-module";
 
 const tagManagerArgs = {
   gtmId: "GTM-XXXXXXX"
@@ -29,25 +28,31 @@ storyblokInit({
   components
 });
 
+const fetchStoryData = async (
+  slug: string,
+  setData: React.Dispatch<React.SetStateAction<ISbStoryData | null>>
+) => {
+  const storyblokApi = getStoryblokApi();
+  const { data } = await storyblokApi.getStory(slug, {
+    version: "draft" // or "published"
+  });
+  setData(data.story);
+};
+
 function MyApp({ Component, pageProps }: AppProps) {
+  const [headerData, setHeaderData] = useState<ISbStoryData<any> | null>(null);
+  const [footerData, setFooterData] = useState<ISbStoryData<any> | null>(null);
+
   useEffect(() => {
     // TagManager.initialize(tagManagerArgs);
   }, []);
-  const [headerData, setHeaderData] = useState<ISbStoryData | null>(null);
 
   useEffect(() => {
-    async function fetchHeaderData() {
-      const storyblokApi = getStoryblokApi();
-      const { data } = await storyblokApi.getStory("header", {
-        version: "draft" // or "published"
-      });
-      setHeaderData(data.story);
-    }
-    fetchHeaderData();
+    fetchStoryData("header", setHeaderData);
+    fetchStoryData("footer", setFooterData);
   }, []);
 
-  if (!headerData) return null;
-  console.log(headerData.content);
+  if (!headerData || !footerData) return null;
 
   return (
     <ThemeProvider theme={theme}>
@@ -62,7 +67,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <GlobalStyles />
       <Header headerProps={headerData.content} />
       <Component {...pageProps} />
-      <Footer {...footerProps} />
+      {<Footer footerProps={footerData.content} />}
     </ThemeProvider>
   );
 }

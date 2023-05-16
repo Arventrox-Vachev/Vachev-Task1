@@ -1,13 +1,12 @@
 import { SbBlokData, StoryblokComponent } from "@storyblok/react";
-import { FunctionComponent } from "react";
 
-export interface IPageComponent extends SbBlokData {
+export interface PageComponentProps extends SbBlokData {
   body: SbBlokData[];
 }
 
-export const Page: FunctionComponent<{ blok: IPageComponent }> = ({ blok }) => {
+export const Page: React.FC<{ blok: PageComponentProps }> = ({ blok }) => {
   return (
-    <main className='container flex flex-col items-center'>
+    <main>
       {blok.body.map(nestedBlok => (
         <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
       ))}
