@@ -10,7 +10,7 @@ export const SectionContainer = styled(_SectionContainer)``;
 
 export const CardContainer = styled(_CardContainer)``;
 
-export const Title = styled(Typography.H1)`
+export const Heading = styled(Typography.H1)`
   width: 100%;
   padding: 0 40px 80px;
   margin-bottom: 40px;
@@ -47,7 +47,7 @@ export const TextContainer = styled("div")`
   }
 `;
 
-export const Text = styled(Typography.Paragraph)`
+export const Description = styled(Typography.Paragraph)`
   padding-right: 60px;
   margin-bottom: 12px;
 

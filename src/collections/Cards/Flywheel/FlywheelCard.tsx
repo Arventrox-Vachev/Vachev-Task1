@@ -1,27 +1,28 @@
 import * as S from "./elements";
-import Image, { ImageProps } from "next/image";
+import Image from "next/image";
 import { HTMLDivProps } from "types";
 
 export interface FlywheelCardProps {
-  title: string;
+  _uid: string;
+  heading: string;
   description: string;
-  image: ImageProps;
+  cardImage: { alt: string; filename: string };
 }
 
 export const FlywheelCard = ({
-  title,
+  heading,
   description,
-  image,
+  cardImage,
   ...props
 }: FlywheelCardProps & HTMLDivProps) => {
   return (
     <S.FlywheelCardContainer {...props}>
       <S.ImageWrapper>
-        <Image {...image} />
+        <Image src={cardImage.filename} alt={cardImage.alt} width={102} height={102} />
       </S.ImageWrapper>
 
-      <S.Title>{title}</S.Title>
-      <S.Text>{description}</S.Text>
+      <S.Heading>{heading}</S.Heading>
+      <S.Description>{description}</S.Description>
     </S.FlywheelCardContainer>
   );
 };

@@ -1,10 +1,10 @@
 import { FooterProps } from "collections";
 
-export const footerProps: FooterProps = {
+const footerProps = {
   desktopDescription: "Boost your campaign performance with over 25% by fixing your campaign data",
   mobileDescription: "The art of Campaign Optimization",
   logo: {
-    title: "CampaignMeister",
+    text: "CampaignMeister",
     image: {
       src: "/imgs/logo-image.png",
       alt: "Some text",

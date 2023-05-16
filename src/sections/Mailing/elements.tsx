@@ -2,17 +2,16 @@ import styled from "styled-components";
 import { SectionContainer as _SectionContainer, Typography } from "components";
 import { JoinWaitingListForm as _JoinWaitingListForm } from "collections";
 
-export const SectionContainer = styled(_SectionContainer)`
+export const SectionContainer = styled(_SectionContainer)<{ backgroundImage: string }>`
   padding-top: 80px;
   flex-direction: column;
   align-items: center;
 
-  background-image: url(./imgs/data_banner.png);
+  background-image: url(${({ backgroundImage }) => backgroundImage});
   background-repeat: no-repeat;
   background-position: center;
   background-size: 88px;
   background-position-y: -40px;
-
   @media ${({ theme }) => theme.breakpoint.max.S} {
     margin-bottom: 32px;
     position: relative;
@@ -21,7 +20,7 @@ export const SectionContainer = styled(_SectionContainer)`
   }
 `;
 
-export const Title = styled(Typography.H1)`
+export const Heading = styled(Typography.H1)`
   width: 100%;
   margin-bottom: 40px;
 

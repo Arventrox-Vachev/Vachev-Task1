@@ -8,9 +8,9 @@ export interface FormTextInputProps<T extends FieldValues = any>
   extends Omit<HTMLInputProps, "name" | "defaultValue"> {
   name: Path<T>;
   label?: string;
-  validImgSrc: string;
+  validImgSrc: any;
   hideValidIndicator: boolean;
-  invalidImgSrc: string;
+  invalidImgSrc: any;
   control: Control<T, any>;
 }
 
@@ -56,7 +56,7 @@ export const FormInput = <T extends FieldValues = any>({
         {!hideValidIndicator && isSubmitted && (
           <S.ImageWrapper>
             <Image
-              src={error ? invalidImgSrc : validImgSrc}
+              src={error ? invalidImgSrc.filename : validImgSrc.filename}
               alt='validation-icon'
               width={24}
               height={24}

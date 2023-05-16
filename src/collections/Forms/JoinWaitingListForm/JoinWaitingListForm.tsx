@@ -1,27 +1,35 @@
 import * as S from "./elements";
+import Image from "next/image";
 import { useZodForm } from "hooks";
-import { HTMLDivProps, HTMLFormProps } from "types";
+import { HTMLDivProps } from "types";
 import { joinWaitingListSchema } from "schemas";
-import Image, { ImageProps } from "next/image";
 
 export interface JoinWaitingListFormProps {
-  title: string;
-  successTitle: string;
+  heading: string;
+  successHeading: string;
   emailHolder: string;
   buttonText: string;
-  validationImgs: { validImgSrc: string; invalidImgSrc: string };
-  policiesText: { tOS: string; newsLetter: string };
-  image: ImageProps;
+  tosText: string;
+  newsletterText: string;
+  successImage: { alt: string; filename: string };
+  invalidImage: { alt: string; filename: string };
+  validImage: { alt: string; filename: string };
+  desktopActiveImage: { filename: string };
+  mobileActiveImage: { filename: string };
 }
 
 export const JoinWaitingListForm = ({
-  title,
-  successTitle,
+  heading,
+  successHeading,
   emailHolder,
   buttonText,
-  validationImgs,
-  policiesText: { tOS, newsLetter },
-  image,
+  tosText,
+  newsletterText,
+  successImage,
+  invalidImage,
+  validImage,
+  desktopActiveImage,
+  mobileActiveImage,
   ...props
 }: JoinWaitingListFormProps & HTMLDivProps) => {
   const { control, handleSubmit, formState, setValue, watch } = useZodForm(joinWaitingListSchema, {
@@ -39,25 +47,38 @@ export const JoinWaitingListForm = ({
     <S.JoinWaitingContainer {...props}>
       {!isSubmitSuccessful ? (
         <S.Form onSubmit={submitHandler}>
-          <S.Title dangerouslySetInnerHTML={{ __html: title }} />
+          <S.Title dangerouslySetInnerHTML={{ __html: heading }} />
           <S.Container>
             <S.InputField
               placeholder={emailHolder}
               name='email'
               hideValidIndicator={false}
               control={control}
-              {...validationImgs}
+              validImgSrc={validImage}
+              invalidImgSrc={invalidImage}
             />
             <S.Button>{buttonText}</S.Button>
           </S.Container>
-          <S.Checkbox name='agreedToTOS' label={tOS} control={control} />
-          <S.Checkbox name='newsLetter' label={newsLetter} control={control} />
+          <S.Checkbox
+            desktopActiveImage={desktopActiveImage.filename}
+            mobileActiveImage={mobileActiveImage.filename}
+            name='agreedToTOS'
+            label={tosText}
+            control={control}
+          />
+          <S.Checkbox
+            desktopActiveImage={desktopActiveImage.filename}
+            mobileActiveImage={mobileActiveImage.filename}
+            name='newsLetter'
+            label={newsletterText}
+            control={control}
+          />
         </S.Form>
       ) : (
         <S.SuccessContainer>
-          <S.Title dangerouslySetInnerHTML={{ __html: successTitle }} />
+          <S.Title dangerouslySetInnerHTML={{ __html: successHeading }} />
           <S.ImageWrapper>
-            <Image {...image} />
+            <Image src={successImage.filename} alt={successImage.alt} width={196} height={147} />
           </S.ImageWrapper>
         </S.SuccessContainer>
       )}

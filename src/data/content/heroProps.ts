@@ -1,17 +1,15 @@
 import { HeroProps } from "sections";
 
-export const heroSectionProps: HeroProps = {
+export const heroSectionProps = {
   title:
     "<span>The ugly truth: Your campaign data are a mess.</span> By fixing it, you can improve your campaign performance with over 25%.",
-  subtitles: [
+  subtitle:
     "Optimizing campaigns is hard, especially if you lack trustworthy data. Unfortunately this is the case for more than 65% of the companies.",
-    "Boost your  performance by fixing your data across all channels, brands and agencies."
-  ],
+  subtitle2:
+    "Boost your  performance by fixing your data across all channels, brands and agencies.",
   image: {
-    src: "/imgs/hero.png",
-    alt: "hero",
-    width: 740,
-    height: 499
+    filename: "/imgs/hero.png",
+    alt: "hero"
   },
   joinWaitingListFormProps: {
     title: "<span>Join</span> waiting list for access",

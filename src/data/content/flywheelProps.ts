@@ -1,6 +1,6 @@
 import { FlyWheelProps } from "sections";
 
-export const flywheelProps: FlyWheelProps = {
+export const flywheelProps = {
   title: "How to <span> boost your performance </span> with flawless data",
 
   description: [
