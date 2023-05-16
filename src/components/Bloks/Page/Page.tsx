@@ -6,10 +6,10 @@ export interface PageComponentProps extends SbBlokData {
 
 export const Page: React.FC<{ blok: PageComponentProps }> = ({ blok }) => {
   return (
-    <main>
+    <>
       {blok.body.map(nestedBlok => (
         <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
       ))}
-    </main>
+    </>
   );
 };

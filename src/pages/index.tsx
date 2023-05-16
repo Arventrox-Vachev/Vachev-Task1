@@ -1,10 +1,9 @@
-import { GetStaticProps, NextPage } from "next";
+import { GetStaticProps } from "next";
 
 import {
   useStoryblokState,
   getStoryblokApi,
   StoryblokComponent,
-  ISbStoriesParams,
   ISbStoryData
 } from "@storyblok/react";
 
@@ -25,8 +24,6 @@ export const getStaticProps: GetStaticProps<{ story: ISbStoryData }> = async () 
 
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, { version: "draft" });
-
-  // console.log(JSON.stringify(data, null, 2));
 
   return {
     props: {

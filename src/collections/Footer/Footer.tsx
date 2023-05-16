@@ -7,7 +7,7 @@ import { LogoProps } from "collections/Logo";
 export interface FooterProps {
   footerProps: FooterBlockData;
 }
-interface FooterBlockData extends SbBlokData {
+export interface FooterBlockData extends SbBlokData {
   navItems: {
     _uid: string;
     heading: string;

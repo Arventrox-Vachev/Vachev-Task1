@@ -7,7 +7,7 @@ export interface HeaderProps {
   headerProps: HeaderBlockData;
 }
 
-interface HeaderBlockData extends SbBlokData {
+export interface HeaderBlockData extends SbBlokData {
   logo: LogoProps;
   buttonText: string;
 }
