@@ -16,5 +16,17 @@ export const Header = styled("header")`
 export const Logo = styled(_Logo)``;
 
 export const Button = styled(_Button)`
-  margin-left: auto;
+  margin-left: 12px;
+
+  &:first-of-type {
+    margin-left: auto;
+
+    > a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
 `;
