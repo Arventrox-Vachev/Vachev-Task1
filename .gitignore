@@ -16,6 +16,9 @@
 /build
 /dist
 
+/firebase
+secrets.json
+
 # misc
 .DS_Store
 *.pem

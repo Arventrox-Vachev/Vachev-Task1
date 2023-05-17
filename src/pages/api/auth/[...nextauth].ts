@@ -2,12 +2,12 @@ import NextAuth, { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import DiscordProvider from "next-auth/providers/discord";
 import Credentials from "next-auth/providers/credentials";
+import { FirestoreAdapter } from "@next-auth/firebase-adapter";
+import { addDoc, collection, getDocs } from "firebase/firestore";
+import { db } from "../../../../firebase.config";
 
 export const authOptions: NextAuthOptions = {
-  // Configure one or more authentication providers
-  session: {
-    strategy: "jwt"
-  },
+  adapter: FirestoreAdapter(),
   providers: [
     Credentials({
       type: "credentials",
@@ -15,12 +15,35 @@ export const authOptions: NextAuthOptions = {
         email: { label: "Email", type: "email", placeholder: "test@email.com" },
         password: { label: "Password", type: "password", placeholder: "enter your password" }
       },
-      authorize(credentials, req) {
+      async authorize(credentials, req) {
         const { email, password } = credentials as { email: string; password: string };
-        if (email !== "test@gmail.com" || password !== "123") return null;
-        console.log({ id: "1", name: "test", email: email });
+        const docsData: any = [];
+        const querySnapshot = await getDocs(collection(db, "users"));
 
-        return { id: "1", name: "test", email: email };
+        querySnapshot.forEach(doc => {
+          docsData.push({ key: doc.id, ...doc.data() });
+        });
+
+        const isValid = await docsData.some(doc => doc.email == email && doc.password == password);
+        const validUser = docsData.find(doc => doc.email == email && doc.password == password);
+        console.log(validUser);
+        console.log(email);
+        console.log(password);
+        console.log(isValid);
+
+        // try {
+        //   const docRef = await addDoc(collection(db, "sessions"), {
+        //     expires: new Date(new Date().getTime() + 60 * 60 * 1000).toDateString(),
+        //     sessionToken: "17f22d74-2ce0-4b18-8875-8dd8e5a66142",
+        //     userId: validUser.key
+        //   });
+        //   console.log("Document written with ID: ", docRef.id);
+        // } catch (e) {
+        //   console.error("Error adding document: ", e, validUser);
+        // }
+
+        if (!isValid) return null;
+        return { id: validUser.id, email: validUser.email };
       }
     }),
 

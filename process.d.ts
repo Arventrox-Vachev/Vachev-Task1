@@ -14,5 +14,21 @@ declare namespace NodeJS {
     AUTH0_SECRET: string;
     DISCORD_ID: string;
     DISCORD_SECRET: string;
+    FIREBASE_PROJECT_ID: string;
+    FIREBASE_CLIENT_EMAIL: string;
+    FIREBASE_PRIVATE_KEY: string;
+    GOOGLE_APPLICATION_CREDENTIALS: {
+      type: string;
+      project_id: string;
+      private_key_id: string;
+      private_key: string;
+      client_email: string;
+      client_id: string;
+      auth_uri: string;
+      token_uri: string;
+      auth_provider_x509_cert_url: string;
+      client_x509_cert_url: string;
+      universe_domain: string;
+    };
   }
 }

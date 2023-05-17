@@ -32,7 +32,7 @@ export const JoinWaitingListForm = ({
   const { isSubmitSuccessful } = formState;
 
   const submitHandler = handleSubmit(data => {
-    console.log(data);
+    // console.log(data);
   });
 
   return (

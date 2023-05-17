@@ -11,6 +11,7 @@ export interface HeaderProps {
 
 export const Header = ({ buttonText, logo, ...props }: HeaderProps & HTMLHeaderProps) => {
   const { data: session } = useSession();
+  console.log(session);
 
   const isSignedHandler = async () => {
     if (session) signOut();
