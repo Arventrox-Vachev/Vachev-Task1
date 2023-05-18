@@ -5,7 +5,6 @@ import { registerSchema } from "schemas";
 import { useRouter } from "next/router";
 import { db } from "../../../../firebase.config";
 import { collection, addDoc } from "firebase/firestore";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 export interface RegisterFormProps {
   heading: string;
@@ -31,6 +30,7 @@ export const RegisterForm = ({
   validationImgs,
   ...props
 }: RegisterFormProps & HTMLFormProps) => {
+  const router = useRouter();
   const { control, handleSubmit, formState, setValue, watch } = useZodForm(registerSchema, {
     email: "",
     password: ""
@@ -39,29 +39,18 @@ export const RegisterForm = ({
   const submitHandler = handleSubmit(async data => {
     console.log(data);
 
-    // try {
-    //   const docRef = await addDoc(collection(db, "users"), {
-    //     email: data.email,
-    //     emailVerified: null,
-    //     password: data.password,
-    //     name: data.name
-    //   });
-    //   console.log("Document written with ID: ", docRef.id);
-    // } catch (e) {
-    //   console.error("Error adding document: ", e);
-    // }
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, data.email, data.password)
-      .then(userCredential => {
-        // Signed in
-        const user = userCredential.user;
-        // ...
-      })
-      .catch(error => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
+    try {
+      const docRef = await addDoc(collection(db, "users"), {
+        email: data.email,
+        emailVerified: null,
+        password: data.password,
+        name: data.name
       });
+      console.log("Document written with ID: ", docRef.id);
+      if (docRef.id) router.push("/");
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
   });
 
   return (

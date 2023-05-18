@@ -3,7 +3,7 @@ import GoogleProvider from "next-auth/providers/google";
 import DiscordProvider from "next-auth/providers/discord";
 import Credentials from "next-auth/providers/credentials";
 import { FirestoreAdapter } from "@next-auth/firebase-adapter";
-import { addDoc, collection, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../../firebase.config";
 
 export const authOptions: NextAuthOptions = {
@@ -17,32 +17,19 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials, req) {
         const { email, password } = credentials as { email: string; password: string };
-        const docsData: any = [];
         const querySnapshot = await getDocs(collection(db, "users"));
+        const docsData: any = [];
 
         querySnapshot.forEach(doc => {
           docsData.push({ key: doc.id, ...doc.data() });
         });
 
-        const isValid = await docsData.some(doc => doc.email == email && doc.password == password);
-        const validUser = docsData.find(doc => doc.email == email && doc.password == password);
-        console.log(validUser);
-        console.log(email);
-        console.log(password);
-        console.log(isValid);
+        const validUser = await docsData.find(
+          doc => doc.email === email && doc.password === password
+        );
 
-        // try {
-        //   const docRef = await addDoc(collection(db, "sessions"), {
-        //     expires: new Date(new Date().getTime() + 60 * 60 * 1000).toDateString(),
-        //     sessionToken: "17f22d74-2ce0-4b18-8875-8dd8e5a66142",
-        //     userId: validUser.key
-        //   });
-        //   console.log("Document written with ID: ", docRef.id);
-        // } catch (e) {
-        //   console.error("Error adding document: ", e, validUser);
-        // }
+        if (!validUser) return null;
 
-        if (!isValid) return null;
         return { id: validUser.id, email: validUser.email };
       }
     }),
@@ -56,6 +43,7 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.DISCORD_SECRET
     })
   ],
+  session: { strategy: "jwt" },
   secret: process.env.JWT_SECRET
 };
 export default NextAuth(authOptions);
