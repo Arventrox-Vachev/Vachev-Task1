@@ -21,7 +21,7 @@ export const authOptions: NextAuthOptions = {
         const docsData: any = [];
 
         querySnapshot.forEach(doc => {
-          docsData.push({ key: doc.id, ...doc.data() });
+          docsData.push({ id: doc.id, ...doc.data() });
         });
 
         const validUser = await docsData.find(
@@ -30,7 +30,7 @@ export const authOptions: NextAuthOptions = {
 
         if (!validUser) return null;
 
-        return { id: validUser.id, email: validUser.email };
+        return { id: validUser.id, email: validUser.email, name: validUser.name };
       }
     }),
 

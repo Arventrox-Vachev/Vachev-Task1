@@ -47,7 +47,7 @@ export const RegisterForm = ({
         name: data.name
       });
       console.log("Document written with ID: ", docRef.id);
-      if (docRef.id) router.push("/");
+      if (docRef.id) router.replace("api/auth/signin");
     } catch (e) {
       console.error("Error adding document: ", e);
     }

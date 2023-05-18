@@ -3,6 +3,7 @@ import type { HTMLHeaderProps } from "types";
 import { LogoProps } from "collections/Logo";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export interface HeaderProps {
   buttonText: string;
@@ -11,11 +12,12 @@ export interface HeaderProps {
 
 export const Header = ({ buttonText, logo, ...props }: HeaderProps & HTMLHeaderProps) => {
   const { data: session } = useSession();
+  const router = useRouter();
   console.log(session);
 
   const isSignedHandler = async () => {
-    if (session) signOut();
-    else signIn();
+    session ? signOut() : signIn();
+    session && router.replace("/");
   };
 
   return (
