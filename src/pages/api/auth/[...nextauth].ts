@@ -1,13 +1,12 @@
-import NextAuth, { NextAuthOptions } from "next-auth";
+import NextAuth, { NextAuthOptions, getServerSession } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import DiscordProvider from "next-auth/providers/discord";
 import Credentials from "next-auth/providers/credentials";
 import { FirestoreAdapter } from "@next-auth/firebase-adapter";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../../../firebase.config";
+import { firestore } from "lib";
 
 export const authOptions: NextAuthOptions = {
-  adapter: FirestoreAdapter(),
+  adapter: FirestoreAdapter(firestore),
   providers: [
     Credentials({
       type: "credentials",
@@ -17,20 +16,15 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials, req) {
         const { email, password } = credentials as { email: string; password: string };
-        const querySnapshot = await getDocs(collection(db, "users"));
-        const docsData: any = [];
+        const user = await firestore.collection("users").where("email", "==", email).get();
+        const userDoc = user.docs[0];
+        if (user.empty) throw new Error("User not found");
 
-        querySnapshot.forEach(doc => {
-          docsData.push({ id: doc.id, ...doc.data() });
-        });
+        const id = userDoc.id;
+        const { email: dbEmail, name: dbName, image } = userDoc.data();
+        console.log(userDoc);
 
-        const validUser = await docsData.find(
-          doc => doc.email === email && doc.password === password
-        );
-
-        if (!validUser) return null;
-
-        return { id: validUser.id, email: validUser.email, name: validUser.name };
+        return { id, email: dbEmail, name: dbName, image };
       }
     }),
 
@@ -47,3 +41,12 @@ export const authOptions: NextAuthOptions = {
   secret: process.env.JWT_SECRET
 };
 export default NextAuth(authOptions);
+
+//register encript
+// login encript and compare
+//env file in vercel
+//button
+
+export const getServerAuthSession = (req, res) => {
+  return getServerSession(req, res, authOptions);
+};

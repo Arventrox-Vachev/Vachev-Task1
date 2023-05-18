@@ -5,4 +5,3 @@ export * from "./iconsProps";
 export * from "./stepsProps";
 export * from "./mailingProps";
 export * from "./footerProps";
-export * from "./registerFormProps";

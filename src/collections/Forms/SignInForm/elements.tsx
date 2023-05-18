@@ -12,6 +12,7 @@ export const Form = styled("form")`
     padding: 20px 24px;
   }
 `;
+
 export const Container = styled("div")`
   display: flex;
 `;
@@ -35,8 +36,18 @@ export const InputField = styled(FormInput)`
 
 export const Button = styled(_Button).attrs({ variant: "secondary" })`
   margin: 12px auto;
-`;
+  & + & {
+    width: 100%;
+    background-color: ${({ theme }) => theme.colors.white};
+    justify-content: space-between;
+    padding: 12px 48px;
 
+    &:hover {
+      color: ${({ theme }) => theme.colors.black};
+      border-color: transparent;
+    }
+  }
+`;
 export const CloseButton = styled("button")`
   height: min-content;
   width: fit-content;

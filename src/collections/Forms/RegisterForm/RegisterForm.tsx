@@ -2,9 +2,8 @@ import * as S from "./elements";
 import { useZodForm } from "hooks";
 import { HTMLFormProps } from "types";
 import { registerSchema } from "schemas";
-import { useRouter } from "next/router";
-import { db } from "../../../../firebase.config";
-import { collection, addDoc } from "firebase/firestore";
+import Image from "next/image";
+import axios from "axios";
 
 export interface RegisterFormProps {
   heading: string;
@@ -28,38 +27,49 @@ export const RegisterForm = ({
   passwordHolder,
   buttonText,
   validationImgs,
+  setIsRegisterShown,
   ...props
-}: RegisterFormProps & HTMLFormProps) => {
-  const router = useRouter();
+}: RegisterFormProps &
+  HTMLFormProps & { setIsRegisterShown: React.Dispatch<React.SetStateAction<boolean>> }) => {
   const { control, handleSubmit, formState, setValue, watch } = useZodForm(registerSchema, {
-    email: "",
-    password: ""
+    regName: "",
+    regEmail: "",
+    regPassword: ""
   });
 
+  //register axios with endpoint api/
+
   const submitHandler = handleSubmit(async data => {
-    console.log(data);
+    const { regEmail, regName, regPassword } = data;
+    const image = "imgs/logo.png";
 
     try {
-      const docRef = await addDoc(collection(db, "users"), {
-        email: data.email,
-        emailVerified: null,
-        password: data.password,
-        name: data.name
+      const response = await axios.post("/api/register", {
+        name: regName,
+        email: regEmail,
+        password: regPassword,
+        image
       });
-      console.log("Document written with ID: ", docRef.id);
-      if (docRef.id) router.replace("api/auth/signin");
-    } catch (e) {
-      console.error("Error adding document: ", e);
+      console.log(response.data);
+      // Handle the response as needed
+    } catch (error) {
+      console.error(error);
+      // Handle errors
     }
   });
 
   return (
     <S.Form onSubmit={submitHandler} {...props}>
-      <S.Title dangerouslySetInnerHTML={{ __html: heading }} />
+      <S.Container>
+        <S.Title dangerouslySetInnerHTML={{ __html: heading }} />
+        <S.CloseButton onClick={() => setIsRegisterShown(false)}>
+          <Image src={validationImgs.invalidImgSrc} alt='close' width={24} height={24} />
+        </S.CloseButton>
+      </S.Container>
       <S.InputField
         label={nameLabel}
         placeholder={nameHolder}
-        name='name'
+        name='regName'
         hideValidIndicator={false}
         control={control}
         {...validationImgs}
@@ -67,7 +77,7 @@ export const RegisterForm = ({
       <S.InputField
         label={emailLabel}
         placeholder={emailHolder}
-        name='email'
+        name='regEmail'
         hideValidIndicator={false}
         control={control}
         {...validationImgs}
@@ -76,7 +86,7 @@ export const RegisterForm = ({
         label={passwordLabel}
         placeholder={passwordHolder}
         type='password'
-        name='password'
+        name='regPassword'
         hideValidIndicator={false}
         control={control}
         {...validationImgs}

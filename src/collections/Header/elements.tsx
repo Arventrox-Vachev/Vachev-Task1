@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Button as _Button } from "components";
 import { Logo as _Logo } from "collections/Logo";
+import { RegisterForm as _RegisterForm } from "collections/Forms/RegisterForm";
+import { SignInForm as _SignInForm } from "collections/Forms/SignInForm";
 
 export const Header = styled("header")`
   padding: 24px 40px;
@@ -29,4 +31,16 @@ export const Button = styled(_Button)`
       height: 100%;
     }
   }
+`;
+export const RegisterForm = styled(_RegisterForm)`
+  z-index: 10;
+  position: absolute;
+  right: 20px;
+  top: 120px;
+`;
+export const SignInForm = styled(_SignInForm)`
+  z-index: 10;
+  position: absolute;
+  right: 20px;
+  top: 120px;
 `;
