@@ -13,8 +13,6 @@ export interface HelloResponse {
 
 const handler = nc<HelloRequest, NextApiResponse<ApiResponseBase<HelloResponse>>>({
   onError: (err, req, res, next) => {
-    console.log(err.message);
-
     res.status(err.statusCode || 500).json({ error: err.message });
   },
 

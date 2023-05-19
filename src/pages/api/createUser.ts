@@ -3,6 +3,7 @@ import bcrypt from "bcrypt";
 import { firestore } from "lib";
 import { z } from "zod";
 import { registerSchema } from "schemas";
+import checkUserExists from "./middleware/checkUserExists";
 
 interface CreateUserRequestBody {
   email: string;
@@ -28,12 +29,7 @@ export default async function handler(
         req.body
       );
 
-      const userExists = await checkUserExists(email);
-
-      if (userExists) {
-        res.status(409).json({ message: "User already exists" });
-        return;
-      }
+      await checkUserExists(req, res);
 
       const hashedPassword = await bcrypt.hash(password, 10);
       const userRef = await createUser(email, name, hashedPassword, image);
@@ -61,14 +57,4 @@ async function createUser(email: string, name: string, password: string, image?:
   });
 
   return userRef;
-}
-
-async function checkUserExists(email: string) {
-  const querySnapshot = await firestore
-    .collection("users")
-    .where("email", "==", email)
-    .limit(1)
-    .get();
-
-  return !querySnapshot.empty;
 }

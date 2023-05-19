@@ -19,16 +19,16 @@ export const authOptions: NextAuthOptions = {
         const { email, password } = credentials as { email: string; password: string };
         const user = await firestore.collection("users").where("email", "==", email).get();
 
-        if (user.empty) throw new Error("User not found");
+        if (user.empty) throw new Error("Email not found");
 
         const userDoc = user.docs[0];
         const id = userDoc.id;
         const { email: dbEmail, name: dbName, password: hashedPassword, image } = userDoc.data();
+        const isMatch = await bcrypt.compare(password, hashedPassword);
 
-        const isMatch = await bcrypt.compare(hashedPassword, password);
-        console.log(isMatch);
+        if (email !== dbEmail || !isMatch) throw new Error("Invalid password");
 
-        return { id, email: dbEmail, name: dbName, image };
+        return { id, email, name: dbName, image };
       }
     }),
 
@@ -48,8 +48,6 @@ export default NextAuth(authOptions);
 
 //register encript
 // login encript and compare
-//env file in vercel
-//button
 
 export const getServerAuthSession = (req, res) => {
   return getServerSession(req, res, authOptions);

@@ -31,19 +31,42 @@ export const SignInForm = ({
   ...props
 }: SignInFormProps &
   HTMLFormProps & { setIsSignInShown: React.Dispatch<React.SetStateAction<boolean>> }) => {
-  const { control, handleSubmit, formState, setValue, watch } = useZodForm(signInSchema, {
+  const { control, handleSubmit, formState, setValue, watch, setError } = useZodForm(signInSchema, {
     signInEmail: "",
     signInPassword: ""
   });
 
   const submitHandler = handleSubmit(async data => {
-    console.log(data);
     const { signInEmail, signInPassword } = data;
-    signIn("credentials", { email: signInEmail, password: signInPassword, callbackUrl: "/test" });
+    try {
+      const result = await signIn("credentials", {
+        email: signInEmail,
+        password: signInPassword,
+        redirect: false
+      });
+      if (result?.error === "Email not found")
+        setError("signInEmail", {
+          type: "manual",
+          message: result?.error
+        });
+      if (result?.error === "Invalid password")
+        setError("signInPassword", {
+          type: "manual",
+          message: result?.error
+        });
+    } catch (error) {
+      console.error("Authentication failed:", error);
+    }
   });
 
   return (
-    <S.Form onSubmit={submitHandler} {...props}>
+    <S.Form
+      onSubmit={e => {
+        e.preventDefault();
+        submitHandler();
+      }}
+      {...props}
+    >
       <S.Container>
         <S.Title dangerouslySetInnerHTML={{ __html: heading }} />
         <S.CloseButton onClick={() => setIsSignInShown(false)}>

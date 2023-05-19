@@ -1,10 +1,7 @@
 import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
 import { firestore } from "lib";
 
-const checkUserExistsMiddleware: NextApiHandler = async (
-  req: NextApiRequest,
-  res: NextApiResponse
-) => {
+const checkUserExists: NextApiHandler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { email }: { email: string } = req.body;
 
   try {
@@ -15,12 +12,11 @@ const checkUserExistsMiddleware: NextApiHandler = async (
       .get();
 
     if (!querySnapshot.empty) {
-      res.status(409).json({ message: "User already exists" });
+      res.status(409).json({ message: "Email already exists" });
       return;
     }
 
-    // Continue to the next handler
-    return;
+    return { req, res };
   } catch (error) {
     console.error("Error checking user existence:", error);
     res.status(500).json({ message: "Internal server error" });
@@ -28,4 +24,4 @@ const checkUserExistsMiddleware: NextApiHandler = async (
   }
 };
 
-export default checkUserExistsMiddleware;
+export default checkUserExists;

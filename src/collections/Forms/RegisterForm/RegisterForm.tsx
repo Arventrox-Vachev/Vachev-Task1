@@ -31,28 +31,31 @@ export const RegisterForm = ({
   ...props
 }: RegisterFormProps &
   HTMLFormProps & { setIsRegisterShown: React.Dispatch<React.SetStateAction<boolean>> }) => {
-  const { control, handleSubmit, formState, setValue, watch } = useZodForm(registerSchema, {
-    name: "",
-    email: "",
-    password: "",
-    image: "imgs/logo.png"
-  });
-
+  const { control, handleSubmit, formState, setValue, watch, setError } = useZodForm(
+    registerSchema,
+    {
+      name: "",
+      email: "",
+      password: "",
+      image: "imgs/logo.png"
+    }
+  );
   const submitHandler = handleSubmit(async data => {
     const { email, name, password, image } = data;
 
     try {
-      const response = await axios.post("/api/register", {
+      await axios.post("/api/createUser", {
         name,
         email,
         password,
         image
       });
-      console.log(response.data);
-      // Handle the response as needed
-    } catch (error) {
-      console.error(error);
-      // Handle errors
+    } catch (error: any) {
+      console.error(error.response.data.message);
+      setError("email", {
+        type: "manual",
+        message: error.response.data.message
+      });
     }
   });
 
