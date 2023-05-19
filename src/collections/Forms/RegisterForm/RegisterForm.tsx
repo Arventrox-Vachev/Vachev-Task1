@@ -32,22 +32,20 @@ export const RegisterForm = ({
 }: RegisterFormProps &
   HTMLFormProps & { setIsRegisterShown: React.Dispatch<React.SetStateAction<boolean>> }) => {
   const { control, handleSubmit, formState, setValue, watch } = useZodForm(registerSchema, {
-    regName: "",
-    regEmail: "",
-    regPassword: ""
+    name: "",
+    email: "",
+    password: "",
+    image: "imgs/logo.png"
   });
 
-  //register axios with endpoint api/
-
   const submitHandler = handleSubmit(async data => {
-    const { regEmail, regName, regPassword } = data;
-    const image = "imgs/logo.png";
+    const { email, name, password, image } = data;
 
     try {
       const response = await axios.post("/api/register", {
-        name: regName,
-        email: regEmail,
-        password: regPassword,
+        name,
+        email,
+        password,
         image
       });
       console.log(response.data);
@@ -69,7 +67,7 @@ export const RegisterForm = ({
       <S.InputField
         label={nameLabel}
         placeholder={nameHolder}
-        name='regName'
+        name={"name"}
         hideValidIndicator={false}
         control={control}
         {...validationImgs}
@@ -77,7 +75,7 @@ export const RegisterForm = ({
       <S.InputField
         label={emailLabel}
         placeholder={emailHolder}
-        name='regEmail'
+        name='email'
         hideValidIndicator={false}
         control={control}
         {...validationImgs}
@@ -86,7 +84,7 @@ export const RegisterForm = ({
         label={passwordLabel}
         placeholder={passwordHolder}
         type='password'
-        name='regPassword'
+        name='password'
         hideValidIndicator={false}
         control={control}
         {...validationImgs}

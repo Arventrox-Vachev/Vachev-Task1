@@ -18,6 +18,7 @@
     "@next-auth/firebase-adapter": "^2.0.1",
     "@storyblok/react": "^2.0.19",
     "axios": "^0.26.1",
+    "bcrypt": "^5.1.0",
     "chart.js": "^3.7.0",
     "firebase": "^9.22.0",
     "firebase-admin": "^11.8.0",

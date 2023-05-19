@@ -4,6 +4,7 @@ import DiscordProvider from "next-auth/providers/discord";
 import Credentials from "next-auth/providers/credentials";
 import { FirestoreAdapter } from "@next-auth/firebase-adapter";
 import { firestore } from "lib";
+import bcrypt from "bcrypt";
 
 export const authOptions: NextAuthOptions = {
   adapter: FirestoreAdapter(firestore),
@@ -17,12 +18,15 @@ export const authOptions: NextAuthOptions = {
       async authorize(credentials, req) {
         const { email, password } = credentials as { email: string; password: string };
         const user = await firestore.collection("users").where("email", "==", email).get();
-        const userDoc = user.docs[0];
+
         if (user.empty) throw new Error("User not found");
 
+        const userDoc = user.docs[0];
         const id = userDoc.id;
-        const { email: dbEmail, name: dbName, image } = userDoc.data();
-        console.log(userDoc);
+        const { email: dbEmail, name: dbName, password: hashedPassword, image } = userDoc.data();
+
+        const isMatch = await bcrypt.compare(hashedPassword, password);
+        console.log(isMatch);
 
         return { id, email: dbEmail, name: dbName, image };
       }
