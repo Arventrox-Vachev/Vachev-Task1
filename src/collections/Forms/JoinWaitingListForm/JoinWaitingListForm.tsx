@@ -1,6 +1,6 @@
 import * as S from "./elements";
 import { useZodForm } from "hooks";
-import { HTMLDivProps, HTMLFormProps } from "types";
+import { HTMLDivProps } from "types";
 import { joinWaitingListSchema } from "schemas";
 import Image, { ImageProps } from "next/image";
 

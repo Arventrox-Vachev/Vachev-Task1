@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Button as _Button } from "components";
 import { Logo as _Logo } from "collections/Logo";
-import { RegisterForm as _RegisterForm } from "collections/Forms/RegisterForm";
+import { SignUpForm as _SignUpForm } from "collections/Forms/SignUpForm";
 import { SignInForm as _SignInForm } from "collections/Forms/SignInForm";
 
 export const Header = styled("header")`
@@ -32,7 +32,7 @@ export const Button = styled(_Button)`
     }
   }
 `;
-export const RegisterForm = styled(_RegisterForm)`
+export const SignUpForm = styled(_SignUpForm)`
   z-index: 10;
   position: absolute;
   right: 20px;

@@ -1,4 +1,4 @@
 export * from "./HelloForm";
 export * from "./JoinWaitingListForm";
-export * from "./RegisterForm";
+export * from "./SignUpForm";
 export * from "./SignInForm";

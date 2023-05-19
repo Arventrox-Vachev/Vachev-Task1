@@ -19,7 +19,7 @@ export const authOptions: NextAuthOptions = {
         const { email, password } = credentials as { email: string; password: string };
         const user = await firestore.collection("users").where("email", "==", email).get();
 
-        if (user.empty) throw new Error("Email not found");
+        if (user.empty) throw new Error("Invalid Email");
 
         const userDoc = user.docs[0];
         const id = userDoc.id;
@@ -45,9 +45,6 @@ export const authOptions: NextAuthOptions = {
   secret: process.env.JWT_SECRET
 };
 export default NextAuth(authOptions);
-
-//register encript
-// login encript and compare
 
 export const getServerAuthSession = (req, res) => {
   return getServerSession(req, res, authOptions);

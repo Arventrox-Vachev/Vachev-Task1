@@ -44,7 +44,7 @@ export const SignInForm = ({
         password: signInPassword,
         redirect: false
       });
-      if (result?.error === "Email not found")
+      if (result?.error === "Invalid Email")
         setError("signInEmail", {
           type: "manual",
           message: result?.error

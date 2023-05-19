@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import bcrypt from "bcrypt";
 import { firestore } from "lib";
 import { z } from "zod";
-import { registerSchema } from "schemas";
+import { signUpSchema } from "schemas";
 import checkUserExists from "./middleware/checkUserExists";
 
 interface CreateUserRequestBody {
@@ -25,9 +25,7 @@ export default async function handler(
 ) {
   if (req.method === "POST") {
     try {
-      const { email, name, password, image }: CreateUserRequestBody = registerSchema.parse(
-        req.body
-      );
+      const { email, name, password, image }: CreateUserRequestBody = signUpSchema.parse(req.body);
 
       await checkUserExists(req, res);
 

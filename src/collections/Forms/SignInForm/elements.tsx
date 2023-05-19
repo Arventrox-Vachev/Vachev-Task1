@@ -19,10 +19,7 @@ export const Container = styled("div")`
 
 export const Title = styled(Typography.H2)`
   margin-bottom: 16px;
-
-  > span {
-    color: ${({ theme }) => theme.colors.yellow};
-  }
+  color: ${({ theme }) => theme.colors.yellow};
 `;
 
 export const InputField = styled(FormInput)`
@@ -36,6 +33,7 @@ export const InputField = styled(FormInput)`
 
 export const Button = styled(_Button).attrs({ variant: "secondary" })`
   margin: 12px auto;
+
   & + & {
     width: 100%;
     background-color: ${({ theme }) => theme.colors.white};

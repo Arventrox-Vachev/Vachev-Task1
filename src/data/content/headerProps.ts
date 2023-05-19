@@ -1,7 +1,7 @@
 import { HeaderProps } from "collections";
 
 export const headerProps: HeaderProps = {
-  buttonsText: { login: "Login", register: "Register", logout: "Logout" },
+  buttonsText: { login: "Login", signUp: "Sign up", logout: "Logout" },
   logo: {
     title: "CampaignMeister",
     image: {
@@ -11,15 +11,17 @@ export const headerProps: HeaderProps = {
       height: 28.24
     }
   },
-  registerForm: {
-    heading: "Register",
+  signUpForm: {
+    heading: "Sign up",
     nameLabel: "Name",
     emailLabel: "Email",
     passwordLabel: "Password",
     nameHolder: "Enter your name",
     emailHolder: "Enter email address",
     passwordHolder: "Enter password",
-    buttonText: "Register",
+    buttonText: "Sign Up",
+    successImgSrc: "/imgs/success-image.png",
+    successHeading: "Signed up successfully",
     validationImgs: {
       validImgSrc: "/imgs/check-image.png",
       invalidImgSrc: "/imgs/x-image.png"
