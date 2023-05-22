@@ -13,6 +13,8 @@ export interface SignInFormProps {
   passwordHolder: string;
   buttonText: string;
   validationImgs: { validImgSrc: string; invalidImgSrc: string };
+  googleBtnText: string;
+  discordBtnText: string;
   googleImgSrc: string;
   discordImgSrc: string;
 }
@@ -26,7 +28,9 @@ export const SignInForm = ({
   buttonText,
   validationImgs,
   googleImgSrc,
+  googleBtnText,
   discordImgSrc,
+  discordBtnText,
   setIsSignInShown,
   ...props
 }: SignInFormProps &
@@ -43,8 +47,9 @@ export const SignInForm = ({
       const result = await signIn("credentials", {
         email: signInEmail,
         password: signInPassword,
-        redirect: false
+        callbackUrl: "/test"
       });
+
       if (result?.error === "Invalid Email")
         setError("signInEmail", {
           type: "manual",
@@ -98,7 +103,7 @@ export const SignInForm = ({
           signIn("google");
         }}
       >
-        Sign In with google
+        {googleBtnText}
         <Image src={googleImgSrc} alt='google' width={20} height={20} />
       </S.Button>
       <S.Button
@@ -107,7 +112,7 @@ export const SignInForm = ({
           signIn("discord");
         }}
       >
-        Sign In with discord
+        {discordBtnText}
         <Image src={discordImgSrc} alt='discord' width={20} height={20} />
       </S.Button>
     </S.Form>

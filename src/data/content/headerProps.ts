@@ -38,7 +38,9 @@ export const headerProps: HeaderProps = {
       validImgSrc: "/imgs/check-image.png",
       invalidImgSrc: "/imgs/x-image.png"
     },
+    googleImgSrc: "/imgs/google-image.png",
+    googleBtnText: "Sign in with Google",
     discordImgSrc: "/imgs/discord-image.png",
-    googleImgSrc: "/imgs/google-image.png"
+    discordBtnText: "Sign in with Discord"
   }
 };

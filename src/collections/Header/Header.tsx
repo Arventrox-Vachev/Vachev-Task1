@@ -27,8 +27,6 @@ export const Header = ({
   const [isSignInShown, setIsSignInShown] = useState(false);
   const { data: session } = useSession();
 
-  // console.log(session);
-
   return (
     <S.Header {...props}>
       <S.Logo {...logo} />

@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 import { firestore } from "lib";
 import { z } from "zod";
 import { signUpSchema } from "schemas";
-import { checkUserExists } from "./middlewares";
+import { checkUserExists, checkPasswordsMatch } from "./middleware";
 
 interface CreateUserRequestBody extends NextApiRequest {
   email: string;
@@ -13,37 +13,33 @@ interface CreateUserRequestBody extends NextApiRequest {
   image: string;
 }
 
-interface CreateUserResponse {
+interface CreateUserResponse extends NextApiResponse {
   id: string;
   email: string;
   name: string;
   image: string;
 }
 
-const handler = nc<
-  CreateUserRequestBody,
-  NextApiResponse<CreateUserResponse | { message: string; errors?: string[] }>
->({
-  onNoMatch: (req, res) => {
+const handler = nc<CreateUserRequestBody, CreateUserResponse>({
+  onNoMatch: (_, res) => {
     res.status(404).end("Page not found");
   },
-  onError: (err, req, res) => {
+  onError: (err, _, res) => {
     if (err instanceof z.ZodError) {
-      const errors = err.errors.map(err => err.message);
-      res.status(400).json({ message: "Invalid request body", errors });
+      res.status(400).end("Invalid request body");
     } else {
-      res.status(500).json({ message: "Internal server error" });
+      res.status(500).end("Internal server error");
     }
   }
 });
 
 handler.use(checkUserExists);
+handler.use(checkPasswordsMatch);
 
 handler.post(async (req, res) => {
   const { email, name, password, image } = signUpSchema.parse(req.body);
-  console.log(password);
-
   const hashedPassword = await bcrypt.hash(password, 10);
+
   const userRef = await firestore.collection("users").add({
     email,
     name,

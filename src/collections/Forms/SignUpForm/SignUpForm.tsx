@@ -56,7 +56,6 @@ export const SignUpForm = ({
         image
       });
     } catch (error: any) {
-      console.error(error.response.data.message);
       setError("email", {
         type: "manual",
         message: error.response.data.message

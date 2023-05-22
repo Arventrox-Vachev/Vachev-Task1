@@ -15,7 +15,7 @@ export const authOptions: NextAuthOptions = {
         email: { label: "Email", type: "email", placeholder: "test@email.com" },
         password: { label: "Password", type: "password", placeholder: "enter your password" }
       },
-      async authorize(credentials, req) {
+      async authorize(credentials, _) {
         const { email, password } = credentials as { email: string; password: string };
         const user = await firestore.collection("users").where("email", "==", email).get();
 
@@ -23,10 +23,10 @@ export const authOptions: NextAuthOptions = {
 
         const userDoc = user.docs[0];
         const id = userDoc.id;
-        const { email: dbEmail, name: dbName, password: hashedPassword, image } = userDoc.data();
+        const { name: dbName, password: hashedPassword, image } = userDoc.data();
         const isMatch = await bcrypt.compare(password, hashedPassword);
 
-        if (email !== dbEmail || !isMatch) throw new Error("Invalid password");
+        if (!isMatch) throw new Error("Invalid password");
 
         return { id, email, name: dbName, image };
       }
