@@ -2,7 +2,7 @@ import * as S from "./elements";
 import { HTMLSectionProps, StepsSectionStoryblok } from "types";
 import { storyblokEditable } from "@storyblok/react";
 
-interface StepsProps extends StepsSectionStoryblok {}
+export interface StepsProps extends StepsSectionStoryblok {}
 
 export const Steps = ({ blok, ...props }: StepsProps & HTMLSectionProps) => {
   const { heading, stepsCards } = blok;
@@ -21,3 +21,4 @@ export const Steps = ({ blok, ...props }: StepsProps & HTMLSectionProps) => {
     </S.SectionContainer>
   );
 };
+4;
