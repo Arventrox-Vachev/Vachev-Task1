@@ -11,21 +11,18 @@ export interface HelloResponse {
   message: `Hello ${string}!`;
 }
 
-// const handler = nc<HelloRequest, NextApiResponse<ApiResponseBase<HelloResponse>>>({
-//   onError: (err, req, res, next) => {
-//     console.log(err.message);
+const handler = nc<HelloRequest, NextApiResponse<ApiResponseBase<HelloResponse>>>({
+  onError: (err, req, res, next) => {
+    res.status(err.statusCode || 500).json({ error: err.message });
+  },
 
-//     res.status(err.statusCode || 500).json({ error: err.message });
-//   },
-//   onNoMatch: (req, res) => {
-//     res.status(404).end("Page not found");
-//   }
-// }).post(async (req, res) => {
-//   helloSchema.validateSync(req.body);
+  onNoMatch: (req, res) => {
+    res.status(404).end("Page not found");
+  }
+}).post(async (req, res) => {
+  const { userName } = req.body;
 
-//   const { userName } = req.body;
+  return res.status(200).json({ message: `Hello ${userName}!` });
+});
 
-//   return res.status(200).json({ message: `Hello ${userName}!` });
-// });
-
-// export default handler;
+export default handler;

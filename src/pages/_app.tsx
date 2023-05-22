@@ -6,12 +6,17 @@ import { theme, GlobalStyles } from "styles";
 import { Header, Footer } from "collections";
 import { headerProps, footerProps } from "data";
 import TagManager from "react-gtm-module";
+import { SessionProvider } from "next-auth/react";
+import { Session } from "next-auth";
 
 const tagManagerArgs = {
   gtmId: "GTM-XXXXXXX"
 };
 
-function MyApp({ Component, pageProps: { ...pageProps } }: AppProps) {
+function MyApp({
+  Component,
+  pageProps: { session, ...pageProps }
+}: AppProps<{ session: Session }>) {
   useEffect(() => {
     // TagManager.initialize(tagManagerArgs);
   }, []);
@@ -27,9 +32,11 @@ function MyApp({ Component, pageProps: { ...pageProps } }: AppProps) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <GlobalStyles />
-      <Header {...headerProps} />
-      <Component {...pageProps} />
-      <Footer {...footerProps} />
+      <SessionProvider session={session}>
+        <Header {...headerProps} />
+        <Component {...pageProps} />
+        <Footer {...footerProps} />
+      </SessionProvider>
     </ThemeProvider>
   );
 }
