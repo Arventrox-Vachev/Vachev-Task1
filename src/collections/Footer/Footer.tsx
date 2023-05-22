@@ -1,28 +1,12 @@
 import * as S from "./elements";
-import type { HTMLFooterProps } from "types";
+import type { FooterStoryblok, HTMLFooterProps } from "types";
 import { useMediaQuery } from "hooks";
-import { SbBlokData, storyblokEditable } from "@storyblok/react";
-import { LogoProps } from "collections/Logo";
+import { storyblokEditable } from "@storyblok/react";
 
 export interface FooterProps {
   footerProps: FooterBlockData;
 }
-export interface FooterBlockData extends SbBlokData {
-  navItems: {
-    _uid: string;
-    heading: string;
-    linkItems: {
-      _uid: string;
-      linkHeading: string;
-      link: { id: string; url: string };
-    }[];
-  }[];
-  logo: LogoProps;
-  mobileDescription: string;
-  desktopDescription: string;
-  desktopCopyright: string;
-  mobileCopyright: string;
-}
+export interface FooterBlockData extends FooterStoryblok {}
 
 export const Footer: React.FC<FooterProps> = ({
   footerProps,

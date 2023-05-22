@@ -3,14 +3,15 @@ import Head from "next/head";
 import { storyblokInit, apiPlugin, getStoryblokApi, ISbStoryData } from "@storyblok/react";
 import { ThemeProvider } from "styled-components";
 import { theme, GlobalStyles } from "styles";
-import { Header, Footer, HeaderBlockData, FooterBlockData } from "collections";
+import { Header, Footer, HeaderProps, FooterProps } from "collections";
 import { FlyWheel, Hero, Icons, Mailing, Steps } from "sections";
 import { Page } from "components";
+import { FooterStoryblok, HeaderStoryblok } from "types";
 
 interface CustomApp extends AppProps {
   props: {
-    header: ISbStoryData<HeaderBlockData>;
-    footer: ISbStoryData<FooterBlockData>;
+    header: ISbStoryData<HeaderStoryblok>;
+    footer: ISbStoryData<FooterStoryblok>;
   };
 }
 

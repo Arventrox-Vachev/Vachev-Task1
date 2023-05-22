@@ -11,7 +11,7 @@
     "start": "next start",
     "dev:ssl": "local-ssl-proxy --source 3010 --target 3011 -- npm run dev",
     "proxy": "mkcert localhost && local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem",
-    "generate-sb-types": "storyblok pull-components --space 228570  && storyblok-generate-ts source=./components.228570.json target=./src/types/component-types-sb && move components.228570.json src/data/content/",
+    "generate-sb-types": "storyblok pull-components --space 228570 && storyblok-generate-ts source=./components.228570.json target=./src/types/component-types-sb && move components.228570.json src/data/content/",
     "lint": "eslint src/**/*.{ts,tsx} --max-warnings=0",
     "lint:fix": "eslint src/**/*.{ts,tsx} --fix",
     "prepare": "husky install"
@@ -48,6 +48,7 @@
     "babel-plugin-import": "^1.13.3",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "babel-plugin-styled-components": "^1.13.2",
+    "dotenv-cli": "^7.2.1",
     "eslint": "^8.18.0",
     "eslint-config-next": "^12.2.0",
     "eslint-config-prettier": "^8.5.0",
@@ -62,6 +63,7 @@
     "husky": "^8.0.0",
     "lint-staged": "^13.0.3",
     "prettier": "^2.4.1",
+    "storyblok-generate-ts": "^1.14.0",
     "ts-node": "^10.4.0",
     "typescript": "^4.4.4"
   }

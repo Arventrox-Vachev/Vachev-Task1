@@ -95,12 +95,12 @@ export interface FlywheelSectionStoryblok {
 }
 
 export interface FooterStoryblok {
-  desktopDescription?: string;
-  mobileDescription?: string;
-  logo?: any[];
-  navItems?: any[];
-  desktopCopyright?: string;
-  mobileCopyright?: string;
+  desktopDescription: string;
+  mobileDescription: string;
+  logo: any[];
+  navItems: any[];
+  desktopCopyright: string;
+  mobileCopyright: string;
   _uid: string;
   component: "footer";
   [k: string]: any;
@@ -182,8 +182,8 @@ export interface JoinWaitingListFormStoryblok {
 }
 
 export interface LinkStoryblok {
-  linkHeading?: string;
-  link?: MultilinkStoryblok;
+  linkHeading: string;
+  link: MultilinkStoryblok;
   _uid: string;
   component: "Link";
   [k: string]: any;
@@ -207,8 +207,8 @@ export interface MailingSectionStoryblok {
 }
 
 export interface NavContainerStoryblok {
-  heading?: string;
-  linkItems?: any[];
+  heading: string;
+  linkItems: any[];
   _uid: string;
   component: "NavContainer";
   [k: string]: any;

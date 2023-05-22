@@ -121,32 +121,38 @@
       "name": "footer",
       "display_name": null,
       "created_at": "2023-05-15T15:15:24.207Z",
-      "updated_at": "2023-05-15T15:22:49.372Z",
+      "updated_at": "2023-05-22T18:28:22.959Z",
       "id": 3978274,
       "schema": {
         "desktopDescription": {
           "type": "textarea",
-          "pos": 0
+          "pos": 0,
+          "required": true
         },
         "mobileDescription": {
           "type": "textarea",
-          "pos": 1
+          "pos": 1,
+          "required": true
         },
         "logo": {
           "type": "bloks",
-          "pos": 2
+          "pos": 2,
+          "required": true
         },
         "navItems": {
           "type": "bloks",
-          "pos": 3
+          "pos": 3,
+          "required": true
         },
         "desktopCopyright": {
           "type": "text",
-          "pos": 4
+          "pos": 4,
+          "required": true
         },
         "mobileCopyright": {
           "type": "text",
-          "pos": 5
+          "pos": 5,
+          "required": true
         }
       },
       "image": null,
@@ -495,14 +501,16 @@
       "name": "Link",
       "display_name": null,
       "created_at": "2023-05-15T15:36:26.972Z",
-      "updated_at": "2023-05-15T15:36:51.641Z",
+      "updated_at": "2023-05-22T18:28:05.513Z",
       "id": 3978375,
       "schema": {
         "linkHeading": {
-          "type": "text"
+          "type": "text",
+          "required": true
         },
         "link": {
-          "type": "multilink"
+          "type": "multilink",
+          "required": true
         }
       },
       "image": null,
@@ -588,14 +596,16 @@
       "name": "NavContainer",
       "display_name": null,
       "created_at": "2023-05-15T15:23:42.665Z",
-      "updated_at": "2023-05-15T15:36:03.534Z",
+      "updated_at": "2023-05-22T18:27:52.127Z",
       "id": 3978278,
       "schema": {
         "heading": {
-          "type": "text"
+          "type": "text",
+          "required": true
         },
         "linkItems": {
-          "type": "bloks"
+          "type": "bloks",
+          "required": true
         }
       },
       "image": null,
