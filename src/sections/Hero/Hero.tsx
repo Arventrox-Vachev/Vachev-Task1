@@ -1,10 +1,9 @@
 import * as S from "./elements";
 import Image from "next/image";
-import { HTMLSectionProps } from "types";
+import { HTMLSectionProps, HeroSectionStoryblok } from "types";
 import { storyblokEditable } from "@storyblok/react";
-import { HeroSectionStoryblok } from "../../../component-types-sb";
 
-interface HeroProps extends HeroSectionStoryblok {}
+export interface HeroProps extends HeroSectionStoryblok {}
 
 export const Hero = ({ blok, ...props }: HeroProps & HTMLSectionProps) => {
   const { heroImage, heading, subheading, subheading2, joinWaitingListForm } = blok;

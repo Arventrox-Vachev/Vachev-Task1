@@ -2,7 +2,7 @@ import * as S from "./elements";
 import { HTMLSectionProps, MailingSectionStoryblok } from "types";
 import { storyblokEditable } from "@storyblok/react";
 
-interface MailingProps extends MailingSectionStoryblok {}
+export interface MailingProps extends MailingSectionStoryblok {}
 
 export const Mailing = ({ blok, ...props }: MailingProps & HTMLSectionProps) => {
   const { heading, backgroundImage, joinWaitingListForm } = blok;

@@ -3,7 +3,7 @@ import { useMediaQuery } from "hooks";
 import { HTMLSectionProps, IconsSectionStoryblok } from "types";
 import { storyblokEditable, SbBlokData } from "@storyblok/react";
 
-interface IconsProps extends IconsSectionStoryblok {}
+export interface IconsProps extends IconsSectionStoryblok {}
 
 export const Icons = ({ blok, ...props }: IconsProps & HTMLSectionProps) => {
   const [isSmallScreenDevice] = useMediaQuery({ type: "max", breakpoint: "S" });
