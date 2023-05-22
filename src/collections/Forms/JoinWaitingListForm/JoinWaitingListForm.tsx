@@ -1,22 +1,11 @@
 import * as S from "./elements";
 import Image from "next/image";
 import { useZodForm } from "hooks";
-import { HTMLDivProps } from "types";
+import { HTMLDivProps, JoinWaitingListFormStoryblok } from "types";
 import { joinWaitingListSchema } from "schemas";
+import { storyblokEditable } from "@storyblok/react";
 
-export interface JoinWaitingListFormProps {
-  heading: string;
-  successHeading: string;
-  emailHolder: string;
-  buttonText: string;
-  tosText: string;
-  newsletterText: string;
-  successImage: { alt: string; filename: string };
-  invalidImage: { alt: string; filename: string };
-  validImage: { alt: string; filename: string };
-  desktopActiveImage: { filename: string };
-  mobileActiveImage: { filename: string };
-}
+export interface JoinWaitingListFormProps extends JoinWaitingListFormStoryblok {}
 
 export const JoinWaitingListForm = ({
   heading,
@@ -30,6 +19,7 @@ export const JoinWaitingListForm = ({
   validImage,
   desktopActiveImage,
   mobileActiveImage,
+  blok,
   ...props
 }: JoinWaitingListFormProps & HTMLDivProps) => {
   const { control, handleSubmit, formState, setValue, watch } = useZodForm(joinWaitingListSchema, {
@@ -44,7 +34,7 @@ export const JoinWaitingListForm = ({
   });
 
   return (
-    <S.JoinWaitingContainer {...props}>
+    <S.JoinWaitingContainer {...props} {...storyblokEditable(blok)}>
       {!isSubmitSuccessful ? (
         <S.Form onSubmit={submitHandler}>
           <S.Title dangerouslySetInnerHTML={{ __html: heading }} />

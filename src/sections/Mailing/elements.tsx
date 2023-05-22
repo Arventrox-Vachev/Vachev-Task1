@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { SectionContainer as _SectionContainer, Typography } from "components";
 import { JoinWaitingListForm as _JoinWaitingListForm } from "collections";
 
-export const SectionContainer = styled(_SectionContainer)<{ backgroundImage: string }>`
+export const SectionContainer = styled(_SectionContainer)<{ bgImage: string }>`
   padding-top: 80px;
   flex-direction: column;
   align-items: center;
 
-  background-image: url(${({ backgroundImage }) => backgroundImage});
+  background-image: url(${({ bgImage }) => bgImage});
   background-repeat: no-repeat;
   background-position: center;
   background-size: 88px;

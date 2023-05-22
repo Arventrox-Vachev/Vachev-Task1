@@ -1,16 +1,8 @@
 import * as S from "./elements";
-import { HTMLSectionProps } from "types";
-import { storyblokEditable, SbBlokData } from "@storyblok/react";
-import { StepsCardProps } from "collections";
+import { HTMLSectionProps, StepsSectionStoryblok } from "types";
+import { storyblokEditable } from "@storyblok/react";
 
-export interface StepsProps {
-  blok: StepsBlokData;
-}
-
-interface StepsBlokData extends SbBlokData {
-  heading: string;
-  stepsCards: StepsCardProps[];
-}
+interface StepsProps extends StepsSectionStoryblok {}
 
 export const Steps = ({ blok, ...props }: StepsProps & HTMLSectionProps) => {
   const { heading, stepsCards } = blok;

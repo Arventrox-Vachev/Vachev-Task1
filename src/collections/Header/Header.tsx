@@ -1,16 +1,8 @@
 import * as S from "./elements";
-import type { HTMLHeaderProps } from "types";
-import { SbBlokData, storyblokEditable } from "@storyblok/react";
-import { LogoProps } from "collections/Logo";
+import type { HTMLHeaderProps, HeaderStoryblok } from "types";
+import { storyblokEditable } from "@storyblok/react";
 
-export interface HeaderProps {
-  headerProps: HeaderBlockData;
-}
-
-export interface HeaderBlockData extends SbBlokData {
-  logo: LogoProps;
-  buttonText: string;
-}
+export interface HeaderProps extends HeaderStoryblok {}
 
 export const Header = ({ headerProps, ...props }: HeaderProps & HTMLHeaderProps) => {
   const { buttonText, logo } = headerProps;

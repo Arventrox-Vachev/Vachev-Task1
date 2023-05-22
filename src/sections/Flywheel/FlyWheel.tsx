@@ -1,20 +1,9 @@
 import * as S from "./elements";
 import Image from "next/image";
-import { HTMLSectionProps } from "types";
-import { storyblokEditable, SbBlokData } from "@storyblok/react";
-import { FlywheelCardProps } from "collections";
+import { HTMLSectionProps, FlywheelSectionStoryblok } from "types";
+import { storyblokEditable } from "@storyblok/react";
 
-export interface FlyWheelProps {
-  blok: FlywheelBlokData;
-}
-
-interface FlywheelBlokData extends SbBlokData {
-  heading: string;
-  description: string;
-  description2: string;
-  flywheelImage: { alt: string; filename: string };
-  flywheelCards: FlywheelCardProps[];
-}
+interface FlyWheelProps extends FlywheelSectionStoryblok {}
 
 export const FlyWheel = ({ blok, ...props }: FlyWheelProps & HTMLSectionProps) => {
   const { heading, description, description2, flywheelImage, flywheelCards } = blok;

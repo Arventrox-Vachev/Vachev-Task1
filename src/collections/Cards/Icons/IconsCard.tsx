@@ -1,12 +1,8 @@
 import * as S from "./elements";
-import Image, { ImageProps } from "next/image";
-import { HTMLDivProps } from "types";
+import Image from "next/image";
+import { HTMLDivProps, IconCardStoryblok } from "types";
 
-export interface IconsCardProps {
-  heading: string;
-  description: string;
-  cardImage: ImageProps | any;
-}
+export interface IconsCardProps extends IconCardStoryblok {}
 
 export const IconsCard = ({
   heading,

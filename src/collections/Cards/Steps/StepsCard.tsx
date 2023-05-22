@@ -1,17 +1,9 @@
 import * as S from "./elements";
-import Image, { ImageProps } from "next/image";
-import { HTMLDivProps } from "types";
+import Image from "next/image";
+import { HTMLDivProps, StepsCardStoryblok } from "types";
 import { useMediaQuery } from "hooks";
 
-export interface StepsCardProps {
-  _uid: string;
-  number: number;
-  heading: string;
-  desktopSubheading: string;
-  mobileSubHeading?: string;
-  description: string;
-  cardImage: ImageProps | any;
-}
+export interface StepsCardProps extends StepsCardStoryblok {}
 
 export const StepsCard = ({
   number,

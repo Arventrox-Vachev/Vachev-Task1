@@ -1,13 +1,8 @@
 import * as S from "./elements";
 import Image from "next/image";
-import { HTMLDivProps } from "types";
+import { HTMLDivProps, FlywheelCardStoryblok } from "types";
 
-export interface FlywheelCardProps {
-  _uid: string;
-  heading: string;
-  description: string;
-  cardImage: { alt: string; filename: string };
-}
+export interface FlywheelCardProps extends FlywheelCardStoryblok {}
 
 export const FlywheelCard = ({
   heading,
