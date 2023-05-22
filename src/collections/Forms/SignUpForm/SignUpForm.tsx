@@ -39,18 +39,20 @@ export const SignUpForm = ({
     name: "",
     email: "",
     password: "",
+    matchPassword: "",
     image: "imgs/logo.png"
   });
   const { isSubmitSuccessful } = formState;
 
   const submitHandler = handleSubmit(async data => {
-    const { email, name, password, image } = data;
+    const { email, name, password, matchPassword, image } = data;
 
     try {
       await axios.post("/api/createUser", {
         name,
         email,
         password,
+        matchPassword,
         image
       });
     } catch (error: any) {
@@ -93,6 +95,15 @@ export const SignUpForm = ({
             placeholder={passwordHolder}
             type='password'
             name='password'
+            hideValidIndicator={false}
+            control={control}
+            {...validationImgs}
+          />
+          <S.InputField
+            label={"Confirm Password"}
+            placeholder={passwordHolder}
+            type='password'
+            name='matchPassword'
             hideValidIndicator={false}
             control={control}
             {...validationImgs}

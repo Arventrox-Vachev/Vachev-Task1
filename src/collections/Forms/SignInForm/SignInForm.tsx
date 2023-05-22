@@ -38,6 +38,7 @@ export const SignInForm = ({
 
   const submitHandler = handleSubmit(async data => {
     const { signInEmail, signInPassword } = data;
+
     try {
       const result = await signIn("credentials", {
         email: signInEmail,

@@ -7,6 +7,6 @@ export const signInSchema = z.object({
     .nonempty(),
   signInPassword: z
     .string({ required_error: "This field is required" })
-    .min(3, "Password must be at least 3 characters long")
+    .min(6, "Password must be at least 6 characters long")
     .nonempty()
 });
