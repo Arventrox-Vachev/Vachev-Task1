@@ -50,7 +50,7 @@ storyblok-generate-ts source=./components.000000.json target=./component-types-s
 
 ```
 
-### Combined command to generate the space's components and their types
+### Combined command to generate the space's components and their types (Optional)
 
 - It also moves the components.json file to src/data/content and generates the components types file in /src/types just change the zero's to the Space ID of the space
 
@@ -60,7 +60,7 @@ storyblok-generate-ts source=./components.000000.json target=./component-types-s
 
 ```
 
-## CLU usage for syncing content and components between 2 spaces
+## CLI usage for syncing content and components between 2 spaces
 
 ### Syncing components from the project's components file to Production Space
 
@@ -84,7 +84,7 @@ storyblok push-components --space 000000 ./src/data/content/components.228570.js
 
 ### Syncing stories from the Production Space to Staging Space
 
-It is used to sync the field values from the Production to the Staging Space.
+- It is used to sync the field values from the Production to the Staging Space.
 
 ```bash
 
