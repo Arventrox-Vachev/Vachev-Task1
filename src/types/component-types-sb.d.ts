@@ -63,6 +63,7 @@ export interface HeroSectionStoryblok {
   subheading2: string;
   heroImage: AssetStoryblok;
   joinWaitingListForm: any[];
+  test?: string;
   _uid: string;
   component: "hero_section";
   [k: string]: any;

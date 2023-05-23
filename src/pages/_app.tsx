@@ -32,7 +32,7 @@ const components = {
 };
 
 storyblokInit({
-  accessToken: "cyNOB5pN3qubri1JgerMvgtt",
+  accessToken: process.env.STORYBLOK_ACCESS_ID_PROD,
   use: [apiPlugin],
   components
 });
