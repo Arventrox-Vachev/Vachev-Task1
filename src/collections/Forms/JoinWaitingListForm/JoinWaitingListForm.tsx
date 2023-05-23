@@ -5,7 +5,9 @@ import { HTMLDivProps, JoinWaitingListFormStoryblok } from "types";
 import { joinWaitingListSchema } from "schemas";
 import { storyblokEditable } from "@storyblok/react";
 
-export interface JoinWaitingListFormProps extends JoinWaitingListFormStoryblok {}
+export interface JoinWaitingListProps extends JoinWaitingListFormStoryblok {
+  blok: JoinWaitingListFormStoryblok;
+}
 
 export const JoinWaitingListForm = ({
   heading,
@@ -21,8 +23,8 @@ export const JoinWaitingListForm = ({
   mobileActiveImage,
   blok,
   ...props
-}: JoinWaitingListFormProps & HTMLDivProps) => {
-  const { control, handleSubmit, formState, setValue, watch } = useZodForm(joinWaitingListSchema, {
+}: JoinWaitingListProps & HTMLDivProps) => {
+  const { control, handleSubmit, formState } = useZodForm(joinWaitingListSchema, {
     email: "",
     agreedToTOS: false,
     newsLetter: false

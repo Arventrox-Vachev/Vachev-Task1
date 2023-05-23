@@ -14,7 +14,7 @@ export const Steps = ({ blok, ...props }: StepsProps & HTMLSectionProps) => {
 
         <S.StepsCardsWrapper>
           {stepsCards.map(cardProps => (
-            <S.StepsCard key={cardProps._uid} {...cardProps} />
+            <S.StepsCard key={cardProps._uid} blok={cardProps} />
           ))}
         </S.StepsCardsWrapper>
       </S.CardContainer>

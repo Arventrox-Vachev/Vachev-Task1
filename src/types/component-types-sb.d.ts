@@ -1,5 +1,108 @@
 import {StoryblokStory} from 'storyblok-generate-ts'
 
+export interface AssetStoryblok {
+  alt?: string;
+  copyright?: string;
+  id: number;
+  filename: string;
+  name: string;
+  title?: string;
+  focus?: string;
+  [k: string]: any;
+}
+
+export interface FlywheelCardStoryblok {
+  heading: string;
+  description: string;
+  cardImage: AssetStoryblok;
+  _uid: string;
+  component: "flywheel_card";
+  [k: string]: any;
+}
+
+export interface FlywheelSectionStoryblok {
+  heading: string;
+  description: string;
+  description2: string;
+  flywheelImage: AssetStoryblok;
+  flywheelCards: any[];
+  _uid: string;
+  component: "flywheel_section";
+  [k: string]: any;
+}
+
+export interface FooterStoryblok {
+  desktopDescription: string;
+  mobileDescription: string;
+  logo: any[];
+  navItems: any[];
+  desktopCopyright: string;
+  mobileCopyright: string;
+  _uid: string;
+  component: "footer";
+  [k: string]: any;
+}
+
+export interface FormInputStoryblok {
+  _uid: string;
+  component: "form_input";
+  [k: string]: any;
+}
+
+export interface HeaderStoryblok {
+  buttonText: string;
+  logo: any[];
+  _uid: string;
+  component: "header";
+  [k: string]: any;
+}
+
+export interface HeroSectionStoryblok {
+  heading: string;
+  subheading: string;
+  subheading2: string;
+  heroImage: AssetStoryblok;
+  joinWaitingListForm: any[];
+  _uid: string;
+  component: "hero_section";
+  [k: string]: any;
+}
+
+export interface IconCardStoryblok {
+  heading: string;
+  description: string;
+  cardImage: AssetStoryblok;
+  _uid: string;
+  component: "iconCard";
+  [k: string]: any;
+}
+
+export interface IconsSectionStoryblok {
+  heading: string;
+  mobileHeading: string;
+  iconCards: any[];
+  _uid: string;
+  component: "icons_section";
+  [k: string]: any;
+}
+
+export interface JoinWaitingListFormStoryblok {
+  heading: string;
+  successHeading: string;
+  emailHolder: string;
+  buttonText: string;
+  tosText: string;
+  newsletterText: string;
+  desktopActiveImage: AssetStoryblok;
+  mobileActiveImage: AssetStoryblok;
+  invalidImage: AssetStoryblok;
+  validImage: AssetStoryblok;
+  successImage: AssetStoryblok;
+  _uid: string;
+  component: "joinWaitingListForm";
+  [k: string]: any;
+}
+
 export type MultilinkStoryblok =
   | {
       cached_url?: string;
@@ -54,132 +157,6 @@ export type MultilinkStoryblok =
       linktype?: "email";
       [k: string]: any;
     };
-
-export interface ButtonStoryblok {
-  link?: MultilinkStoryblok;
-  label?: string;
-  _uid: string;
-  component: "Button";
-  [k: string]: any;
-}
-
-export interface AssetStoryblok {
-  alt?: string;
-  copyright?: string;
-  id: number;
-  filename: string;
-  name: string;
-  title?: string;
-  focus?: string;
-  [k: string]: any;
-}
-
-export interface FlywheelCardStoryblok {
-  heading: string;
-  description: string;
-  cardImage: AssetStoryblok;
-  _uid: string;
-  component: "flywheel_card";
-  [k: string]: any;
-}
-
-export interface FlywheelSectionStoryblok {
-  heading: string;
-  description: string;
-  description2: string;
-  flywheelImage: AssetStoryblok;
-  flywheelCards: any[];
-  _uid: string;
-  component: "flywheel_section";
-  [k: string]: any;
-}
-
-export interface FooterStoryblok {
-  desktopDescription: string;
-  mobileDescription: string;
-  logo: any[];
-  navItems: any[];
-  desktopCopyright: string;
-  mobileCopyright: string;
-  _uid: string;
-  component: "footer";
-  [k: string]: any;
-}
-
-export interface FooterStoryblok {
-  _uid: string;
-  component: "Footer";
-  [k: string]: any;
-}
-
-export interface FormInputStoryblok {
-  _uid: string;
-  component: "form_input";
-  [k: string]: any;
-}
-
-export interface HeaderStoryblok {
-  buttonText: string;
-  logo: any[];
-  _uid: string;
-  component: "Header";
-  [k: string]: any;
-}
-
-export interface HeroSectionStoryblok {
-  heading: string;
-  subheading: string;
-  subheading2: string;
-  heroImage: AssetStoryblok;
-  joinWaitingListForm: any[];
-  _uid: string;
-  component: "hero_section";
-  [k: string]: any;
-}
-
-export interface IconCardStoryblok {
-  heading: string;
-  description: string;
-  cardImage: AssetStoryblok;
-  _uid: string;
-  component: "iconCard";
-  [k: string]: any;
-}
-
-export interface IconsSectionStoryblok {
-  heading: string;
-  mobileHeading: string;
-  iconCards: any[];
-  _uid: string;
-  component: "icons_section";
-  [k: string]: any;
-}
-
-export interface ImageStoryblok {
-  image?: AssetStoryblok;
-  width?: string;
-  height?: string;
-  _uid: string;
-  component: "image";
-  [k: string]: any;
-}
-
-export interface JoinWaitingListFormStoryblok {
-  heading: string;
-  successHeading: string;
-  emailHolder: string;
-  buttonText: string;
-  tosText: string;
-  newsletterText: string;
-  desktopActiveImage: AssetStoryblok;
-  mobileActiveImage: AssetStoryblok;
-  invalidImage: AssetStoryblok;
-  validImage: AssetStoryblok;
-  successImage: AssetStoryblok;
-  _uid: string;
-  component: "joinWaitingListForm";
-  [k: string]: any;
-}
 
 export interface LinkStoryblok {
   linkHeading: string;
@@ -239,12 +216,5 @@ export interface StepsSectionStoryblok {
   stepsCards: any[];
   _uid: string;
   component: "steps_section";
-  [k: string]: any;
-}
-
-export interface SubtitleStoryblok {
-  Text?: string;
-  _uid: string;
-  component: "subtitle";
   [k: string]: any;
 }

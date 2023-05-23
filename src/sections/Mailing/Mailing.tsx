@@ -10,7 +10,9 @@ export const Mailing = ({ blok, ...props }: MailingProps & HTMLSectionProps) => 
   return (
     <S.SectionContainer bgImage={backgroundImage.filename} {...props} {...storyblokEditable(blok)}>
       <S.Heading dangerouslySetInnerHTML={{ __html: heading }} />
-      <S.JoinWaitingListForm {...joinWaitingListForm[0]} />
+      {joinWaitingListForm.map(props => (
+        <S.JoinWaitingListForm key={props._uid} blok={props} {...props} />
+      ))}
     </S.SectionContainer>
   );
 };

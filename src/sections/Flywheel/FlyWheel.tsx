@@ -3,7 +3,9 @@ import Image from "next/image";
 import { HTMLSectionProps, FlywheelSectionStoryblok } from "types";
 import { storyblokEditable } from "@storyblok/react";
 
-export interface FlyWheelProps extends FlywheelSectionStoryblok {}
+export interface FlyWheelProps {
+  blok: FlywheelSectionStoryblok;
+}
 
 export const FlyWheel = ({ blok, ...props }: FlyWheelProps & HTMLSectionProps) => {
   const { heading, description, description2, flywheelImage, flywheelCards } = blok;
@@ -20,7 +22,7 @@ export const FlyWheel = ({ blok, ...props }: FlyWheelProps & HTMLSectionProps) =
 
         <S.FlywheelWrapper>
           {flywheelCards.map(cardProps => (
-            <S.FlywheelCard key={cardProps._uid} {...cardProps} />
+            <S.FlywheelCard key={cardProps._uid} blok={cardProps} />
           ))}
 
           <S.ImageWrapper>

@@ -1,17 +1,22 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { storyblokInit, apiPlugin, getStoryblokApi, ISbStoryData } from "@storyblok/react";
+import {
+  storyblokInit,
+  apiPlugin,
+  getStoryblokApi,
+  ISbStoryData,
+  StoryblokComponent
+} from "@storyblok/react";
 import { ThemeProvider } from "styled-components";
 import { theme, GlobalStyles } from "styles";
-import { Header, Footer, HeaderProps, FooterProps } from "collections";
-import { FlyWheel, Hero, Icons, Mailing, Steps } from "sections";
+import { Header, Footer } from "collections";
 import { Page } from "components";
-import { FooterStoryblok, HeaderStoryblok } from "types";
+import { FlyWheel, Hero, Icons, Mailing, Steps } from "sections";
 
 interface CustomApp extends AppProps {
   props: {
-    header: ISbStoryData<HeaderStoryblok>;
-    footer: ISbStoryData<FooterStoryblok>;
+    header: ISbStoryData;
+    footer: ISbStoryData;
   };
 }
 
@@ -21,7 +26,9 @@ const components = {
   icons_section: Icons,
   steps_section: Steps,
   mailing_section: Mailing,
-  page: Page
+  page: Page,
+  header: Header,
+  footer: Footer
 };
 
 storyblokInit({
@@ -29,15 +36,6 @@ storyblokInit({
   use: [apiPlugin],
   components
 });
-
-const fetchStoryData = async (slug: string) => {
-  const storyblokApi = getStoryblokApi();
-  const { data } = await storyblokApi.getStory(slug, {
-    version: "draft" // or "published"
-  });
-
-  return data.story;
-};
 
 function MyApp({ Component, pageProps, props: { header, footer } }: CustomApp) {
   return (
@@ -51,12 +49,20 @@ function MyApp({ Component, pageProps, props: { header, footer } }: CustomApp) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <GlobalStyles />
-      <Header headerProps={header.content} />
+      <StoryblokComponent blok={header.content} />
       <Component {...pageProps} />
-      {<Footer footerProps={footer.content} />}
+      <StoryblokComponent blok={footer.content} />
     </ThemeProvider>
   );
 }
+const fetchStoryData = async (slug: string) => {
+  const storyblokApi = getStoryblokApi();
+  const { data } = await storyblokApi.getStory(slug, {
+    version: "draft" // or "published"
+  });
+
+  return data.story;
+};
 
 MyApp.getInitialProps = async ctx => {
   const header = await fetchStoryData("header");
