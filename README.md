@@ -1,16 +1,36 @@
 ## Get types from Swagger API
 
-npm i swagger-typescript-api
-npx swagger-typescript-api -p https://ercworldmarketplace20230223141409.azurewebsites.net/swagger/v1/swagger.json -o ./src/types -n swagger.d.ts
+# Swagger combined with React-query hooks and types using Rapini
 
-## OR codegen
+## Install packages
 
-java -jar swagger-codegen-cli.jar generate -i swagger.json -l typescript-fetch -o ./output
+``bash
 
-## Combined with React-query hooks and types
+npm i -g rapini
+
+``
+and
+
+``bash
 
 npm i react-query
-npm i -g rapini
-download openapi.yaml
+
+``
+
+## Generate hooks with types
+
+### From project
+
+``bash
 
 rapini react-query -p openapi.yaml --output-dir ./src/hooks/react-query-api-hooks
+
+``
+
+### From swagger
+
+``bash
+
+rapini react-query -p https://petstore3.swagger.io/api/v3/openapi.json --output-dir ./src/hooks/react-query-api-hooks
+
+``
