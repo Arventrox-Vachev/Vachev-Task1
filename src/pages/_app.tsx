@@ -6,6 +6,7 @@ import { theme, GlobalStyles } from "styles";
 import { Header, Footer } from "collections";
 import { headerProps, footerProps } from "data";
 import TagManager from "react-gtm-module";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 const tagManagerArgs = {
   gtmId: "GTM-XXXXXXX"
@@ -15,6 +16,8 @@ function MyApp({ Component, pageProps: { ...pageProps } }: AppProps) {
   useEffect(() => {
     // TagManager.initialize(tagManagerArgs);
   }, []);
+
+  const queryClient = new QueryClient();
 
   return (
     <ThemeProvider theme={theme}>
@@ -27,9 +30,11 @@ function MyApp({ Component, pageProps: { ...pageProps } }: AppProps) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <GlobalStyles />
-      <Header {...headerProps} />
-      <Component {...pageProps} />
-      <Footer {...footerProps} />
+      <QueryClientProvider client={queryClient}>
+        <Header {...headerProps} />
+        <Component {...pageProps} />
+        <Footer {...footerProps} />
+      </QueryClientProvider>
     </ThemeProvider>
   );
 }
