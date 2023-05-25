@@ -22,9 +22,11 @@ npm i react-query
 
 ### From project
 
+- file can be yaml or json
+
 ```bash
 
-rapini react-query -p openapi.yaml --output-dir ./src/hooks/react-query-api-hooks
+rapini react-query -p file --output-dir ./src/hooks/react-query-api-hooks
 
 ```
 
