@@ -62,14 +62,14 @@ export const NumberWrapper = styled("div")`
   text-align: center;
 `;
 
-export const Title = styled(Typography.H2)`
+export const Heading = styled(Typography.H2)`
   margin-bottom: 20px;
   color: ${({ theme }) => theme.colors.yellow};
 `;
 
-export const Subtitle = styled(Typography.Paragraph).attrs({ variant: "sm" })`
+export const Subheading = styled(Typography.Paragraph).attrs({ variant: "sm" })`
   margin-bottom: 20px;
   font-weight: 500;
 `;
 
-export const Text = styled(Typography.Paragraph).attrs({ variant: "sm" })``;
+export const Description = styled(Typography.Paragraph).attrs({ variant: "sm" })``;

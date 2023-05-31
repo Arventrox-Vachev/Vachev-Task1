@@ -1,35 +1,35 @@
 import * as S from "./elements";
-import Image, { ImageProps } from "next/image";
+import Image from "next/image";
 import { HTMLSectionProps } from "types";
+import { storyblokEditable, SbBlokData } from "@storyblok/react";
 import { JoinWaitingListFormProps } from "collections";
 
 export interface HeroProps {
-  title: string;
-  subtitles: string[];
-  image: ImageProps;
-  joinWaitingListFormProps: JoinWaitingListFormProps;
+  blok: HeroBlokData;
 }
 
-export const Hero = ({
-  title,
-  subtitles,
-  image,
-  joinWaitingListFormProps,
-  ...props
-}: HeroProps & HTMLSectionProps) => {
-  return (
-    <S.SectionContainer {...props}>
-      <S.ItemsContainer>
-        <S.Title dangerouslySetInnerHTML={{ __html: title }} />
-        {subtitles.map((subtitle, index) => (
-          <S.SubHeading key={index}>{subtitle}</S.SubHeading>
-        ))}
+interface HeroBlokData extends SbBlokData {
+  heading: string;
+  subheading: string;
+  subheading2: string;
+  heroImage: { alt: string; filename: string };
+  joinWaitingListForm: JoinWaitingListFormProps;
+}
 
-        <S.JoinWaitingListForm {...joinWaitingListFormProps} />
+export const Hero = ({ blok, ...props }: HeroProps & HTMLSectionProps) => {
+  const { heroImage, heading, subheading, subheading2, joinWaitingListForm } = blok;
+
+  return (
+    <S.SectionContainer {...props} {...storyblokEditable(blok)}>
+      <S.ItemsContainer>
+        <S.Heading dangerouslySetInnerHTML={{ __html: heading }} />
+        <S.SubHeading>{subheading}</S.SubHeading>
+        <S.SubHeading>{subheading2}</S.SubHeading>
+        <S.JoinWaitingListForm {...joinWaitingListForm[0]} />
       </S.ItemsContainer>
 
       <S.ImageWrapper>
-        <Image {...image} />
+        <Image src={heroImage.filename} alt={heroImage.alt} width={740} height={500} />
       </S.ImageWrapper>
     </S.SectionContainer>
   );

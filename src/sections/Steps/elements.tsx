@@ -18,7 +18,7 @@ export const CardContainer = styled(_CardContainer)`
   }
 `;
 
-export const Title = styled(Typography.H1)`
+export const Heading = styled(Typography.H1)`
   width: 100%;
   padding: 0 40px 80px;
   border-bottom: 2px solid ${({ theme }) => theme.colors.secondary};

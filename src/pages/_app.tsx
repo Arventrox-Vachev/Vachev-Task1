@@ -1,21 +1,44 @@
-import { useEffect } from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { storyblokInit, apiPlugin, getStoryblokApi, ISbStoryData } from "@storyblok/react";
 import { ThemeProvider } from "styled-components";
 import { theme, GlobalStyles } from "styles";
-import { Header, Footer } from "collections";
-import { headerProps, footerProps } from "data";
-import TagManager from "react-gtm-module";
+import { Header, Footer, HeaderBlockData, FooterBlockData } from "collections";
+import { FlyWheel, Hero, Icons, Mailing, Steps } from "sections";
+import { Page } from "components";
 
-const tagManagerArgs = {
-  gtmId: "GTM-XXXXXXX"
+interface CustomApp extends AppProps {
+  props: {
+    header: ISbStoryData<HeaderBlockData>;
+    footer: ISbStoryData<FooterBlockData>;
+  };
+}
+
+const components = {
+  hero_section: Hero,
+  flywheel_section: FlyWheel,
+  icons_section: Icons,
+  steps_section: Steps,
+  mailing_section: Mailing,
+  page: Page
 };
 
-function MyApp({ Component, pageProps: { ...pageProps } }: AppProps) {
-  useEffect(() => {
-    // TagManager.initialize(tagManagerArgs);
-  }, []);
+storyblokInit({
+  accessToken: "cyNOB5pN3qubri1JgerMvgtt",
+  use: [apiPlugin],
+  components
+});
 
+const fetchStoryData = async (slug: string) => {
+  const storyblokApi = getStoryblokApi();
+  const { data } = await storyblokApi.getStory(slug, {
+    version: "draft" // or "published"
+  });
+
+  return data.story;
+};
+
+function MyApp({ Component, pageProps, props: { header, footer } }: CustomApp) {
   return (
     <ThemeProvider theme={theme}>
       <Head>
@@ -27,11 +50,23 @@ function MyApp({ Component, pageProps: { ...pageProps } }: AppProps) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <GlobalStyles />
-      <Header {...headerProps} />
+      <Header headerProps={header.content} />
       <Component {...pageProps} />
-      <Footer {...footerProps} />
+      {<Footer footerProps={footer.content} />}
     </ThemeProvider>
   );
 }
+
+MyApp.getInitialProps = async ctx => {
+  const header = await fetchStoryData("header");
+  const footer = await fetchStoryData("footer");
+
+  return {
+    props: {
+      header,
+      footer
+    }
+  };
+};
 
 export default MyApp;
