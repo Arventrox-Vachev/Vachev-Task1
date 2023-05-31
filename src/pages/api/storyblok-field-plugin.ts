@@ -1,6 +1,5 @@
 import nc from "next-connect";
 import { NextApiRequest, NextApiResponse } from "next";
-import axios from "axios";
 
 interface CreateUserRequestBody extends NextApiRequest {}
 
@@ -82,12 +81,10 @@ const handler = nc<CreateUserRequestBody, CreateUserResponse>({
   }
 });
 
-handler.post(async (req, res) => {
-  const { data } = req.body;
-
+handler.get(async (req, res) => {
   // Store the data in your preferred format or save it to a database
 
-  res.status(200).json({ success: true });
+  res.json(fieldPluginData);
 });
 
 export default handler;
