@@ -1,3 +1,5 @@
+import { StepsProps } from "sections";
+
 export const stepsProps = {
   title: "You can achieve this in just <span>three easy steps</span>",
   cards: [

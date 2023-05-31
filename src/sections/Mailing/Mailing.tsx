@@ -1,22 +1,18 @@
 import * as S from "./elements";
-import { HTMLSectionProps } from "types";
-import { JoinWaitingListFormProps } from "collections";
-import Image from "next/image";
+import { HTMLSectionProps, MailingSectionStoryblok } from "types";
+import { storyblokEditable } from "@storyblok/react";
 
-export interface MailingProps {
-  title: string;
-  joinWaitingListFormProps: JoinWaitingListFormProps;
-}
+export interface MailingProps extends MailingSectionStoryblok {}
 
-export const Mailing = ({
-  title,
-  joinWaitingListFormProps,
-  ...props
-}: MailingProps & HTMLSectionProps) => {
+export const Mailing = ({ blok, ...props }: MailingProps & HTMLSectionProps) => {
+  const { heading, backgroundImage, joinWaitingListForm } = blok;
+
   return (
-    <S.SectionContainer {...props}>
-      <S.Title dangerouslySetInnerHTML={{ __html: title }} />
-      <S.JoinWaitingListForm {...joinWaitingListFormProps} />
+    <S.SectionContainer bgImage={backgroundImage.filename} {...props} {...storyblokEditable(blok)}>
+      <S.Heading dangerouslySetInnerHTML={{ __html: heading }} />
+      {joinWaitingListForm.map(props => (
+        <S.JoinWaitingListForm key={props._uid} blok={props} {...props} />
+      ))}
     </S.SectionContainer>
   );
 };

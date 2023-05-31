@@ -1,35 +1,94 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Storyblok CLI and storyblok-generate-ts
 
-First, run the development server:
+## Storyblok CLI Installation
+
+### Firstly install storyblok CLI
 
 ```bash
-npm run dev
-# or
-yarn
+
+npm i storyblok -g
 
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### then login to storyblok using the CLI
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+storyblok login
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
 
-## Learn More
+## Generate types from storyblok components
 
-To learn more about Next.js, take a look at the following resources:
+### First install storyblok-generate-ts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+npm install -D storyblok-generate-ts
 
-## Deploy on Vercel
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Run the pull command with the storyblok CLI to download your space's components schema as json (Replace 000000 with the Space ID from Storyblok which is in Settings/Space)</br> **you must be logged in from the CLI !**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+
+storyblok pull-components --space 000000
+
+```
+
+- It will create a json file containing the space's components. with the name components.SpaceID.json in the root of the project folder.
+
+### Run the generate-sb-types command which will generate the space's components types ready for usage
+
+- Replace the 000000 with the Space ID from Storyblok which is in Settings/Space
+
+```bash
+
+storyblok-generate-ts source=./components.000000.json target=./component-types-sb
+
+```
+
+### Combined command to generate the space's components and their types (Optional)
+
+- It also moves the components.json file to src/data/content and generates the components types file in /src/types just change the zero's to the Space ID of the space
+
+```bash
+
+"generate-sb-types": "storyblok pull-components --space 000000 && storyblok-generate-ts source=./components.000000.json target=./src/types/component-types-sb && move components.000000.json src/data/content/",
+
+```
+
+## CLI usage for syncing content and components between 2 spaces
+
+### Syncing components from the project's components file to Production Space
+
+- **You must be logged in to storyblok from the CLI and have generated the component's file mentioned above**
+- **Change the 000000 to the target Production Space ID and the source to your project's components file source**
+
+```bash
+
+storyblok push-components --space 000000 ./src/data/content/components.228570.json
+
+```
+
+### Syncing components from the Staging Space to Production Space
+
+```bash
+
+ storyblok sync --type components --source ReplaceWithStagingSpaceID --target ReplaceWithProdSpaceID
+
+
+```
+
+### Syncing stories from the Production Space to Staging Space
+
+- It is used to sync the field values from the Production to the Staging Space.
+
+```bash
+
+ storyblok sync --type stories --source ReplaceWithProdSpaceID --target ReplaceWithStagingSpaceID
+
+
+```

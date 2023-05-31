@@ -1,6 +1,6 @@
 import { MailingProps } from "sections";
 
-export const mailingProps: MailingProps = {
+export const mailingProps = {
   title: "<span>Start</span> optimizing <span>now</span>",
   joinWaitingListFormProps: {
     title: "<span>Join</span> waiting list for access",

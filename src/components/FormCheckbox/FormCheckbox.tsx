@@ -7,12 +7,16 @@ export interface FormCheckboxProps<T extends FieldValues = any>
   name: Path<T>;
   control: Control<T, any>;
   label?: string;
+  desktopActiveImage: string;
+  mobileActiveImage: string;
 }
 
 export const FormCheckbox = <T extends FieldValues = any>({
   name,
   control,
   label,
+  desktopActiveImage,
+  mobileActiveImage,
   ...props
 }: FormCheckboxProps<T>) => {
   const {
@@ -41,6 +45,8 @@ export const FormCheckbox = <T extends FieldValues = any>({
           ref={ref}
           hasError={!!error}
           isSubmitted={isSubmitted}
+          desktopActiveImage={desktopActiveImage}
+          mobileActiveImage={mobileActiveImage}
         />
         {label && <S.Label htmlFor={name} dangerouslySetInnerHTML={{ __html: label }} />}
       </S.InputWrapper>

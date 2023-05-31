@@ -1,35 +1,27 @@
 import * as S from "./elements";
-import Image, { ImageProps } from "next/image";
-import { HTMLSectionProps } from "types";
-import { JoinWaitingListFormProps } from "collections";
+import Image from "next/image";
+import { HTMLSectionProps, HeroSectionStoryblok } from "types";
+import { storyblokEditable } from "@storyblok/react";
 
 export interface HeroProps {
-  title: string;
-  subtitles: string[];
-  image: ImageProps;
-  joinWaitingListFormProps: JoinWaitingListFormProps;
+  blok: HeroSectionStoryblok;
 }
 
-export const Hero = ({
-  title,
-  subtitles,
-  image,
-  joinWaitingListFormProps,
-  ...props
-}: HeroProps & HTMLSectionProps) => {
+export const Hero = ({ blok, ...props }: HeroProps & HTMLSectionProps) => {
+  const { heroImage, heading, subheading, subheading2, joinWaitingListForm } = blok;
+
   return (
-    <S.SectionContainer {...props}>
+    <S.SectionContainer {...props} {...storyblokEditable(blok)}>
       <S.ItemsContainer>
-        <S.Title dangerouslySetInnerHTML={{ __html: title }} />
-        {subtitles.map((subtitle, index) => (
-          <S.SubHeading key={index}>{subtitle}</S.SubHeading>
+        <S.Heading dangerouslySetInnerHTML={{ __html: heading }} />
+        <S.SubHeading>{subheading}</S.SubHeading>
+        <S.SubHeading>{subheading2}</S.SubHeading>
+        {joinWaitingListForm.map(props => (
+          <S.JoinWaitingListForm key={props._uid} blok={props} {...props} />
         ))}
-
-        <S.JoinWaitingListForm {...joinWaitingListFormProps} />
       </S.ItemsContainer>
-
       <S.ImageWrapper>
-        <Image {...image} />
+        <Image src={heroImage.filename} alt={heroImage.alt} width={740} height={500} />
       </S.ImageWrapper>
     </S.SectionContainer>
   );

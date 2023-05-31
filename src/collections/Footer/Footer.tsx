@@ -1,51 +1,43 @@
 import * as S from "./elements";
-import type { HTMLFooterProps } from "types";
+import type { FooterStoryblok, HTMLFooterProps } from "types";
 import { useMediaQuery } from "hooks";
-import { ImageProps } from "next/image";
-import { LogoProps } from "collections/Logo";
+import { storyblokEditable } from "@storyblok/react";
 
 export interface FooterProps {
-  desktopDescription: string;
-  mobileDescription: string;
-  logo: LogoProps;
-  navItems: {
-    title: string;
-    links: string[];
-  }[];
-  desktopCopyright: string;
-  mobileCopyright: string;
+  blok: FooterStoryblok;
 }
 
-export const Footer = ({
-  desktopDescription,
-  mobileDescription,
-  logo,
-  navItems,
-  desktopCopyright,
-  mobileCopyright,
+export const Footer: React.FC<FooterProps> = ({
+  blok,
   ...props
 }: FooterProps & HTMLFooterProps) => {
   const [isSmallScreenDevice] = useMediaQuery({ type: "max", breakpoint: "S" });
-  const copyright = isSmallScreenDevice ? mobileCopyright : desktopCopyright;
-  const description = isSmallScreenDevice ? mobileDescription : desktopDescription;
+  const {
+    logo,
+    mobileDescription,
+    desktopDescription,
+    desktopCopyright,
+    mobileCopyright,
+    navItems
+  } = blok;
 
   return (
-    <S.Footer {...props}>
+    <S.Footer {...props} {...storyblokEditable(blok)} key={blok._uid}>
       <S.Container>
         <S.HolderContainer>
           <S.TextContainer>
-            <S.Logo {...logo} />
-            <S.Text>{description}</S.Text>
+            <S.Logo blok={logo[0]} {...logo[0]} />
+            <S.Text>{isSmallScreenDevice ? mobileDescription : desktopDescription}</S.Text>
           </S.TextContainer>
 
           <S.NavContainer>
-            {navItems.map((navItem, index) => (
-              <S.NavSubContainer key={index}>
-                <S.Title>{navItem.title}</S.Title>
+            {navItems.map(navItem => (
+              <S.NavSubContainer key={navItem._uid} {...storyblokEditable(navItem)}>
+                <S.Title>{navItem.heading}</S.Title>
 
-                {navItem.links.map((link, index) => (
-                  <S.Link href='/' key={index}>
-                    {link}
+                {navItem.linkItems.map(({ link, _uid, linkHeading }) => (
+                  <S.Link href={link.url} key={_uid}>
+                    {linkHeading}
                   </S.Link>
                 ))}
               </S.NavSubContainer>
@@ -53,7 +45,11 @@ export const Footer = ({
           </S.NavContainer>
         </S.HolderContainer>
 
-        <S.Copyright dangerouslySetInnerHTML={{ __html: copyright }} />
+        <S.Copyright
+          dangerouslySetInnerHTML={{
+            __html: isSmallScreenDevice ? mobileCopyright : desktopCopyright
+          }}
+        />
       </S.Container>
     </S.Footer>
   );

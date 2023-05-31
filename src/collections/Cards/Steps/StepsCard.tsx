@@ -1,40 +1,29 @@
 import * as S from "./elements";
-import Image, { ImageProps } from "next/image";
-import { HTMLDivProps } from "types";
+import Image from "next/image";
+import { HTMLDivProps, StepsCardStoryblok } from "types";
 import { useMediaQuery } from "hooks";
+import { storyblokEditable } from "@storyblok/react";
 
-export interface StepsCardProps {
-  number: number;
-  title: string;
-  desktopSubtitle: string;
-  mobileSubtitle?: string;
-  description: string;
-  image: ImageProps;
+export interface StepsCardProps extends StepsCardStoryblok {
+  blok: StepsCardStoryblok;
 }
 
-export const StepsCard = ({
-  number,
-  title,
-  desktopSubtitle,
-  mobileSubtitle,
-  description,
-  image,
-  ...props
-}: StepsCardProps & HTMLDivProps) => {
+export const StepsCard = ({ blok, ...props }: StepsCardProps & HTMLDivProps) => {
   const [isSmallScreenDevice] = useMediaQuery({ type: "max", breakpoint: "S" });
-  const subtitle = isSmallScreenDevice && mobileSubtitle ? mobileSubtitle : desktopSubtitle;
-
+  const { cardImage, description, desktopSubheading, heading, number, mobileSubheading } = blok;
   return (
-    <S.StepsCardContainer {...props}>
+    <S.StepsCardContainer {...props} {...storyblokEditable(blok)}>
       <S.ImageWrapper>
-        <Image {...image} />
+        <Image src={cardImage.filename} alt={cardImage.alt} width={193} height={197} />
       </S.ImageWrapper>
 
       <S.TextContainer>
         <S.NumberWrapper>{number}</S.NumberWrapper>
-        <S.Title>{title}</S.Title>
-        <S.Subtitle>{subtitle}</S.Subtitle>
-        <S.Text>{description}</S.Text>
+        <S.Heading>{heading}</S.Heading>
+        <S.Subheading>
+          {isSmallScreenDevice && mobileSubheading ? mobileSubheading : desktopSubheading}
+        </S.Subheading>
+        <S.Description>{description}</S.Description>
       </S.TextContainer>
     </S.StepsCardContainer>
   );

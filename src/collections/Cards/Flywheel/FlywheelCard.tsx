@@ -1,27 +1,22 @@
 import * as S from "./elements";
-import Image, { ImageProps } from "next/image";
-import { HTMLDivProps } from "types";
+import Image from "next/image";
+import { HTMLDivProps, FlywheelCardStoryblok } from "types";
+import { storyblokEditable } from "@storyblok/react";
 
-export interface FlywheelCardProps {
-  title: string;
-  description: string;
-  image: ImageProps;
+export interface FlywheelCardProps extends FlywheelCardStoryblok {
+  blok: FlywheelCardStoryblok;
 }
 
-export const FlywheelCard = ({
-  title,
-  description,
-  image,
-  ...props
-}: FlywheelCardProps & HTMLDivProps) => {
+export const FlywheelCard = ({ blok, ...props }: FlywheelCardProps & HTMLDivProps) => {
+  const { heading, description, cardImage } = blok;
   return (
-    <S.FlywheelCardContainer {...props}>
+    <S.FlywheelCardContainer {...props} {...storyblokEditable(blok)}>
       <S.ImageWrapper>
-        <Image {...image} />
+        <Image src={cardImage.filename} alt={cardImage.alt} width={102} height={102} />
       </S.ImageWrapper>
 
-      <S.Title>{title}</S.Title>
-      <S.Text>{description}</S.Text>
+      <S.Heading>{heading}</S.Heading>
+      <S.Description>{description}</S.Description>
     </S.FlywheelCardContainer>
   );
 };
