@@ -24,7 +24,7 @@ export const getStaticProps: GetStaticProps<{ story: ISbStoryData }> = async () 
 
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, { version: "draft" });
-
+  
   return {
     props: {
       story: data ? data.story : false,

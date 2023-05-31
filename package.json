@@ -11,7 +11,7 @@
     "start": "next start",
     "dev:ssl": "local-ssl-proxy --source 3010 --target 3011 -- npm run dev",
     "proxy": "mkcert localhost && local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem",
-    "generate-sb-types": "storyblok pull-components --space 228570 && storyblok-generate-ts source=./components.228570.json target=./src/types/component-types-sb && move components.228570.json src/data/content/",
+    "generate-sb-types": "storyblok pull-components --space 231900 && storyblok-generate-ts source=./components.231900.json target=./src/types/component-types-sb && move components.231900.json src/data/content/",
     "generate-sb-migration": "storyblok push-components --space 231900 ./src/data/content/components.228570.json",
     "lint": "eslint src/**/*.{ts,tsx} --max-warnings=0",
     "lint:fix": "eslint src/**/*.{ts,tsx} --fix",

@@ -1,0 +1,680 @@
+{
+  "components": [
+    {
+      "name": "flywheel_card",
+      "display_name": null,
+      "created_at": "2023-05-23T10:01:30.737Z",
+      "updated_at": "2023-05-23T10:01:30.737Z",
+      "id": 4017009,
+      "schema": {
+        "heading": {
+          "type": "text",
+          "key": "heading",
+          "pos": 0,
+          "required": true
+        },
+        "description": {
+          "type": "textarea",
+          "display_name": "Description",
+          "key": "description",
+          "pos": 1,
+          "required": true
+        },
+        "cardImage": {
+          "type": "asset",
+          "key": "image",
+          "pos": 2,
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "flywheel_card",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "flywheel_section",
+      "display_name": "Flywheel Section",
+      "created_at": "2023-05-23T10:01:30.867Z",
+      "updated_at": "2023-05-23T10:51:15.438Z",
+      "id": 4017014,
+      "schema": {
+        "heading": {
+          "type": "text",
+          "pos": 0,
+          "key": "heading",
+          "required": true
+        },
+        "description": {
+          "type": "textarea",
+          "pos": 1,
+          "key": "description",
+          "display_name": "Description",
+          "required": true
+        },
+        "description2": {
+          "type": "textarea",
+          "pos": 2,
+          "display_name": "Description2",
+          "key": "subheading2",
+          "required": true
+        },
+        "flywheelImage": {
+          "type": "asset",
+          "pos": 3,
+          "key": "flywheel_image",
+          "required": true
+        },
+        "flywheelCards": {
+          "type": "bloks",
+          "pos": 4,
+          "key": "flywheelCards",
+          "required": true,
+          "component_group_whitelist": []
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Flywheel Section",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "footer",
+      "display_name": "Footer",
+      "created_at": "2023-05-23T10:01:30.561Z",
+      "updated_at": "2023-05-23T10:51:16.093Z",
+      "id": 4017001,
+      "schema": {
+        "desktopDescription": {
+          "type": "textarea",
+          "pos": 0,
+          "required": true
+        },
+        "mobileDescription": {
+          "type": "textarea",
+          "pos": 1,
+          "required": true
+        },
+        "logo": {
+          "type": "bloks",
+          "pos": 2,
+          "required": true,
+          "component_group_whitelist": []
+        },
+        "navItems": {
+          "type": "bloks",
+          "pos": 3,
+          "required": true,
+          "component_group_whitelist": []
+        },
+        "desktopCopyright": {
+          "type": "text",
+          "pos": 4,
+          "required": true
+        },
+        "mobileCopyright": {
+          "type": "text",
+          "pos": 5,
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Footer",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "form_input",
+      "display_name": null,
+      "created_at": "2023-05-23T10:01:30.844Z",
+      "updated_at": "2023-05-23T10:01:30.844Z",
+      "id": 4017013,
+      "schema": {},
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "form_input",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "header",
+      "display_name": null,
+      "created_at": "2023-05-23T10:01:30.583Z",
+      "updated_at": "2023-05-23T10:51:17.450Z",
+      "id": 4017002,
+      "schema": {
+        "buttonText": {
+          "type": "text",
+          "required": true
+        },
+        "logo": {
+          "type": "bloks",
+          "required": true,
+          "component_group_whitelist": []
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "header",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "hero_section",
+      "display_name": null,
+      "created_at": "2023-05-23T10:01:30.695Z",
+      "updated_at": "2023-05-29T10:07:33.423Z",
+      "id": 4017007,
+      "schema": {
+        "heading": {
+          "type": "textarea",
+          "pos": 0,
+          "required": true,
+          "translatable": false,
+          "allow_target_blank": false,
+          "key": "heading",
+          "display_name": "Heading"
+        },
+        "subheading": {
+          "type": "textarea",
+          "pos": 1,
+          "key": "subheading",
+          "display_name": "Subheading",
+          "required": true
+        },
+        "subheading2": {
+          "type": "textarea",
+          "pos": 2,
+          "key": "subtitle2",
+          "required": true
+        },
+        "heroImage": {
+          "type": "asset",
+          "pos": 3,
+          "filetypes": [
+            "images"
+          ],
+          "display_name": "Hero Image",
+          "key": "heroImage",
+          "required": true
+        },
+        "joinWaitingListForm": {
+          "type": "bloks",
+          "pos": 4,
+          "key": "joinWaitingListForm",
+          "required": true,
+          "component_group_whitelist": []
+        },
+        "test": {
+          "type": "custom",
+          "field_type": "shopify-products-custom",
+          "options": []
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "hero_section",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "iconCard",
+      "display_name": null,
+      "created_at": "2023-05-23T10:01:30.675Z",
+      "updated_at": "2023-05-23T10:01:30.675Z",
+      "id": 4017006,
+      "schema": {
+        "heading": {
+          "type": "text",
+          "key": "title",
+          "pos": 0,
+          "required": true
+        },
+        "description": {
+          "type": "textarea",
+          "key": "description",
+          "pos": 1,
+          "required": true
+        },
+        "cardImage": {
+          "type": "asset",
+          "key": "image",
+          "pos": 2,
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "iconCard",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "icons_section",
+      "display_name": null,
+      "created_at": "2023-05-23T10:01:30.819Z",
+      "updated_at": "2023-05-23T10:51:19.475Z",
+      "id": 4017012,
+      "schema": {
+        "heading": {
+          "type": "text",
+          "pos": 0,
+          "key": "heading",
+          "required": true
+        },
+        "mobileHeading": {
+          "type": "text",
+          "pos": 1,
+          "key": "mobileHeading",
+          "required": true
+        },
+        "iconCards": {
+          "type": "bloks",
+          "pos": 2,
+          "key": "icon_cards",
+          "required": true,
+          "component_group_whitelist": []
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "icons_section",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "joinWaitingListForm",
+      "display_name": null,
+      "created_at": "2023-05-23T10:01:30.625Z",
+      "updated_at": "2023-05-23T10:01:30.625Z",
+      "id": 4017004,
+      "schema": {
+        "heading": {
+          "type": "text",
+          "pos": 0,
+          "key": "heading",
+          "required": true
+        },
+        "successHeading": {
+          "type": "text",
+          "pos": 1,
+          "key": "successTitle",
+          "required": true
+        },
+        "emailHolder": {
+          "type": "text",
+          "pos": 2,
+          "key": "emailHolder",
+          "required": true
+        },
+        "buttonText": {
+          "type": "text",
+          "pos": 3,
+          "key": "buttonText",
+          "display_name": "Button Text",
+          "required": true
+        },
+        "tosText": {
+          "type": "textarea",
+          "pos": 4,
+          "key": "tosText",
+          "display_name": "TOS Text",
+          "required": true
+        },
+        "newsletterText": {
+          "type": "text",
+          "pos": 5,
+          "key": "newsletterText",
+          "required": true
+        },
+        "desktopActiveImage": {
+          "type": "asset",
+          "pos": 6,
+          "filetypes": [
+            "images"
+          ],
+          "key": "desktopActiveImage",
+          "required": true
+        },
+        "mobileActiveImage": {
+          "type": "asset",
+          "display_name": "Mobile active",
+          "filetypes": [
+            "images"
+          ],
+          "pos": 7,
+          "key": "mobileActiveImage",
+          "required": true
+        },
+        "invalidImage": {
+          "type": "asset",
+          "filetypes": [
+            "images"
+          ],
+          "pos": 8,
+          "key": "invalidImage",
+          "required": true
+        },
+        "validImage": {
+          "type": "asset",
+          "filetypes": [
+            "images"
+          ],
+          "pos": 9,
+          "key": "validImage",
+          "required": true
+        },
+        "successImage": {
+          "type": "asset",
+          "pos": 10,
+          "key": "successImage",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "joinWaitingListForm",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "Link",
+      "display_name": null,
+      "created_at": "2023-05-23T10:01:30.604Z",
+      "updated_at": "2023-05-23T10:01:30.604Z",
+      "id": 4017003,
+      "schema": {
+        "linkHeading": {
+          "type": "text",
+          "required": true
+        },
+        "link": {
+          "type": "multilink",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Link",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "logo",
+      "display_name": null,
+      "created_at": "2023-05-23T10:01:30.889Z",
+      "updated_at": "2023-05-23T10:01:30.889Z",
+      "id": 4017015,
+      "schema": {
+        "text": {
+          "type": "text",
+          "key": "logo_text",
+          "pos": 0,
+          "required": true
+        },
+        "image": {
+          "type": "asset",
+          "key": "image",
+          "pos": 1,
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "logo",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "mailing_section",
+      "display_name": "Mailing Section",
+      "created_at": "2023-05-23T10:01:30.757Z",
+      "updated_at": "2023-05-23T10:51:22.136Z",
+      "id": 4017010,
+      "schema": {
+        "heading": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "backgroundImage": {
+          "type": "asset",
+          "pos": 1,
+          "required": true
+        },
+        "joinWaitingListForm": {
+          "type": "bloks",
+          "pos": 2,
+          "required": true,
+          "component_group_whitelist": []
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Mailing Section",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "NavContainer",
+      "display_name": null,
+      "created_at": "2023-05-23T10:01:30.716Z",
+      "updated_at": "2023-05-23T10:51:22.867Z",
+      "id": 4017008,
+      "schema": {
+        "heading": {
+          "type": "text",
+          "required": true
+        },
+        "linkItems": {
+          "type": "bloks",
+          "required": true,
+          "component_group_whitelist": []
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "NavContainer",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "page",
+      "display_name": null,
+      "created_at": "2023-05-23T10:01:30.923Z",
+      "updated_at": "2023-05-23T10:51:23.506Z",
+      "id": 4017016,
+      "schema": {
+        "body": {
+          "type": "bloks",
+          "pos": 1,
+          "key": "body",
+          "component_group_whitelist": []
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "page",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "stepsCard",
+      "display_name": null,
+      "created_at": "2023-05-23T10:01:30.646Z",
+      "updated_at": "2023-05-23T10:01:30.646Z",
+      "id": 4017005,
+      "schema": {
+        "heading": {
+          "type": "text",
+          "pos": 0,
+          "display_name": "Heading",
+          "key": "heading",
+          "required": true
+        },
+        "number": {
+          "type": "number",
+          "pos": 1,
+          "key": "number",
+          "required": true
+        },
+        "desktopSubheading": {
+          "type": "text",
+          "pos": 2,
+          "key": "desktopSubheading",
+          "required": true
+        },
+        "mobileSubheading": {
+          "type": "text",
+          "pos": 3,
+          "key": "mobile_subtitle",
+          "required": false
+        },
+        "description": {
+          "type": "textarea",
+          "pos": 4,
+          "key": "description",
+          "required": true
+        },
+        "cardImage": {
+          "type": "asset",
+          "pos": 5,
+          "key": "image",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "stepsCard",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "steps_section",
+      "display_name": null,
+      "created_at": "2023-05-23T10:01:30.791Z",
+      "updated_at": "2023-05-23T10:51:24.891Z",
+      "id": 4017011,
+      "schema": {
+        "heading": {
+          "type": "text",
+          "display_name": "Heading",
+          "key": "title",
+          "pos": 0,
+          "required": true
+        },
+        "stepsCards": {
+          "type": "bloks",
+          "key": "steps_cards",
+          "pos": 1,
+          "required": true,
+          "component_group_whitelist": []
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "steps_section",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import {StoryblokStory} from 'storyblok-generate-ts'
+import { StoryblokStory } from "storyblok-generate-ts";
 
 export interface AssetStoryblok {
   alt?: string;
@@ -63,7 +63,6 @@ export interface HeroSectionStoryblok {
   subheading2: string;
   heroImage: AssetStoryblok;
   joinWaitingListForm: any[];
-  test?: string;
   _uid: string;
   component: "hero_section";
   [k: string]: any;

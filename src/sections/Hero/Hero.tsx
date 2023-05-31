@@ -20,7 +20,6 @@ export const Hero = ({ blok, ...props }: HeroProps & HTMLSectionProps) => {
           <S.JoinWaitingListForm key={props._uid} blok={props} {...props} />
         ))}
       </S.ItemsContainer>
-
       <S.ImageWrapper>
         <Image src={heroImage.filename} alt={heroImage.alt} width={740} height={500} />
       </S.ImageWrapper>
